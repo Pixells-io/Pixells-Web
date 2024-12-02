@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Menu from "./layouts/Menu";
 import TermsConditions from "./pages/Landing/TermsConditions";
 import PrivacyNotice from "./pages/Landing/PrivacyNotice";
+import CheckoutForm from "./pages/Checkout/CheckoutForm";
 
 //Layouts
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         element: <PrivacyNotice />,
       },
     ],
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutForm />,
   },
 ]);
 
