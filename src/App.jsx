@@ -1,8 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Menu from "./layouts/Menu";
-import TermsConditions from "./pages/Landing/TermsConditions";
-import PrivacyNotice from "./pages/Landing/PrivacyNotice";
-import CheckoutForm from "./pages/Checkout/CheckoutForm";
 
 //Layouts
 
@@ -23,18 +20,61 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "/contacto",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Landing/Contact"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/soporte",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Landing/Support"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
         path: "/terminos-y-condiciones",
-        element: <TermsConditions />,
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Landing/TermsConditions"
+          );
+          return {
+            Component,
+          };
+        },
       },
       {
         path: "/aviso-de-privacidad",
-        element: <PrivacyNotice />,
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Landing/PrivacyNotice"
+          );
+          return {
+            Component,
+          };
+        },
       },
     ],
   },
   {
     path: "/checkout",
-    element: <CheckoutForm />,
+    lazy: async () => {
+      const { default: Component } = await import(
+        "./pages/Checkout/CheckoutForm"
+      );
+      return {
+        Component,
+      };
+    },
   },
 ]);
 

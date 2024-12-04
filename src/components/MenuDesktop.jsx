@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function MenuDesktop() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="sticky top-0 z-10 flex justify-between bg-white px-8 py-3">
+    <div
+      className={`sticky top-0 z-20 flex justify-between bg-white px-8 py-3 ${
+        isScrolled ? "border-b border-blancoBox" : ""
+      }`}
+    >
       <div className="flex w-1/3 items-center">
         <Link to="/">
           <img src="/img/logo.webp" alt="Pixells Logo" className="h-10" />
@@ -23,13 +44,13 @@ function MenuDesktop() {
           MÓDULOS
         </Link>
         <Link
-          to={"/"}
+          to={"/soporte"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
         >
           SOPORTE
         </Link>
         <Link
-          to={"/"}
+          to={"/contacto"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
         >
           CONTACTO
