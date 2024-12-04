@@ -69,25 +69,13 @@ function FirstBanner() {
     }
   };
 
-  // Función para mover el carrusel
-  const moveCarousel = () => {
-    if (carouselRef.current) {
-      const carousel = carouselRef.current;
-      const itemWidth = carousel.children[0].offsetWidth;
-      carousel.scrollTo({
-        left: currentIndex * itemWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
   // Duplicar los módulos para crear un bucle infinito
   const extendedModules = [...modules, ...modules]; // Duplicamos los módulos
 
   return (
-    <div className="flex rounded-3xl bg-[#7794F915] px-6 py-6">
-      <div className="ml-16 mt-16 w-1/2">
-        <span className="text-gradient-home">
+    <div className="rounded-3xl bg-[#7794F915] px-6 py-6 sm:flex">
+      <div className="mt-16 sm:ml-16 sm:w-1/2">
+        <span className="text-gradient-home text-3xl font-normal leading-10 sm:text-5xl">
           Una nueva forma de <br /> operar tu empresa.
         </span>
         <div className="mt-10">
@@ -99,7 +87,7 @@ function FirstBanner() {
             funciones, con usuarios ilimitados.
           </span>
         </div>
-        <div className="mr-40 mt-10 text-center">
+        <div className="mt-10 text-center sm:mr-40">
           <Link
             to={"/checkout"}
             className="rounded-xl bg-primario px-2 py-2 font-roboto text-xs font-semibold text-white hover:bg-primarioBotones"
@@ -111,23 +99,23 @@ function FirstBanner() {
           <img
             src="/img/computadora_sistema_pixells.webp"
             alt="Sistema Pixells Laptop"
-            className="h-auto w-[34.375rem]"
+            className="h-auto w-full sm:w-[34.375rem]"
           />
         </div>
       </div>
-      <div className="w-1/2 justify-center pt-20">
+      <div className="justify-center pt-20 sm:w-1/2">
         <div className="w-full">
           <img
             src={selectedImg}
             alt="Sistema Pixells Project Manager"
             className={
               selectedModule === 0
-                ? "gradient-radius blurred-image h-auto w-[40rem]"
-                : "gradient-radius h-auto w-[40rem]"
+                ? "gradient-radius blurred-image h-auto w-full sm:w-[40rem]"
+                : "gradient-radius h-auto w-full sm:w-[40rem]"
             }
           />
         </div>
-        <div className="ml-[3rem] mt-[-4.8rem] flex w-[36rem] items-center justify-center rounded-2xl px-6 py-4 text-center">
+        <div className="mt-[-3.5rem] flex items-center justify-center rounded-2xl text-center sm:ml-[3rem] sm:mt-[-4.8rem] sm:w-[36rem] sm:px-6 sm:py-4">
           <IonIcon
             icon={chevronBack}
             className="z-10 transform cursor-pointer rounded-full text-3xl text-black"

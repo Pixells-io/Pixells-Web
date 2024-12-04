@@ -1,8 +1,12 @@
+import { IonIcon } from "@ionic/react";
+import { menuOutline } from "ionicons/icons";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import MenuMovil from "./MenuMovil";
 
 function MenuDesktop() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuMovilModal, setMenuMovilModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,12 +29,13 @@ function MenuDesktop() {
         isScrolled ? "border-b border-blancoBox" : ""
       }`}
     >
-      <div className="flex w-1/3 items-center">
+      <MenuMovil modal={menuMovilModal} setModal={setMenuMovilModal} />
+      <div className="flex items-center">
         <Link to="/">
           <img src="/img/logo.webp" alt="Pixells Logo" className="h-10" />
         </Link>
       </div>
-      <div className="flex w-1/3 items-center justify-center gap-8">
+      <div className="hidden items-center justify-center gap-8 sm:flex">
         <Link
           to={"/"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
@@ -56,10 +61,10 @@ function MenuDesktop() {
           CONTACTO
         </Link>
       </div>
-      <div className="flex w-1/3 items-center justify-end gap-4">
+      <div className="flex items-center justify-end gap-6 sm:gap-4">
         <Link
           to={"/"}
-          className="font-poppins text-sm font-medium text-primarioBotones hover:text-primario"
+          className="hidden font-poppins text-sm font-medium text-primarioBotones hover:text-primario sm:block"
         >
           INGRESAR
         </Link>
@@ -69,6 +74,11 @@ function MenuDesktop() {
         >
           Comenzar Gratis
         </Link>
+        <IonIcon
+          icon={menuOutline}
+          className="text-3xl sm:hidden"
+          onClick={() => setMenuMovilModal(true)}
+        ></IonIcon>
       </div>
     </div>
   );

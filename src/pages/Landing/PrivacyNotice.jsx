@@ -4,11 +4,11 @@ import React from "react";
 function PrivacyNotice() {
   return (
     <div>
-      <div className="mx-8 my-4 rounded-3xl bg-[#7794F915] px-6 py-6 text-center">
+      <div className="mx-4 my-4 rounded-3xl bg-[#7794F915] px-6 py-6 text-center sm:mx-8">
         <span className="font-poppins text-2xl text-grisHeading">
           AVISO DE PRIVACIDAD
         </span>
-        <div className="px-20 pt-14 text-left text-justify font-roboto text-base text-grisHeading">
+        <div className="pt-14 text-justify font-roboto text-base text-grisHeading sm:px-20">
           <p className="mb-4">
             <strong>1. Responsable del Tratamiento de Datos Personales</strong>
             <br />

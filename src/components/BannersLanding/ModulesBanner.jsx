@@ -64,31 +64,19 @@ function ModulesBanner() {
     }
   };
 
-  // Función para mover el carrusel
-  const moveCarousel = () => {
-    if (carouselRef.current) {
-      const carousel = carouselRef.current;
-      const itemWidth = carousel.children[0].offsetWidth;
-      carousel.scrollTo({
-        left: currentIndex * itemWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
   // Duplicar los módulos para crear un bucle infinito
   const extendedModules = [...modules, ...modules]; // Duplicamos los módulos
 
   return (
-    <div className="text-center">
-      <span className="font-poppins text-xl font-normal text-grisHeading">
+    <div className="mx-4 text-center sm:mx-0">
+      <span className="font-poppins text-2xl font-normal text-grisHeading sm:text-xl">
         LOS MÓDULOS MÁS IMPORTANTES PARA TU EMPRESA
       </span>
       <div className="relative mt-10 flex items-center justify-center gap-20">
         {/* Botón de navegación anterior */}
         <IonIcon
           icon={chevronBack}
-          className="absolute left-4 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-black px-4 py-4 text-3xl text-blancoBox"
+          className="absolute left-4 top-1/2 z-10 transform cursor-pointer rounded-full bg-black px-2 py-2 text-2xl text-blancoBox sm:px-4 sm:py-4 sm:text-3xl"
           onClick={handlePrev}
         />
 
@@ -100,7 +88,7 @@ function ModulesBanner() {
           {extendedModules.map((module, index) => (
             <div
               key={module.id}
-              className="overflow flex h-[27.375rem] w-[23.688rem] flex-shrink-0 flex-col justify-end rounded-3xl text-start transition-transform"
+              className="overflow flex h-[27.375rem] w-[21.688rem] flex-shrink-0 flex-col justify-end rounded-3xl text-start transition-transform sm:w-[23.688rem]"
               style={{
                 backgroundColor: module.color,
                 transform: `translateX(-${(currentIndex - 1) * 100}%)`, // Ajuste para mostrar 3 en el centro
@@ -115,8 +103,7 @@ function ModulesBanner() {
               <img
                 src={module.img}
                 alt={module.title}
-                width={"339px"}
-                className="tempered-glass-effect mb-8 ml-10 rounded"
+                className="tempered-glass-effect mb-8 ml-8 w-[315px] rounded sm:ml-10 sm:w-[339px]"
               />
             </div>
           ))}
@@ -125,7 +112,7 @@ function ModulesBanner() {
         {/* Botón de navegación siguiente */}
         <IonIcon
           icon={chevronForward}
-          className="absolute right-4 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-black px-4 py-4 text-3xl text-blancoBox"
+          className="absolute right-4 top-1/2 z-10 transform cursor-pointer rounded-full bg-black px-2 py-2 text-2xl text-blancoBox sm:px-4 sm:py-4 sm:text-3xl"
           onClick={handleNext}
         />
       </div>

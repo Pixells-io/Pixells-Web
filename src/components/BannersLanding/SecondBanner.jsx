@@ -9,61 +9,59 @@ import "../../../public/main.css";
 
 function SecondBanner() {
   return (
-    <div className="second-banner-gradient px-8 py-4 pb-8">
+    <div className="second-banner-gradient px-6 py-8 pb-10 sm:px-8">
       <div className="border-b border-white py-2">
         <span className="pixells-inteligence-gradient font-poppins text-base font-semibold">
           PIXELLS INTELLIGENCE
         </span>
       </div>
-      <div className="flex">
-        <div className="w-2/3 px-14 py-14">
-          <span className="font-poppins text-4xl font-semibold leading-[55px] tracking-wider text-blancoBg">
+      <div className="sm:flex">
+        <div className="py-14 sm:w-2/3 sm:px-14">
+          <span className="font-poppins text-3xl font-semibold leading-[55px] tracking-wider text-blancoBg sm:text-4xl">
             Integra tu empresa <br />
             a la inteligencia <br />
             artificial, haz que <br />
             haga las cosas por ti
           </span>
-          <div className="mt-6">
-            <span className="font-roboto font-normal leading-4 text-blancoBg">
+          <div className="mt-6 text-justify sm:w-2/4 sm:text-left">
+            <span className="text-justify font-roboto font-normal leading-4 text-blancoBg">
               Pixells intelligence, está disponible a partir de Diciembre de
-              <br />
-              2024 dentro del sistema. Su costo puede variar, <br />
-              dependiendo los servicios seleccionados.
+              2024 dentro del sistema. Su costo puede variar, dependiendo los
+              servicios seleccionados.
             </span>
           </div>
         </div>
-        <div className="grid w-1/3 items-center">
-          <div className="mr-8">
+        <div className="grid items-center sm:w-1/3">
+          <div className="sm:mr-8">
             <div className="flex items-center gap-4 border-b border-white py-6">
               <IonIcon
                 icon={settingsOutline}
-                className="text-xl text-white"
+                className="text-5xl text-white sm:text-xl"
               ></IonIcon>
               <div>
                 <span className="font-roboto text-sm font-semibold leading-4 text-blancoBg">
-                  Soporte inteligente para poder relizar cualquier <br />
-                  acción dentro del sistema. Respuestas faciles y <br />
-                  objetivas.
+                  Soporte inteligente para poder relizar cualquier acción dentro
+                  del sistema. Respuestas faciles y objetivas.
                 </span>
               </div>
             </div>
             <div className="flex items-center gap-4 border-b border-white py-6">
               <IonIcon
                 icon={barChartOutline}
-                className="text-xl text-white"
+                className="text-5xl text-white sm:text-xl"
               ></IonIcon>
               <div>
                 <span className="font-roboto text-sm font-semibold leading-4 text-blancoBg">
-                  Reporteo y obtención de información del <br />
-                  sistema en tiempo real. Pregunta cuales son <br />
-                  tus ventas del días, tus actividades de hoy, etc.
+                  Reporteo y obtención de información del sistema en tiempo
+                  real. Pregunta cuales son tus ventas del días, tus actividades
+                  de hoy, etc.
                 </span>
               </div>
             </div>
             <div className="flex items-center gap-4 border-b border-white py-6">
               <IonIcon
                 icon={terminalOutline}
-                className="text-xl text-white"
+                className="text-5xl text-white sm:text-xl"
               ></IonIcon>
               <div>
                 <span className="font-roboto text-sm font-semibold leading-4 text-blancoBg">

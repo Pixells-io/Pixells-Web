@@ -4,11 +4,11 @@ import React from "react";
 function TermsConditions() {
   return (
     <div>
-      <div className="mx-8 my-4 rounded-3xl bg-[#7794F915] px-6 py-6 text-center">
+      <div className="mx-4 my-4 rounded-3xl bg-[#7794F915] px-6 py-6 text-center sm:mx-8">
         <span className="font-poppins text-2xl text-grisHeading">
           TÉRMINOS Y CONDICIONES
         </span>
-        <div className="px-20 pt-10 text-left font-roboto text-base text-grisHeading">
+        <div className="pt-10 text-left font-roboto text-base text-grisHeading sm:px-20">
           <span>
             Estos términos y condiciones establecen todas las pautas de lo que
             adquieres al comprar Pixells®, las condiciones de la licencia de

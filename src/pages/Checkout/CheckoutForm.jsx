@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function CheckoutForm() {
   return (
-    <div className="flex min-h-screen items-center justify-center text-center align-middle">
-      <div className="w-1/4 items-center justify-center">
+    <div className="flex min-h-screen justify-center px-8 pt-8 text-center align-middle sm:items-center sm:px-0 sm:pt-0">
+      <div className="items-center justify-center sm:w-1/4">
         <div className="flex items-center justify-center py-6 text-center">
           <Link to={"/"}>
             <img src="/img/logo.webp" width={"60px"} />

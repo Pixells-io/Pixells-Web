@@ -7,7 +7,7 @@ function IntegrationsBanner() {
       <span className="font-poppins text-xl font-light text-grisHeading">
         Integraciones mas populares
       </span>
-      <div className="mt-10 flex items-center justify-center gap-20">
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-20">
         <img
           src="/img/meta_logo.webp"
           className="h-auto object-contain"

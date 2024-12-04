@@ -5,11 +5,11 @@ import React from "react";
 function Support() {
   return (
     <div>
-      <div className="w-3/5 px-40 pt-14">
+      <div className="px-16 pt-14 sm:w-3/5 sm:px-40">
         <h3 className="font-poppins text-xl font-semibold tracking-wider text-grisHeading">
           Contacto de Soporte y Asistencia Técnica
         </h3>
-        <div className="mt-10 w-4/5 space-y-4">
+        <div className="mt-10 space-y-4 sm:w-4/5">
           <InputTitle name={"subject"} type={"text"} placeholder={"Asunto"} />
           <InputTitle
             name={"email"}
@@ -28,10 +28,10 @@ function Support() {
             placeholder={"Descripción"}
           />
         </div>
-        <div className="mt-16">
+        <div className="mt-16 text-center sm:text-left">
           <button
             type="button"
-            className="rounded-xl bg-[#242425] px-4 py-2 font-roboto text-xs font-semibold tracking-wider text-white"
+            className="rounded-xl bg-[#242425] px-6 py-2 font-roboto text-xs font-semibold tracking-wider text-white sm:px-4"
           >
             Enviar
           </button>

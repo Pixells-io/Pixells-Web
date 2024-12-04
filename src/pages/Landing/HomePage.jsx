@@ -9,7 +9,7 @@ import React from "react";
 function HomePage() {
   return (
     <div>
-      <div className="mx-8 my-4">
+      <div className="mx-4 my-4 sm:mx-8">
         <FirstBanner />
       </div>
       <div className="mt-12">

@@ -6,24 +6,20 @@ import { Link } from "react-router-dom";
 function Contact() {
   return (
     <div>
-      <div className="flex px-32 py-24">
-        <div className="w-1/2">
+      <div className="py-24 sm:flex sm:px-32">
+        <div className="px-10 sm:w-1/2 sm:pr-12">
           <span className="font-poppins text-4xl font-semibold tracking-wider text-grisHeading">
-            CONTACTA A NUESTRO <br />
-            EQUIPO DE ATENCIÓN A <br />
-            CLIENTES.
+            CONTACTA A NUESTRO EQUIPO DE ATENCIÓN A CLIENTES.
           </span>
           <div className="py-8">
             <span className="font-roboto text-lg font-light text-[#242425]">
               Haznos saber cualquier duda sobre el funcionamiento del sistema,
-              <br />
               módulos existentes, actualizaciones, precios y más información.
             </span>
           </div>
           <div className="pt-4">
             <span className="font-roboto text-lg font-light text-[#242425]">
               Si lo prefieres, puedes contactarnos por Whatsapp y nuestro
-              <br />
               asistente virtual te ayudará con cualquier duda.
             </span>
           </div>
@@ -33,8 +29,8 @@ function Contact() {
             </Link>
           </div>
         </div>
-        <div className="w-1/2">
-          <div className="mx-16 rounded-xl border border-blancoBox text-center">
+        <div className="px-4 pt-20 sm:w-1/2 sm:pt-0">
+          <div className="rounded-xl border border-blancoBox text-center sm:mx-16">
             <div className="py-8 text-center">
               <span className="font-poppins text-base text-[#242425]">
                 CONTACTO ATENCIÓN AL CLIENTE
@@ -72,11 +68,11 @@ function Contact() {
           </div>
         </div>
       </div>
-      <div className="flex px-24 pb-28 pt-14">
-        <div className="w-2/5">
+      <div className="px-10 pb-28 pt-14 sm:flex sm:px-24">
+        <div className="sm:w-2/5">
           <img src="/img/pixells_support.webp" width={"400px"}></img>
         </div>
-        <div className="flex w-3/5 flex-col justify-center space-y-6">
+        <div className="mt-12 flex flex-col justify-center space-y-6 sm:mt-0 sm:w-3/5">
           <h2 className="font-poppins text-2xl font-semibold tracking-wider text-grisHeading">
             Contacto de Soporte y Asistencia Técnica
           </h2>
@@ -85,7 +81,7 @@ function Contact() {
             funcionamiento <br />
             del sistema.
           </h3>
-          <div className="mt-2">
+          <div className="mt-2 text-center sm:text-left">
             <Link
               to={"/soporte"}
               className="rounded-xl bg-[#242425] px-4 py-2 font-roboto text-xs font-semibold tracking-wider text-white"

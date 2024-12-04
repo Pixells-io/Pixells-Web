@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function FooterDesktopWhite() {
   return (
     <div className="w-full">
-      <div className="flex w-full bg-white px-16 pb-20 pt-10">
-        <div className="w-1/5">
+      <div className="w-full space-y-8 bg-white px-10 pb-20 pt-10 sm:flex sm:space-y-0 sm:px-16">
+        <div className="sm:w-1/5">
           <Link to={"/"}>
             <img
               src="/img/logo.webp"
@@ -14,7 +14,7 @@ function FooterDesktopWhite() {
             />
           </Link>
         </div>
-        <div className="w-1/5">
+        <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-[#242425]">
             PIXELLS
           </span>
@@ -27,11 +27,11 @@ function FooterDesktopWhite() {
             </Link>
           </div>
         </div>
-        <div className="w-1/5">
+        <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-[#242425]">
             PRODUCTOS
           </span>
-          <div className="mt-4">
+          <div className="sm:w-1/5">
             <Link
               to={"/"}
               className="font-poppins text-xs font-normal text-[#242425] hover:text-primario"
@@ -47,7 +47,7 @@ function FooterDesktopWhite() {
             </Link>
           </div>
         </div>
-        <div className="w-1/5">
+        <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-[#242425]">
             LEGALES
           </span>
@@ -74,7 +74,7 @@ function FooterDesktopWhite() {
             </Link>
           </div>
         </div>
-        <div className="w-1/5">
+        <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-[#242425]">
             SERVICIO AL CLIENTE
           </span>
@@ -102,24 +102,24 @@ function FooterDesktopWhite() {
           </div>
         </div>
       </div>
-      <div className="flex border-t border-blancoBox bg-white px-4 py-4">
-        <div className="px-10">
-          <span className="font-roboto text-xs font-light text-[#242425]">
-            Copyright © 2024 Pixells Inc.
-          </span>
+      <div className="bg-white px-4 py-4 sm:flex">
+        <div className="px-10 py-4 sm:py-0">
+          <Link
+            to={"/aviso-de-privacidad"}
+            className="font-roboto text-xs font-light text-[#242425]"
+          >
+            Política de privacidad
+          </Link>
         </div>
-        <div className="border-l border-r px-10 text-[#242425]">
+        <div className="border-b border-t px-10 py-4 text-[#242425] sm:border-b-0 sm:border-l sm:border-r sm:border-t-0 sm:py-0">
           <span className="font-roboto text-xs font-light text-[#242425]">
             Todos los derechos reservados.
           </span>
         </div>
-        <div className="px-10">
-          <Link
-            to={"/aviso-de-privacidad"}
-            className="font-roboto text-xs font-light text-[#242425] hover:text-primario"
-          >
-            Política de privacidad
-          </Link>
+        <div className="px-10 py-4 sm:py-0">
+          <span className="font-roboto text-xs font-light text-[#242425]">
+            Copyright © 2024 Pixells Inc.
+          </span>
         </div>
       </div>
     </div>

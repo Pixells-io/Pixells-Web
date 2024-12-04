@@ -1,8 +1,5 @@
 .text-gradient-home {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 2.875rem;
-  line-height: 69px;
   background: linear-gradient(
     208.5deg,
     #ffac46,
@@ -156,4 +153,3 @@
 .rotate-img.scrolling {
   animation: scrollRotate 0.5s ease forwards;
 }
-
