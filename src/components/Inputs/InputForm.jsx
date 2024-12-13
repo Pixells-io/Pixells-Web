@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 
-function InputForm({ type, name, placeholder }) {
+function InputForm({ type, name, placeholder, value, onChange, color }) {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState("");
+  const [internalValue, setInternalValue] = useState("");
+
+  const handleChange = (e) => {
+    setInternalValue(e.target.value);
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
+  const inputValue = value !== undefined ? value : internalValue;
 
   return (
     <div className="relative w-full">
@@ -10,9 +19,13 @@ function InputForm({ type, name, placeholder }) {
         id={name}
         type={type}
         name={name}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="border[#D7D7D7] w-full rounded-xl border px-4 py-3 font-roboto text-sm text-grisHeading"
+        value={inputValue}
+        onChange={handleChange}
+        className={
+          color == true
+            ? "w-full rounded-xl border border-red-500 px-4 py-3 font-roboto text-sm text-red-500"
+            : "border[#D7D7D7] w-full rounded-xl border px-4 py-3 font-roboto text-sm text-grisHeading"
+        }
         style={{ outline: "none" }}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
@@ -20,9 +33,11 @@ function InputForm({ type, name, placeholder }) {
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all duration-200 ${
-          isFocused || value.trim()
-            ? "border[#D7D7D7] top-[-14px] text-xs text-grisHeading"
-            : "top-2 text-sm text-grisHeading"
+          color == true ? "text-red-500" : "text-grisHeading"
+        } ${
+          isFocused || inputValue.trim()
+            ? "border[#D7D7D7] top-[-14px] text-xs"
+            : "top-2 text-sm"
         }`}
       >
         {placeholder}

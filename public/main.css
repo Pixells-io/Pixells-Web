@@ -64,13 +64,13 @@
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -86,12 +86,33 @@
   transition: filter 0.3s ease; /* Transición suave para el desenfoque */
 }
 
-.second-banner-gradient{
-  background: linear-gradient(137.89deg, #008AF9 -9.53%, #9065F8 104.63%);
+.second-banner-gradient {
+  background: linear-gradient(137.89deg, #008af9 -9.53%, #9065f8 104.63%);
 }
 
 .pixells-inteligence-gradient {
-  background: linear-gradient(271.92deg, #FFAC46 1.46%, #FF9546 3.05%, #FF8046 4.5%, #FF753C 5.92%, #FF6932 7.37%, #FF7884 8.72%, #FF8DFF 10.63%, #E284FF 12.29%, #C67BFF 13.64%, #A872FF 15.03%, #8C69FF 16.22%, #857AFF 17.46%, #7C8FFF 19.36%, #73A3FF 20.89%, #69B9FF 22.07%, #7FD6FF 23.32%, #51D5FF 24.41%, #51D5FF 25.27%, #FFFFFF 25.78%);
+  background: linear-gradient(
+    271.92deg,
+    #ffac46 1.46%,
+    #ff9546 3.05%,
+    #ff8046 4.5%,
+    #ff753c 5.92%,
+    #ff6932 7.37%,
+    #ff7884 8.72%,
+    #ff8dff 10.63%,
+    #e284ff 12.29%,
+    #c67bff 13.64%,
+    #a872ff 15.03%,
+    #8c69ff 16.22%,
+    #857aff 17.46%,
+    #7c8fff 19.36%,
+    #73a3ff 20.89%,
+    #69b9ff 22.07%,
+    #7fd6ff 23.32%,
+    #51d5ff 24.41%,
+    #51d5ff 25.27%,
+    #ffffff 25.78%
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -107,7 +128,7 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  background: linear-gradient(90deg, #44444F 7.38%, #9C9CB5 26.93%);
+  background: linear-gradient(90deg, #44444f 7.38%, #9c9cb5 26.93%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -116,21 +137,40 @@
 }
 
 .tempered-glass-effect {
-  border-radius: 8px;  /* Bordes redondeados */
+  border-radius: 8px; /* Bordes redondeados */
   border-left: 8px solid rgba(255, 255, 255, 0.2);
   border-top: 8px solid rgba(255, 255, 255, 0.2);
 }
 
 .text-gradient-home-black {
   line-height: 69px;
-  background: linear-gradient(259.12deg, #FFAC46 -10.99%, #FF9546 -3.58%, #FF8046 3.15%, #FF753C 9.74%, #FF6932 16.47%, #FF7884 22.73%, #FF8DFF 31.58%, #E284FF 39.33%, #C67BFF 45.57%, #A872FF 52.02%, #8C69FF 57.54%, #857AFF 63.3%, #7C8FFF 72.16%, #73A3FF 79.24%, #69B9FF 84.73%, #7FD6FF 90.52%, #51D5FF 95.57%, #51D5FF 100.98%);
+  background: linear-gradient(
+    259.12deg,
+    #ffac46 -10.99%,
+    #ff9546 -3.58%,
+    #ff8046 3.15%,
+    #ff753c 9.74%,
+    #ff6932 16.47%,
+    #ff7884 22.73%,
+    #ff8dff 31.58%,
+    #e284ff 39.33%,
+    #c67bff 45.57%,
+    #a872ff 52.02%,
+    #8c69ff 57.54%,
+    #857aff 63.3%,
+    #7c8fff 72.16%,
+    #73a3ff 79.24%,
+    #69b9ff 84.73%,
+    #7fd6ff 90.52%,
+    #51d5ff 95.57%,
+    #51d5ff 100.98%
+  );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient 15s ease infinite;
 }
-
 
 .rotate-img {
   transform: rotateX(40deg) rotateY(20deg);
@@ -152,4 +192,102 @@
 
 .rotate-img.scrolling {
   animation: scrollRotate 0.5s ease forwards;
+}
+
+/* THANK YOU PAGE */
+.bg-gradient-thank-you {
+  background: linear-gradient(
+    222.26deg,
+    rgba(119, 148, 249, 0.1) 12.05%,
+    rgba(2, 189, 237, 0.08) 21.26%,
+    rgba(5, 230, 192, 0.06) 27.94%,
+    rgba(183, 252, 223, 0.1) 35.54%,
+    rgba(194, 255, 171, 0.1) 40.37%,
+    rgba(255, 255, 255, 0.1) 52%
+  );
+}
+
+@keyframes firework {
+  0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+  50% { width: 0.5vmin; opacity: 1; }
+  100% { width: var(--finalSize); opacity: 0; }
+}
+
+/* Estilo base para los fuegos artificiales */
+.firework,
+.firework::before,
+.firework::after {
+  --initialSize: 0.4vmin;
+  --finalSize: 45vmin;
+  --particleSize: 0.4vmin;
+  --color1: yellow;
+  --color2: khaki;
+  --color3: white;
+  --color4: lime;
+  --color5: gold;
+  --color6: mediumseagreen;
+  --y: -30vmin;
+  --x: -50%;
+  --initialY: 60vmin;
+  content: "";
+  animation: firework 5s infinite; /* Animación más lenta (5 segundos) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--y));
+  width: var(--initialSize);
+  aspect-ratio: 1;
+  background: 
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%;
+  background-size: var(--initialSize) var(--initialSize);
+  background-repeat: no-repeat;
+}
+
+/* Asegura que cada fuego artificial tiene una posición y colores diferentes */
+.firework:nth-child(1) { --x: 30vmin; left: 30%; top: 60%; animation-delay: 0s; }
+.firework:nth-child(2) { --x: -30vmin; left: 70%; top: 60%; animation-delay: -0.2s; }
+.firework:nth-child(3) { --x: 50vmin; left: 50%; top: 50%; animation-delay: -0.4s; }
+.firework:nth-child(4) { --x: -50vmin; left: 20%; top: 80%; animation-delay: -0.6s; }
+.firework:nth-child(5) { --x: 40vmin; left: 60%; top: 40%; animation-delay: -0.8s; }
+.firework:nth-child(6) { --x: -40vmin; left: 80%; top: 70%; animation-delay: -1s; }
+.firework:nth-child(7) { --x: 20vmin; left: 40%; top: 20%; animation-delay: -1.2s; }
+.firework:nth-child(8) { --x: -20vmin; left: 60%; top: 20%; animation-delay: -1.4s; }
+.firework:nth-child(9) { --x: 10vmin; left: 20%; top: 30%; animation-delay: -1.6s; }
+.firework:nth-child(10) { --x: -10vmin; left: 90%; top: 30%; animation-delay: -1.8s; }
+
+.firework:nth-child(1),
+.firework:nth-child(2),
+.firework:nth-child(3),
+.firework:nth-child(4),
+.firework:nth-child(5),
+.firework:nth-child(6),
+.firework:nth-child(7),
+.firework:nth-child(8),
+.firework:nth-child(9),
+.firework:nth-child(10) {
+  --color1: red; --color2: orange; --color3: yellow; --color4: green; --color5: blue; --color6: purple;
+  --finalSize: 40vmin;
 }

@@ -69,7 +69,29 @@ const router = createBrowserRouter([
     path: "/checkout",
     lazy: async () => {
       const { default: Component } = await import(
-        "./pages/Checkout/CheckoutForm"
+        "./pages/Checkout/CheckoutPage"
+      );
+      return {
+        Component,
+      };
+    },
+  },
+  {
+    path: "/gracias",
+    lazy: async () => {
+      const { default: Component } = await import(
+        "./pages/Checkout/ThankYouPage"
+      );
+      return {
+        Component,
+      };
+    },
+  },
+  {
+    path: "/primeros-pasos",
+    lazy: async () => {
+      const { default: Component } = await import(
+        "./pages/FirstInformation/MainInformation"
       );
       return {
         Component,
