@@ -23,8 +23,8 @@ function InputForm({ type, name, placeholder, value, onChange, color }) {
         onChange={handleChange}
         className={
           color == true
-            ? "w-full rounded-xl border border-red-500 px-4 py-3 font-roboto text-sm text-red-500"
-            : "border[#D7D7D7] w-full rounded-xl border px-4 py-3 font-roboto text-sm text-grisHeading"
+            ? "w-full rounded-xl border border-red-500 px-4 py-3 font-roboto text-[16px] text-red-500"
+            : "border[#D7D7D7] w-full rounded-xl border px-4 py-3 font-roboto text-[16px] text-grisHeading"
         }
         style={{ outline: "none" }}
         onFocus={() => setIsFocused(true)}
