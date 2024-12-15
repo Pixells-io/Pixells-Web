@@ -114,7 +114,7 @@ const CheckoutForm = () => {
   const [checkboxError, setCheckboxError] = useState(false);
 
   //Step State
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
 
   //Name of the card
   const [cardName, setCardName] = useState("");
@@ -383,8 +383,8 @@ const CheckoutForm = () => {
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="monthly">
-                <div className="mt-8 flex rounded-xl border border-grisDisabled">
-                  <div className="w-1/2 border-r border-grisDisabled px-6 py-6 text-left">
+                <div className="mt-8 rounded-xl border border-grisDisabled sm:flex">
+                  <div className="border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2">
                     <span className="font-poppins text-xl font-medium text-black">
                       Gratuito
                     </span>
@@ -447,7 +447,7 @@ const CheckoutForm = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="w-1/2 px-6 py-6 text-left">
+                  <div className="px-6 py-6 text-left sm:w-1/2">
                     <div className="flex gap-2">
                       <IonIcon
                         icon={sparklesSharp}
@@ -676,7 +676,7 @@ const CheckoutForm = () => {
       {/* STEP 3 */}
       <div className="w-full" hidden={step != 3 ? true : false}>
         <div className="flex justify-center text-center">
-          <div className="w-2/6">
+          <div className="w-full sm:w-2/6">
             <div className="flex w-full justify-center py-10 text-center align-middle">
               <img src="/img/logo.webp" alt="Pixells Logo" className="h-10" />
             </div>
