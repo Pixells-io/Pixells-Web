@@ -79,11 +79,13 @@ function ModulesBanner() {
           className="absolute left-4 top-1/2 z-10 transform cursor-pointer rounded-full bg-black px-2 py-2 text-2xl text-blancoBox sm:px-4 sm:py-4 sm:text-3xl"
           onClick={handlePrev}
         />
-
         <div
           ref={carouselRef}
-          className="flex gap-10 overflow-hidden scroll-smooth px-6"
-          style={{ scrollBehavior: "smooth" }}
+          className="flex touch-pan-x gap-10 overflow-x-auto overflow-y-hidden scroll-smooth px-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          style={{
+            scrollBehavior: "smooth",
+            WebkitOverflowScrolling: "touch",
+          }}
         >
           {extendedModules.map((module, index) => (
             <div
@@ -91,7 +93,7 @@ function ModulesBanner() {
               className="overflow flex h-[27.375rem] w-[21.688rem] flex-shrink-0 flex-col justify-end rounded-3xl text-start transition-transform sm:w-[23.688rem]"
               style={{
                 backgroundColor: module.color,
-                transform: `translateX(-${(currentIndex - 1) * 100}%)`, // Ajuste para mostrar 3 en el centro
+                transform: `translateX(-${(currentIndex - 1) * 100}%)`,
               }}
             >
               <div className="px-6 pb-14">

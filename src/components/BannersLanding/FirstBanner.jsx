@@ -122,11 +122,17 @@ function FirstBanner() {
             onClick={handlePrev}
           />
           <div
-            className="mt-4 flex w-[32rem] gap-10 overflow-hidden scroll-smooth p-4 px-6"
-            style={{ scrollBehavior: "smooth" }}
+            className="no-scrollbar mt-4 flex w-[32rem] touch-pan-x gap-10 overflow-x-auto scroll-smooth p-4 px-6"
+            style={{
+              scrollBehavior: "smooth",
+              WebkitOverflowScrolling: "touch",
+              msOverflowStyle: "none",
+              scrollbarWidth: "none",
+              overscrollBehavior: "contain",
+            }}
             ref={carouselRef}
           >
-            {modules.map((module, i) => (
+            {extendedModules.map((module, i) => (
               <div
                 key={i}
                 className={
@@ -136,8 +142,8 @@ function FirstBanner() {
                 }
                 onClick={() => changeSelectedImg(module.img, module.id)}
                 style={{
-                  transform: `translateX(-${(currentIndex - 1) * 100}%)`, // Ajuste para mostrar 3 en el centro
-                }} // Ajuste para mostrar 3 en el centro
+                  transform: `translateX(-${(currentIndex - 1) * 100}%)`,
+                }}
               >
                 <span className="font-poppins text-sm text-grisHeading">
                   {module.name}

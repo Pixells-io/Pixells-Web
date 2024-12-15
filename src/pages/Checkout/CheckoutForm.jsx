@@ -73,7 +73,7 @@ const CheckoutForm = () => {
       setLoading(false);
 
       //Set Client ID in Cache
-      Cookies.set("client_id", client_id, { expires: 730 });
+      Cookies.set("client_id", client_id, { expires: 1 });
 
       //Redirect to Thank You Page
       navigate("/gracias");

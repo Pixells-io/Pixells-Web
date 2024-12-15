@@ -196,7 +196,7 @@ function ThankYouPage() {
 
   return (
     <div className="h-screen w-full">
-      <div className="px-48 py-32">
+      <div className="px-8 py-10 sm:px-48 sm:py-32">
         <div className="flex justify-between rounded-full bg-grisBg px-2 py-2">
           {/*  */}
           <button
@@ -245,7 +245,7 @@ function ThankYouPage() {
           <h3 className="pt-6 font-poppins text-base text-grisHeading">
             Selecciona una o más opciones
           </h3>
-          <div className="mx-48 mt-12 grid grid-cols-3 justify-items-center gap-4">
+          <div className="grid grid-cols-2 justify-items-center gap-4 pt-6 sm:mx-48 sm:mt-12 sm:grid-cols-3">
             {operation.map((item, index) => (
               <div
                 key={index}
@@ -261,10 +261,10 @@ function ThankYouPage() {
               </div>
             ))}
           </div>
-          <div className="py-2 text-end">
+          <div className="py-10 text-end sm:px-0 sm:py-2">
             <IonIcon
               icon={arrowForwardOutline}
-              className="rounded-full bg-primarioBotones p-1 text-2xl text-white"
+              className="rounded-full bg-primarioBotones p-1 text-4xl text-white sm:text-2xl"
               onClick={() => changeStatus(2)}
             />
           </div>
@@ -277,7 +277,7 @@ function ThankYouPage() {
             ¿Cuantos usuarios planeas para tu sistema?
           </h2>
           <div className="mt-28 flex items-center justify-center">
-            <div className="flex w-1/3 items-center justify-center gap-8">
+            <div className="flex items-center justify-center gap-8 sm:w-1/3">
               <IonIcon
                 icon={remove}
                 className="text-4xl"
@@ -298,10 +298,10 @@ function ThankYouPage() {
               />
             </div>
           </div>
-          <div className="py-2 text-end">
+          <div className="py-20 text-end sm:py-2">
             <IonIcon
               icon={arrowForwardOutline}
-              className="rounded-full bg-primarioBotones p-1 text-2xl text-white"
+              className="rounded-full bg-primarioBotones p-1 text-4xl text-white sm:text-2xl"
               onClick={() => changeStatus(3)}
             />
           </div>
@@ -313,7 +313,7 @@ function ThankYouPage() {
           <h3 className="pt-6 font-poppins text-base text-grisHeading">
             Selecciona una o más opciones
           </h3>
-          <div className="mx-48 mt-12 grid grid-cols-3 justify-items-center gap-4">
+          <div className="grid grid-cols-2 justify-items-center gap-4 py-8 sm:mx-48 sm:mt-12 sm:grid-cols-3">
             {economic.map((item, index) => (
               <div
                 key={index}
@@ -332,7 +332,7 @@ function ThankYouPage() {
           <div className="py-2 text-end">
             <IonIcon
               icon={arrowForwardOutline}
-              className="rounded-full bg-primarioBotones p-1 text-2xl text-white"
+              className="rounded-full bg-primarioBotones p-1 text-4xl text-white sm:text-2xl"
               onClick={() => sendForm()}
             />
           </div>
