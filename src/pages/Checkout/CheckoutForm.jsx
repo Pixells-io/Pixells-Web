@@ -114,7 +114,7 @@ const CheckoutForm = () => {
   const [checkboxError, setCheckboxError] = useState(false);
 
   //Step State
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   //Name of the card
   const [cardName, setCardName] = useState("");
