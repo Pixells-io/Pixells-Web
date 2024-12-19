@@ -63,7 +63,7 @@ function MenuDesktop() {
       </div>
       <div className="flex items-center justify-end gap-6 sm:gap-4">
         <Link
-          to={"/"}
+          to={"https://sistema.pixells.io/login"}
           className="hidden font-poppins text-sm font-medium text-primarioBotones hover:text-primario sm:block"
         >
           INGRESAR

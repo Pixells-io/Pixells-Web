@@ -12,7 +12,7 @@ import {
 } from "ionicons/icons";
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
 function ThankYouPage() {
   //Validate is create account
@@ -190,7 +190,7 @@ function ThankYouPage() {
     const session = await response.json();
 
     if (session.status == 201) {
-      navigate("/");
+      redirect("https://sistema.pixells.io/login");
     }
   }
 
