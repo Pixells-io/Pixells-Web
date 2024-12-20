@@ -63,17 +63,22 @@ const CheckoutForm = () => {
     const session = await response.json();
 
     if (session.suscription.error) {
-      console.error(session.error);
       setLoading(false);
       setStripeError(true);
       return;
     } else {
       //Success Pay
       const client_id = session.client;
+      const client_token = session.token;
       setLoading(false);
 
       //Set Client ID in Cache
       Cookies.set("client_id", client_id, { expires: 1 });
+      Cookies.set("token", client_token, {
+        domain: ".pixells.io",
+        secure: true,
+        sameSite: "None",
+      });
 
       //Redirect to Thank You Page
       navigate("/gracias");
@@ -107,6 +112,7 @@ const CheckoutForm = () => {
   const [lastNameError, setLastNameError] = useState(false);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
+  const [emailDuplicated, setEmailDuplicated] = useState(false);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -122,13 +128,13 @@ const CheckoutForm = () => {
   //Button State
   const [buttonState, setButtonState] = useState(false);
 
-  function validateInput() {
+  async function validateInput() {
     //Validate the name
     if (name.length > 0) {
       setNameError(false);
     } else {
       setNameError(true);
-      setButtonState(true);
+
       return;
     }
 
@@ -137,16 +143,40 @@ const CheckoutForm = () => {
       setLastNameError(false);
     } else {
       setLastNameError(true);
-      setButtonState(true);
+
       return;
     }
 
     //Validate the email
     if (email.length > 0) {
       setEmailError(false);
+
+      //Validate the email is not repeated
+      const response = await fetch(
+        `https://saasbackend.pixells.io/api/saas/validate-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+          }),
+        },
+      );
+
+      const info = await response.json();
+
+      if (info.status === 201) {
+        //Email is Done
+        setEmailDuplicated(false);
+      } else {
+        //Email have a problem
+        setEmailError(true);
+        setEmailDuplicated(true);
+      }
     } else {
       setEmailError(true);
-      setButtonState(true);
       return;
     }
 
@@ -159,7 +189,7 @@ const CheckoutForm = () => {
       setPasswordError(false);
     } else {
       setPasswordError(true);
-      setButtonState(true);
+
       return;
     }
 
@@ -174,7 +204,6 @@ const CheckoutForm = () => {
     setStep(2);
   }
 
-  //Falta validar checkbox
   function changeStateInputs(value, type) {
     switch (type) {
       case 1:
@@ -241,7 +270,7 @@ const CheckoutForm = () => {
               controlados.
             </span>
           </div>
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-6 text-left">
             <div className="flex gap-4">
               <InputForm
                 type="name"
@@ -268,6 +297,11 @@ const CheckoutForm = () => {
               onChange={(e) => changeStateInputs(e.target.value, 1)}
               placeholder="Correo Electrónico"
             />
+            {emailDuplicated == true ? (
+              <span className="font-roboto text-sm text-red-500">
+                Este Email ya esta en uso, elige otro
+              </span>
+            ) : null}
             <InputForm
               type="password"
               name="password"

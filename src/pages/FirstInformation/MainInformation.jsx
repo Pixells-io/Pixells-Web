@@ -190,7 +190,7 @@ function ThankYouPage() {
     const session = await response.json();
 
     if (session.status == 201) {
-      window.location.href = "https://sistema.pixells.io/login";
+      window.location.href = "https://sistema.pixells.io";
     }
   }
 
@@ -245,7 +245,7 @@ function ThankYouPage() {
           <h3 className="pt-6 font-poppins text-base text-grisHeading">
             Selecciona una o más opciones
           </h3>
-          <div className="grid grid-cols-2 justify-items-center gap-4 pt-6 sm:mx-48 sm:mt-12 sm:grid-cols-3">
+          <div className="grid grid-cols-1 justify-items-center gap-4 pt-6 sm:mx-48 sm:mt-12 sm:grid-cols-3">
             {operation.map((item, index) => (
               <div
                 key={index}
@@ -313,7 +313,7 @@ function ThankYouPage() {
           <h3 className="pt-6 font-poppins text-base text-grisHeading">
             Selecciona una o más opciones
           </h3>
-          <div className="grid grid-cols-2 justify-items-center gap-4 py-8 sm:mx-48 sm:mt-12 sm:grid-cols-3">
+          <div className="grid grid-cols-1 justify-items-center gap-4 py-8 sm:mx-48 sm:mt-12 sm:grid-cols-3">
             {economic.map((item, index) => (
               <div
                 key={index}

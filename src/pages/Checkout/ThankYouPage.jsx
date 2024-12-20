@@ -13,7 +13,7 @@ function ThankYouPage() {
     } else {
       setTimeout(() => {
         navigate("/primeros-pasos");
-      }, 10000);
+      }, 5000);
     }
   }, []);
 
