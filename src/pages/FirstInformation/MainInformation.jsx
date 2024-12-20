@@ -190,7 +190,7 @@ function ThankYouPage() {
     const session = await response.json();
 
     if (session.status == 201) {
-      redirect("https://sistema.pixells.io/login");
+      window.location.href = "https://sistema.pixells.io/login";
     }
   }
 
