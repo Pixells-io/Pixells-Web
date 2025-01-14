@@ -11,37 +11,37 @@ function ModulesBanner() {
     {
       id: 1,
       title: "VENDE TUS <br/> PRODUCTOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#A692E8",
     },
     {
       id: 2,
       title: "GESTIONA <br/> INVENTARIOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#58ABB0",
     },
     {
       id: 3,
       title: "FABRICA <br> ARTICULOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#7B93E7",
     },
     {
       id: 4,
       title: "VENDE TUS <br/> PRODUCTOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#A692E8",
     },
     {
       id: 5,
       title: "GESTIONA <br/> INVENTARIOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#58ABB0",
     },
     {
       id: 6,
       title: "FABRICA <br> ARTICULOS",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
       color: "#A692E8",
     },
   ];

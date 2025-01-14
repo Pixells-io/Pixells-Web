@@ -255,7 +255,7 @@ const CheckoutForm = () => {
         <div>
           <div className="flex items-center justify-center py-6 text-center">
             <Link to={"/"}>
-              <img src="/img/logo.webp" width={"60px"} />
+              <img src="/logos/icono_yacamba_azul.webp" width={"60px"} />
             </Link>
           </div>
           <div className="py-4 text-center">
@@ -265,7 +265,7 @@ const CheckoutForm = () => {
           </div>
           <div className="text-left">
             <span className="font-poppins text-sm font-normal text-grisHeading">
-              Registrate y disfruta el sistema Pixells con un usuario de forma
+              Registrate y disfruta el sistema Yacamba con un usuario de forma
               gratuita. Haz que tu empresa sea profesional y con procesos
               controlados.
             </span>
@@ -366,7 +366,7 @@ const CheckoutForm = () => {
               </Link>{" "}
               y el{" "}
               <Link className="text-blue-600">Concentimiento Electrónico </Link>
-              para el uso de Pixells.
+              para el uso de Yacamba.
             </span>
           </div>
           <div className="mt-12">
@@ -712,7 +712,11 @@ const CheckoutForm = () => {
         <div className="flex justify-center text-center">
           <div className="w-full sm:w-2/6">
             <div className="flex w-full justify-center py-10 text-center align-middle">
-              <img src="/img/logo.webp" alt="Pixells Logo" className="h-10" />
+              <img
+                src="/logos/icono_yacamba_azul.webp"
+                alt="Yacamba Logo"
+                className="h-10"
+              />
             </div>
             <div className="rounded-xl border border-grisDisabled px-10 py-8 text-left">
               <h2 className="font-poppins text-xl font-semibold tracking-wider text-grisHeading">

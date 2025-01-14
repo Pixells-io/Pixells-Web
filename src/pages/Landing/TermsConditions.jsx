@@ -11,13 +11,13 @@ function TermsConditions() {
         <div className="pt-10 text-left font-roboto text-base text-grisHeading sm:px-20">
           <span>
             Estos términos y condiciones establecen todas las pautas de lo que
-            adquieres al comprar Pixells®, las condiciones de la licencia de
+            adquieres al comprar Yacamba®, las condiciones de la licencia de
             usuario que contrataste, las políticas de privacidad, y las reglas
             de uso de nuestro programa. Es importante que sepas los términos más
             importantes de nuestros términos y condiciones:
             <br />
             <br />
-            1. Los términos y condiciones son un contrato entre Pixells y el
+            1. Los términos y condiciones son un contrato entre Yacamba y el
             usuario, por lo que recomendamos que se lean completos.
             <br />
             <br />
@@ -25,14 +25,14 @@ function TermsConditions() {
             estás sujetándote a las condiciones aquí establecidas.
             <br />
             <br />
-            3. La propiedad del software Pixells es de Pixells y lo que se
+            3. La propiedad del software Yacamba es de Yacamba y lo que se
             adquiere es una licencia de usuario final, esto es, una licencia
             para usar el programa en una computadora o varias computadoras.
             <br />
             <br />
             4. La licencia otorgada es exclusiva para el usuario registrado. No
             debes compartir tus claves de usuario ni permitir el uso o
-            instalación de Pixells en otros equipos bajo las condiciones aquí
+            instalación de Yacamba en otros equipos bajo las condiciones aquí
             establecidas.
             <br />
             <br />
@@ -40,7 +40,7 @@ function TermsConditions() {
             obstante, es el usuario quien decide usar el sistema.
             <br />
             <br />
-            6. Pixells se vincula con programas, sistemas o servicios de otras
+            6. Yacamba se vincula con programas, sistemas o servicios de otras
             empresas (como los sistemas para recargas telefónicas), pero dichos
             sistemas y su uso son propiedad y responsabilidad de los terceros y
             del usuario. Para poder usar esos servicios de terceros, debes
@@ -49,7 +49,7 @@ function TermsConditions() {
             <br />
             <br />
             7. Si el usuario no está de acuerdo con los términos y condiciones
-            de Pixells, no adquiera, instale, registre, acceda o utilice
+            de Yacamba, no adquiera, instale, registre, acceda o utilice
             nuestros productos.
             <br />
             <br />
@@ -84,7 +84,7 @@ function TermsConditions() {
             3.6 CONDICIONES DE PAGOS, CANCELACIONES Y DEVOLUCIONES.
             <br />
             <br />
-            4. CONDICIONES DE USO DE Pixells.
+            4. CONDICIONES DE USO DE Yacamba.
             <br />
             <br />
             5. PRODUCTOS Y SERVICIOS DE TERCEROS.
@@ -108,7 +108,7 @@ function TermsConditions() {
             1. GENERALES
             <br />
             <br />
-            El presente documento constituye un convenio entre usted y Pixells
+            El presente documento constituye un convenio entre usted y Yacamba
             y/o sus empresas filiales o subsidiarias, como usuario usted
             manifiesta que es su voluntad convenir y participar, en concurrencia
             con la voluntad de nosotros, en el presente contrato electrónico por
@@ -117,7 +117,7 @@ function TermsConditions() {
             MANERA LIBRE, DE BUENA FE Y SIN EXISTIR VICIOS POR ERROR, VIOLENCIA
             O DOLO EN SU CONSENTIMIENTO, EN PLENO CONOCIMIENTO DEL ALCANCE LEGAL
             DE LOS PRESENTES. SI USTED NO ESTÁ DE ACUERDO CON LOS TÉRMINOS Y
-            CONDICIONES DE PIXELLS LE SOLICITAMOS QUE NO ADQUIERA, INSTALE, SE
+            CONDICIONES DE Yacamba LE SOLICITAMOS QUE NO ADQUIERA, INSTALE, SE
             REGISTRE, ACCEDA O UTILICE NUESTROS PRODUCTOS.
             <br />
             <br />
@@ -128,7 +128,7 @@ function TermsConditions() {
             responsable de la veracidad, calidad y cantidad de la información
             que almacene o genere a través de nuestros programas, así como de la
             información de terceros como sus empleados, clientes y proveedores.
-            Una vez efectuado el pago, el comprador adquiere de Pixells el
+            Una vez efectuado el pago, el comprador adquiere de Yacamba el
             derecho de usar este "PROGRAMA" mediante una LICENCIA DE USO,
             quedando sometido a las siguientes condiciones:
             <br />
@@ -141,18 +141,18 @@ function TermsConditions() {
             definiciones.
             <br />
             <br />
-            PIXELLS. Se refiere a PIXELLS. o cualquier de sus empresas filiales
+            Yacamba. Se refiere a Yacamba. o cualquier de sus empresas filiales
             o subsidiarias que generan o licencian los programas.
             <br />
             <br />
             PROGRAMA o PRODUCTO. Se refiere al programa de cómputo sobre el cual
-            PIXELLS otorga una licencia de uso al USUARIO. Por ejemplo, PIXELLS
+            Yacamba otorga una licencia de uso al USUARIO. Por ejemplo, Yacamba
             software, es un programa o producto tecnológico propiedad de
-            PIXELLS.
+            Yacamba.
             <br />
             <br />
             USUARIO. Persona física con actividades empresariales o persona
-            moral que contrata los servicios o productos de PIXELLS para el uso
+            moral que contrata los servicios o productos de Yacamba para el uso
             de los programas en su empresa, negocio o comercio.
             <br />
             <br />
@@ -162,7 +162,7 @@ function TermsConditions() {
             <br />
             CLIENTE. Persona física o moral que obtiene los productos o
             servicios que comercializa u ofrece el USUARIO y para lo cual el
-            USUARIO utiliza los productos de PIXELLS para su administración.
+            USUARIO utiliza los productos de Yacamba para su administración.
             <br />
             <br />
             NUBE. Modelo de provisión externa de servicios de cómputo que
@@ -174,7 +174,7 @@ function TermsConditions() {
             SERVICIOS DE TERCEROS. Se refiere a todo programa de cómputo, sitio
             de internet, sistema o, en general, a los productos o servicios que
             son administrados, generados y ofrecidos por terceras personas
-            vinculados tecnológicamente con el PROGRAMA de PIXELLS.
+            vinculados tecnológicamente con el PROGRAMA de Yacamba.
             <br />
             <br />
             INFORMACIÓN PERSONAL. La información considerada datos personales de
@@ -209,7 +209,7 @@ function TermsConditions() {
             3.1 CONTENIDO DE LA LICENCIA
             <br />
             <br />
-            Por el presente convenio PIXELLS. y sus empresas filiales o
+            Por el presente convenio Yacamba. y sus empresas filiales o
             subsidiarias, le otorgan al USUARIO una licencia de uso exclusivo
             del programa, intransmisible, inalienable, sin facultades de
             sublicencia, bajo las siguientes condiciones:
@@ -265,7 +265,7 @@ function TermsConditions() {
             La venta, reventa, cesión, distribución, arrendamiento o
             sublicencia, total o parcial, de nuestro producto, su usuario o
             licencia, así como cualquier contenido asociado a él, salvo que se
-            cuente con la expresa autorización de PIXELLS;
+            cuente con la expresa autorización de Yacamba;
             <br />
             <br />
             Realizar trabajos de ingeniería inversa, descompilar o desensamblar
@@ -299,7 +299,7 @@ function TermsConditions() {
             <br />
             <br />
             Cualquier violación a los términos y condiciones de uso da la
-            facultad a PIXELLS de rescindir el presente contrato e impedir el
+            facultad a Yacamba de rescindir el presente contrato e impedir el
             acceso y utilización de los programas, sin previo aviso, y la
             facultad de iniciar acciones de resarcimiento de daños y perjuicios
             ante las instancias correspondientes.
@@ -322,7 +322,7 @@ function TermsConditions() {
             subsecuente.
             <br />
             <br />
-            PIXELLS se reserva el derecho de revocar vía remota (por cualquier
+            Yacamba se reserva el derecho de revocar vía remota (por cualquier
             medio electrónico disponible) y de forma automática la licencia en
             caso de que el usuario infrinja cualquiera de las obligaciones que a
             su cargo se establezcan en este convenio.
@@ -338,7 +338,7 @@ function TermsConditions() {
             Conexión estable a internet
             <br />
             <br />
-            PIXELLS no se hace responsable por problemas de uso o instalación
+            Yacamba no se hace responsable por problemas de uso o instalación
             del programa si no se cumplen las condiciones mínimas aquí
             señaladas.
             <br />
@@ -346,25 +346,25 @@ function TermsConditions() {
             3.4 GARANTÍAS
             <br />
             <br />
-            PIXELLS garantiza que el "PROGRAMA" funciona correctamente en la
+            Yacamba garantiza que el "PROGRAMA" funciona correctamente en la
             forma que se establece en el Manual y/o Instructivo de Uso que
             acompaña al "PROGRAMA".
             <br />
             <br />
-            PIXELLS GARANTIZA ESTE "PROGRAMA" Y, EN SU CASO, POR UN PERIODO DE
+            Yacamba GARANTIZA ESTE "PROGRAMA" Y, EN SU CASO, POR UN PERIODO DE
             90 DIAS CONTADOS A PARTIR DE LA FECHA DE ADQUISICION.
             <br />
             <br />
             Si el usuario identifica algún error de funcionalidad de programa,
             deberá informarnos de inmediato a través del correo electrónico
-            hola@pixells.io para que nuestro equipo técnico identifique y
-            resuelva el problema en el menor tiempo posible. PIXELLS garantiza
+            hola@Yacamba.io para que nuestro equipo técnico identifique y
+            resuelva el problema en el menor tiempo posible. Yacamba garantiza
             que se tomarán acciones inmediatas para identificar el origen del
             error y para iniciar las acciones para corregir los defectos.
             <br />
             <br />
-            La responsabilidad de PIXELLS y el único derecho del usuario, a
-            opción de PIXELLS, será:
+            La responsabilidad de Yacamba y el único derecho del usuario, a
+            opción de Yacamba, será:
             <br />
             <br />
             a) La devolución del importe pagado por la Licencia de Uso del
@@ -382,13 +382,13 @@ function TermsConditions() {
             <br />
             La opción a) será únicamente atribuible cuando no pueda
             implementarse las opciones b) y c) y siempre y cuando el aviso de
-            fallas sea enviado a PIXELLS dentro de los 90 días de vigencia de la
+            fallas sea enviado a Yacamba dentro de los 90 días de vigencia de la
             garantía.
             <br />
             <br />
-            EN NINGUN CASO LA RESPONSABILIDAD DE PIXELLS SERA POR UNA CANTIDAD
+            EN NINGUN CASO LA RESPONSABILIDAD DE Yacamba SERA POR UNA CANTIDAD
             MAYOR A LA DEL PRECIO DE ADQUISICION DE LA LICENCIA DE USO DEL
-            "PROGRAMA" PAGADO A PIXELLS o a sus empresas filiales o
+            "PROGRAMA" PAGADO A Yacamba o a sus empresas filiales o
             subsidiarias.
             <br />
             <br />
@@ -399,17 +399,17 @@ function TermsConditions() {
             representantes.
             <br />
             <br />
-            En ningún caso PIXELLS será responsable por daños directos,
+            En ningún caso Yacamba será responsable por daños directos,
             indirectos, incidentales o de lucro cesante.
             <br />
             <br />
-            PIXELLS no garantiza la correcta operación del "PROGRAMA" por fallas
+            Yacamba no garantiza la correcta operación del "PROGRAMA" por fallas
             en la energía eléctrica, virus, deficiente instalación,
             incumplimiento de los requisitos mínimos del sistema o por cualquier
-            otra razón que no sea directamente imputable a PIXELLS.
+            otra razón que no sea directamente imputable a Yacamba.
             <br />
             <br />
-            PIXELLS tampoco garantiza el correcto funcionamiento de los
+            Yacamba tampoco garantiza el correcto funcionamiento de los
             servicios, programas o sistemas de terceros vinculados
             tecnológicamente con nuestros programas, toda vez que los mismos son
             programados y administrados por cada proveedor. No obstante, de ser
@@ -417,7 +417,7 @@ function TermsConditions() {
             programas o sistemas de terceros.
             <br />
             <br />
-            PIXELLS, no otorga garantía alguna, expresa o implícita, con el
+            Yacamba, no otorga garantía alguna, expresa o implícita, con el
             presente "PROGRAMA" en relación con su aplicación a una situación
             determinada o su idoneidad o aptitud para producir determinados
             resultados comerciales o particulares.
@@ -426,7 +426,7 @@ function TermsConditions() {
             3.5 ACTUALIZACIONES
             <br />
             <br />
-            PIXELLS implementa comúnmente diversos tipos de actualizaciones del
+            Yacamba implementa comúnmente diversos tipos de actualizaciones del
             "PROGRAMA". Algunas actualizaciones se realizan con la finalidad de
             corregir errores, formatos, mejorar la visibilidad o funcionalidad
             del programa y otras se realizan con la finalidad de agregar nuevas
@@ -437,7 +437,7 @@ function TermsConditions() {
             usuarios, cajas registradas, empleados o cajeros y, en general, a la
             información almacenada en nuestro programa. De encontrarse con un
             error después de una actualización por favor contáctenos a
-            hola@pixells.io.
+            hola@Yacamba.io.
             <br />
             <br />
             3.6 CONDICIONES DE PAGOS, CANCELACIONES Y DEVOLUCIONES.
@@ -446,26 +446,26 @@ function TermsConditions() {
             CONDICIONES DE ADQUISICIÓN DE LICENCIAS Y PRODUCTOS.
             <br />
             <br />
-            La adquisición de las licencias de PIXELLS y de otros productos,
+            La adquisición de las licencias de Yacamba y de otros productos,
             como timbres fiscales, se lleva a cabo de dos maneras: a través de
             nuestros agentes de venta.
             <br />
             <br />
             Para el pago de las licencias y otros productos y servicios de
-            PIXELLS, podrá realizarlo en línea con tarjeta de crédito o débito,
+            Yacamba, podrá realizarlo en línea con tarjeta de crédito o débito,
             por depósito o transferencia bancaria. En cualquiera de las
             modalidades, deberá enviarnos el comprobante de depósito o
-            transferencia a través del correo hola@pixells.io para poder
+            transferencia a través del correo hola@yacamba.com para poder
             acreditar el pago.
             <br />
             <br />
             Una vez acreditado el pago, nuestro equipo de atención a clientes le
             enviará el número de activación necesario para instalar su licencia
-            en el programa PIXELLS, o bien, la acreditación de los productos
+            en el programa Yacamba, o bien, la acreditación de los productos
             adquiridos.
             <br />
             <br />
-            Cualquier pago realizado a PIXELLS que no cumpla con las
+            Cualquier pago realizado a Yacamba que no cumpla con las
             disposiciones anteriores no podrá tenerse por acreditado ni recibido
             por nosotros, por tanto, no se acreditará ni reflejará la
             adquisición de las licencias o productos a través del programa.
@@ -475,8 +475,8 @@ function TermsConditions() {
             <br />
             <br />
             El usuario podrá, en cualquier momento, solicitar la cancelación de
-            las licencias o productos adquiridos de PIXELLS. Una vez solicitada
-            la cancelación, recibirá un correo por parte de PIXELLS indicándole
+            las licencias o productos adquiridos de Yacamba. Una vez solicitada
+            la cancelación, recibirá un correo por parte de Yacamba indicándole
             la procedencia de su cancelación.
             <br />
             <br />
@@ -484,15 +484,15 @@ function TermsConditions() {
             se solicite dentro de los 30 días siguientes a la fecha de pago de
             la licencia o producto, sin la necesidad de acreditar razón alguna.
             Toda solicitud de devolución presentada posterior a este plazo será
-            rechazada y PIXELLS no procederá al reembolso de las cantidades.
+            rechazada y Yacamba no procederá al reembolso de las cantidades.
             <br />
             <br />
             La cancelación o devolución del pago de una licencia o producto
             deberá solicitarse a través del programa, o bien, del correo
-            electrónico hola@pixells.io.
+            electrónico hola@yacamba.com.
             <br />
             <br />
-            4. CONDICIONES DE USO DE PIXELLS
+            4. CONDICIONES DE USO DE YACAMBA
             <br />
             <br />
             USOS ACEPTADOS. Le recordamos que la licencia que adquiera permite
@@ -546,7 +546,7 @@ function TermsConditions() {
             configurados en el programa.
             <br />
             <br />
-            La instalación de Pixells en servidores que permitan su utilización
+            La instalación de Yacamba en servidores que permitan su utilización
             simultánea por varias computadoras conectadas.
             <br />
             <br />

@@ -70,7 +70,7 @@ function Contact() {
       </div>
       <div className="px-10 pb-28 pt-14 sm:flex sm:px-24">
         <div className="sm:w-2/5">
-          <img src="/img/pixells_support.webp" width={"400px"}></img>
+          <img src="/img/yacamba_support.webp" width={"400px"}></img>
         </div>
         <div className="mt-12 flex flex-col justify-center space-y-6 sm:mt-0 sm:w-3/5">
           <h2 className="font-poppins text-2xl font-semibold tracking-wider text-grisHeading">

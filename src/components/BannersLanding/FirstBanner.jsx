@@ -7,7 +7,7 @@ import { chevronBack, chevronForward } from "ionicons/icons";
 function FirstBanner() {
   const [selectedModule, setSelectedModule] = useState(0);
   const [selectedImg, setSelectedImg] = useState(
-    "/img/sistema_pixells_project_manager.webp",
+    "/img/sistema_yacamba_project_manager.webp",
   );
 
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para el índice del carrusel
@@ -17,32 +17,32 @@ function FirstBanner() {
     {
       id: 1,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
     {
       id: 2,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
     {
       id: 3,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
     {
       id: 4,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
     {
       id: 5,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
     {
       id: 6,
       name: "Ventas",
-      img: "/img/sistema_pixells_project_manager.webp",
+      img: "/img/sistema_yacamba_project_manager.webp",
     },
   ];
 
@@ -97,8 +97,8 @@ function FirstBanner() {
         </div>
         <div className="mt-32">
           <img
-            src="/img/computadora_sistema_pixells.webp"
-            alt="Sistema Pixells Laptop"
+            src="/img/computadora_sistema_yacamba.webp"
+            alt="Sistema Yacamba Laptop"
             className="h-auto w-full sm:w-[34.375rem]"
           />
         </div>
@@ -107,7 +107,7 @@ function FirstBanner() {
         <div className="w-full">
           <img
             src={selectedImg}
-            alt="Sistema Pixells Project Manager"
+            alt="Sistema Yacamba"
             className={
               selectedModule === 0
                 ? "gradient-radius blurred-image h-auto w-full sm:w-[40rem]"

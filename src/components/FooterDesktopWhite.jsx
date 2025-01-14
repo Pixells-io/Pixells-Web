@@ -8,15 +8,15 @@ function FooterDesktopWhite() {
         <div className="sm:w-1/5">
           <Link to={"/"}>
             <img
-              src="/img/logo.webp"
-              alt="Logo Pixells Blanco"
+              src="/logos/oruga_blanco.webp"
+              alt="Logo Oruga Blanco"
               width={"50px"}
             />
           </Link>
         </div>
         <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-[#242425]">
-            PIXELLS
+            ORUGA
           </span>
           <div className="mt-4">
             <Link
@@ -118,7 +118,7 @@ function FooterDesktopWhite() {
         </div>
         <div className="px-10 py-4 sm:py-0">
           <span className="font-roboto text-xs font-light text-[#242425]">
-            Copyright © 2024 Pixells Inc.
+            Copyright © 2024 Oruga Inc.
           </span>
         </div>
       </div>

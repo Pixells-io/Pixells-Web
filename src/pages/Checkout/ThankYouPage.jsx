@@ -30,7 +30,7 @@ function ThankYouPage() {
         <div className="firework"></div>
         <div className="firework"></div>
         <div className="firework"></div>
-        BIENVENIDO A PIXELLS
+        BIENVENIDO A YACAMBA
       </span>
     </div>
   );

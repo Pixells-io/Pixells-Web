@@ -32,7 +32,11 @@ function MenuDesktop() {
       <MenuMovil modal={menuMovilModal} setModal={setMenuMovilModal} />
       <div className="flex items-center">
         <Link to="/">
-          <img src="/img/logo.webp" alt="Pixells Logo" className="h-10" />
+          <img
+            src="/logos/logo_yacamba.webp"
+            alt="Yacamba Logo"
+            className="h-6"
+          />
         </Link>
       </div>
       <div className="hidden items-center justify-center gap-8 sm:flex">
@@ -63,7 +67,7 @@ function MenuDesktop() {
       </div>
       <div className="flex items-center justify-end gap-6 sm:gap-4">
         <Link
-          to={"https://sistema.pixells.io/login"}
+          to={"https://sistema.yacamba.com/login"}
           className="hidden font-poppins text-sm font-medium text-primarioBotones hover:text-primario sm:block"
         >
           INGRESAR

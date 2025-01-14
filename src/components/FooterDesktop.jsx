@@ -8,15 +8,15 @@ function FooterDesktop() {
         <div className="sm:w-1/5">
           <Link to={"/"}>
             <img
-              src="/img/logo_blanco.webp"
-              alt="Logo Pixells Blanco"
+              src="/logos/icono_yacamba_blanco.webp"
+              alt="Logo Yacamba Blanco"
               width={"50px"}
             />
           </Link>
         </div>
         <div className="sm:w-1/5">
           <span className="font-poppins text-sm font-normal text-white">
-            PIXELLS
+            YACAMBA
           </span>
           <div className="mt-4">
             <Link
@@ -36,7 +36,7 @@ function FooterDesktop() {
               to={"/"}
               className="font-poppins text-xs font-normal text-white"
             >
-              Sistema ERP
+              Yacamba ERP
             </Link>
             <br />
             <Link
@@ -118,7 +118,7 @@ function FooterDesktop() {
         </div>
         <div className="px-10 py-4 sm:py-0">
           <span className="font-roboto text-xs font-light text-white">
-            Copyright © 2024 Pixells Inc.
+            Copyright © 2024 Yacamba Inc.
           </span>
         </div>
       </div>

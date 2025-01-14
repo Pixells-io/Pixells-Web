@@ -12,7 +12,7 @@ function PrivacyNotice() {
           <p className="mb-4">
             <strong>1. Responsable del Tratamiento de Datos Personales</strong>
             <br />
-            Pixells (en adelante, "la Empresa"), con domicilio en Justo Sierra
+            Yacamba (en adelante, "la Empresa"), con domicilio en Justo Sierra
             1830, Col. Ladrón de Guevara, Gdl, Jal, es responsable del
             tratamiento de sus datos personales conforme a lo dispuesto en la
             Ley Federal de Protección de Datos Personales en Posesión de los
@@ -88,7 +88,7 @@ function PrivacyNotice() {
             <br />
             La Empresa se reserva el derecho de realizar modificaciones a este
             aviso de privacidad. Las actualizaciones estarán disponibles en
-            pixels.io.
+            yacamba.com.
           </p>
 
           <p className="mb-4">
@@ -103,7 +103,7 @@ function PrivacyNotice() {
             <br />
             Para dudas o aclaraciones:
             <br />
-            Correo electrónico: <strong>hola@pixells.io</strong>
+            Correo electrónico: <strong>hola@yacamba.com</strong>
             <br />
             Dirección:{" "}
             <strong>Justo Sierra 1830, Col. Ladrón de Guevara, Gdl, Jal</strong>

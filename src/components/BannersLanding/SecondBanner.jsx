@@ -11,8 +11,8 @@ function SecondBanner() {
   return (
     <div className="second-banner-gradient px-6 py-8 pb-10 sm:px-8">
       <div className="border-b border-white py-2">
-        <span className="pixells-inteligence-gradient font-poppins text-base font-semibold">
-          PIXELLS INTELLIGENCE
+        <span className="Yacamba-inteligence-gradient font-poppins text-base font-semibold">
+          YACAMBA INTELLIGENCE
         </span>
       </div>
       <div className="sm:flex">
@@ -25,7 +25,7 @@ function SecondBanner() {
           </span>
           <div className="mt-6 text-justify sm:w-2/4 sm:text-left">
             <span className="text-justify font-roboto font-normal leading-4 text-blancoBg">
-              Pixells intelligence, está disponible a partir de Diciembre de
+              Yacamba intelligence, está disponible a partir de Diciembre de
               2024 dentro del sistema. Su costo puede variar, dependiendo los
               servicios seleccionados.
             </span>
@@ -65,7 +65,7 @@ function SecondBanner() {
               ></IonIcon>
               <div>
                 <span className="font-roboto text-sm font-semibold leading-4 text-blancoBg">
-                  Ejecuta tareas con inteligencia Pixells. Evita saturarte de
+                  Ejecuta tareas con inteligencia Artificial. Evita saturarte de
                   actividades operativas y deja que
                 </span>
                 <span className="crispin-title-gradient"> CRISPIN </span>
