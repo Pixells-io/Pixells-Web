@@ -7,7 +7,7 @@ import { chevronBack, chevronForward } from "ionicons/icons";
 function FirstBanner() {
   const [selectedModule, setSelectedModule] = useState(0);
   const [selectedImg, setSelectedImg] = useState(
-    "/img/sistema_yacamba_project_manager.webp",
+    "/modules/project_manager.webp",
   );
 
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para el índice del carrusel
@@ -16,33 +16,78 @@ function FirstBanner() {
   const modules = [
     {
       id: 1,
-      name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      name: "Organizacion",
+      img: "/modules/organizacion.webp",
     },
     {
       id: 2,
-      name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      name: "Project Manager",
+      img: "/modules/project_manager.webp",
     },
     {
       id: 3,
-      name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      name: "CRM",
+      img: "/modules/crm.webp",
     },
     {
       id: 4,
-      name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      name: "Analitica",
+      img: "/modules/analytics.webp",
     },
     {
       id: 5,
-      name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      name: "Desarrollo Organizacion",
+      img: "/modules/org_dev.webp",
     },
     {
       id: 6,
+      name: "Tickets",
+      img: "/modules/tickets.webp",
+    },
+    {
+      id: 7,
+      name: "Topics",
+      img: "/modules/topics.webp",
+    },
+    {
+      id: 8,
+      name: "Bancos",
+      img: "/modules/bancos.webp",
+    },
+    {
+      id: 9,
+      name: "Contabilidad",
+      img: "/modules/contabilidad.webp",
+    },
+    {
+      id: 10,
+      name: "Inventario",
+      img: "/modules/inventario.webp",
+    },
+    {
+      id: 11,
       name: "Ventas",
-      img: "/img/sistema_yacamba_project_manager.webp",
+      img: "/modules/ventas.webp",
+    },
+    {
+      id: 12,
+      name: "Compras",
+      img: "/modules/compras.webp",
+    },
+    {
+      id: 13,
+      name: "Transformacion",
+      img: "/modules/transformacion.webp",
+    },
+    {
+      id: 14,
+      name: "Punto de Venta",
+      img: "/modules/punto_venta.webp",
+    },
+    {
+      id: 15,
+      name: "Configuracion",
+      img: "/modules/configuracion.webp",
     },
   ];
 
@@ -103,7 +148,7 @@ function FirstBanner() {
           />
         </div>
       </div>
-      <div className="justify-center pt-20 sm:w-1/2">
+      <div className="justify-center pt-28 sm:w-1/2">
         <div className="w-full">
           <img
             src={selectedImg}
