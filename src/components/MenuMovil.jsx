@@ -17,9 +17,9 @@ function MenuMovil({ modal, setModal }) {
         modal ? "block" : "hidden"
       } fixed left-0 top-0 z-50 h-screen w-screen overflow-hidden overflow-y-hidden bg-white px-8 py-3`}
     >
-      <div className="flex items-center justify-between">
-        <Link to="/">
-          <img src="/img/logo.webp" className="h-10" alt="" />
+      <div className="mt-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center">
+          <img src="/logos/logo_yacamba.webp" className="h-10" alt="" />
         </Link>
         <IonIcon
           icon={closeOutline}
