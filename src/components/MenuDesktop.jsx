@@ -35,7 +35,7 @@ function MenuDesktop() {
           <img
             src="/logos/logo_yacamba.webp"
             alt="Yacamba Logo"
-            className="h-4 sm:h-6"
+            className="h-6 sm:h-10"
           />
         </Link>
       </div>
