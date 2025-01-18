@@ -153,7 +153,7 @@ const CheckoutForm = () => {
 
       //Validate the email is not repeated
       const response = await fetch(
-        `https://saasbackend.pixells.io/api/saas/validate-email`,
+        `https://saasbackend.yacamba.com/api/saas/validate-email`,
         {
           method: "POST",
           headers: {

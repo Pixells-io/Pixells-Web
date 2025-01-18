@@ -190,7 +190,7 @@ function ThankYouPage() {
     const session = await response.json();
 
     if (session.status == 201) {
-      window.location.href = "https://sistema.pixells.io";
+      window.location.href = "https://sistema.yacamba.com";
     }
   }
 
