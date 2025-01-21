@@ -64,13 +64,12 @@ function MenuMovil({ modal, setModal }) {
           >
             Comenzar Gratis
           </button>
-          <button
-            type="button"
-            onClick={() => redirectFunction("/")}
+          <Link
             className="w-full rounded-lg border border-primarioBotones py-2 font-roboto text-xs font-semibold tracking-widest text-primarioBotones"
+            to={"https://sistema.yacamba.com/login"}
           >
             Iniciar Sesión
-          </button>
+          </Link>
         </div>
         <div className="pt-8 text-center"></div>
       </div>

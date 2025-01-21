@@ -386,7 +386,13 @@ const CheckoutForm = () => {
           <div className="mt-6">
             <span className="font-poppins text-xs text-grisHeading">
               Si ya tienes una cuenta,{" "}
-              <Link className="text-blue-600">Inicia Sesión</Link>.
+              <Link
+                className="text-blue-600"
+                to={"https://sistema.yacamba.com"}
+              >
+                Inicia Sesión
+              </Link>
+              .
             </span>
           </div>
         </div>
