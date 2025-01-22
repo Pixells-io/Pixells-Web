@@ -15,27 +15,31 @@ const CheckoutForm = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    if (useCard == true) {
+      event.preventDefault();
 
-    if (!stripe || !elements) {
-      return; // Asegúrate de que Stripe y Elements estén listos
-    }
+      if (!stripe || !elements) {
+        return; // Asegúrate de que Stripe y Elements estén listos
+      }
 
-    setLoading(true);
+      setLoading(true);
 
-    const cardElement = elements.getElement(CardElement);
+      const cardElement = elements.getElement(CardElement);
 
-    // Crear el PaymentMethod con la información de la tarjeta
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: "card",
-      card: cardElement,
-    });
+      // Crear el PaymentMethod con la información de la tarjeta
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: "card",
+        card: cardElement,
+      });
 
-    if (error) {
-      console.error(error);
-      setLoading(false);
-      setStripeError(true);
-      return;
+      if (error) {
+        console.error(error);
+        setLoading(false);
+        setStripeError(true);
+        return;
+      }
+    } else {
+      paymentMethod = null;
     }
 
     // Enviar el PaymentMethod al backend para completar el proceso de suscripción
@@ -47,7 +51,7 @@ const CheckoutForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          payment_method_id: paymentMethod.id,
+          payment_method_id: paymentMethod?.id,
           email: email,
           password: password,
           confirm_password: confirmPassword,
@@ -56,6 +60,8 @@ const CheckoutForm = () => {
           card_name: cardName,
           name: name,
           last_name: lastName,
+          cupon: cupon,
+          client_code: clientCode,
         }),
       },
     );
@@ -118,6 +124,21 @@ const CheckoutForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
+
+  //Cupons
+  const [cupon, setCupon] = useState("");
+  const [useCupon, setUseCupon] = useState(false);
+  const [cuponError, setCuponError] = useState(false);
+
+  //Client Code
+  const [clientCode, setClientCode] = useState("");
+  const [useClientCode, setUseClientCode] = useState(false);
+  const [clientCodeError, setClientCodeError] = useState(false);
+
+  const [ammount, setAmmount] = useState(3000);
+
+  //Use Card
+  const [useCard, setUseCard] = useState(true);
 
   //Step State
   const [step, setStep] = useState(1);
@@ -240,6 +261,52 @@ const CheckoutForm = () => {
   function selectPlanFunction(plan) {
     setSelectedPlan(plan);
     setStep(3);
+  }
+
+  async function setDiscountCheckout() {
+    if (cupon.length > 0) {
+      const response = await fetch(
+        `https://brainbackend.yacamba.com/api/discount/consult-discount`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            code: cupon,
+          }),
+        },
+      );
+
+      const info = await response.json();
+      if (info.data == null) {
+        setCuponError(true);
+      } else {
+        setCuponError(false);
+        const cuponInfo = info.data;
+
+        switch (cuponInfo.type) {
+          case "1":
+            //Percent Discount
+            const newAmmount = 3000 - (3000 * cuponInfo.discount) / 100;
+            setAmmount(newAmmount);
+            setUseCard(true);
+
+            break;
+          case "2":
+            //Permanent Free
+            setUseCard(false);
+            setAmmount(0);
+
+            break;
+          case "3":
+            //Temporal Free
+            setAmmount(0);
+            setUseCard(true);
+            break;
+        }
+      }
+    }
   }
 
   return (
@@ -762,32 +829,109 @@ const CheckoutForm = () => {
                 </div>
                 <div>
                   <h2 className="font-poppins text-lg font-semibold text-grisHeading">
-                    $3,000 mxn
+                    ${" "}
+                    {ammount.toLocaleString("en-US", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    mxn
                   </h2>
                   <span className="font-roboto text-xs text-[#ABABAB]">
                     Por mes + IVA
                   </span>
                 </div>
               </div>
-              <div
-                className={
-                  stripeError == true
-                    ? "mt-12 border-b border-red-500 pb-4"
-                    : "mt-12 border-b pb-4"
-                }
-              >
-                <CardElement options={{ style }} />
+
+              <div>
+                <span
+                  className="font-poppins text-xs text-[#ABABAB]"
+                  onClick={() => setUseCupon(!useCupon)}
+                >
+                  ¿Tienes un codigo de descuento?
+                </span>
+                {useCupon == true ? (
+                  <div>
+                    {cuponError == true ? (
+                      <h2 className="mt-2 font-roboto text-base text-red-400">
+                        El cupon esta vencio o no existe
+                      </h2>
+                    ) : (
+                      false
+                    )}
+                    <div className="flex">
+                      <input
+                        type="text"
+                        name="cupon"
+                        placeholder="Ingresa el cupon"
+                        value={cupon}
+                        onChange={(e) => setCupon(e.target.value)}
+                        className={
+                          cuponError == true
+                            ? "w-full border-b border-red-500 py-2 font-roboto text-base text-red-500 focus:outline-none"
+                            : "w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
+                        }
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setDiscountCheckout()}
+                        className="rounded-xl bg-primario px-4 font-poppins text-sm text-white hover:bg-primarioBotones"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  false
+                )}
               </div>
-              <div className="w-full pt-4">
-                <input
-                  type="text"
-                  name="card_name"
-                  placeholder="Títular de la tarjeta"
-                  value={cardName}
-                  onChange={(e) => setCardName(e.target.value)}
-                  className="w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
-                />
+              <div>
+                <span
+                  className="font-poppins text-xs text-[#ABABAB]"
+                  onClick={() => setUseClientCode(!useClientCode)}
+                >
+                  ¿Tienes un codigo de referido?
+                </span>
+                {useClientCode == true ? (
+                  <input
+                    type="text"
+                    name="ref_code"
+                    placeholder="Ingresa el codigo de referido"
+                    value={clientCode}
+                    onChange={(e) => setClientCode(e.target.value)}
+                    className="w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
+                  />
+                ) : (
+                  false
+                )}
               </div>
+              {useCard == true ? (
+                <>
+                  <div
+                    className={
+                      stripeError == true
+                        ? "mt-10 border-b border-red-500 pb-4"
+                        : "mt-10 border-b pb-4"
+                    }
+                  >
+                    <CardElement options={{ style }} />
+                  </div>
+                  <div className="w-full pt-4">
+                    <input
+                      type="text"
+                      name="card_name"
+                      placeholder="Títular de la tarjeta"
+                      value={cardName}
+                      onChange={(e) => setCardName(e.target.value)}
+                      className="w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
+                    />
+                  </div>
+                </>
+              ) : (
+                <h2 className="rounded-xl bg-white px-12 py-3 font-poppins text-xs text-primario">
+                  Tienes acceso a una cuenta gratuita, por lo cual no necesitas
+                  ingresar un metodo de pago.
+                </h2>
+              )}
               <div className="mt-24 text-center">
                 <button
                   disabled={loading || !stripe}

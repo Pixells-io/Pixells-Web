@@ -1,8 +1,6 @@
-import InputForm from "@/components/Inputs/InputForm";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements, useElements, useStripe } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 
 function CheckoutPage() {
