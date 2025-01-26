@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IonIcon } from "@ionic/react";
 import { checkmarkOutline, people, sparklesSharp } from "ionicons/icons";
 import Cookies from "js-cookie";
+import { use } from "react";
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false);
@@ -13,9 +14,10 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
+  const [payment_method_id, payment_method_idInfo] = useState(0);
 
   const handleSubmit = async (event) => {
-    if (useCard == true) {
+    if (useCard === true) {
       event.preventDefault();
 
       if (!stripe || !elements) {
@@ -32,14 +34,14 @@ const CheckoutForm = () => {
         card: cardElement,
       });
 
+      payment_method_idInfo(paymentMethod?.id);
+
       if (error) {
         console.error(error);
         setLoading(false);
         setStripeError(true);
         return;
       }
-    } else {
-      paymentMethod = null;
     }
 
     // Enviar el PaymentMethod al backend para completar el proceso de suscripción
@@ -51,7 +53,7 @@ const CheckoutForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          payment_method_id: paymentMethod?.id,
+          payment_method_id: payment_method_id,
           email: email,
           password: password,
           confirm_password: confirmPassword,
@@ -935,7 +937,7 @@ const CheckoutForm = () => {
               <div className="mt-24 text-center">
                 <button
                   disabled={loading || !stripe}
-                  type="submit"
+                  type="button"
                   onClick={(e) => handleSubmit(e)}
                   className="rounded-xl bg-primario px-12 py-3 font-poppins text-sm text-white hover:bg-primarioBotones"
                 >
