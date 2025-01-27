@@ -62,6 +62,30 @@ const CheckoutForm = () => {
           }),
         },
       );
+
+      const session = await response.json();
+
+      if (session.suscription.error) {
+        setLoading(false);
+        setStripeError(true);
+        return;
+      } else {
+        //Success Pay
+        const client_id = session.client;
+        const client_token = session.token;
+        setLoading(false);
+
+        //Set Client ID in Cache
+        Cookies.set("client_id", client_id, { expires: 1 });
+        Cookies.set("token", client_token, {
+          domain: ".pixells.io",
+          secure: true,
+          sameSite: "None",
+        });
+
+        //Redirect to Thank You Page
+        navigate("/gracias");
+      }
     } else {
       const response = await fetch(
         `${import.meta.env.VITE_SERVER_URL}suscriptions/create-suscription`,
@@ -85,30 +109,30 @@ const CheckoutForm = () => {
           }),
         },
       );
-    }
 
-    const session = await response.json();
+      const session = await response.json();
 
-    if (session.suscription.error) {
-      setLoading(false);
-      setStripeError(true);
-      return;
-    } else {
-      //Success Pay
-      const client_id = session.client;
-      const client_token = session.token;
-      setLoading(false);
+      if (session.suscription.error) {
+        setLoading(false);
+        setStripeError(true);
+        return;
+      } else {
+        //Success Pay
+        const client_id = session.client;
+        const client_token = session.token;
+        setLoading(false);
 
-      //Set Client ID in Cache
-      Cookies.set("client_id", client_id, { expires: 1 });
-      Cookies.set("token", client_token, {
-        domain: ".pixells.io",
-        secure: true,
-        sameSite: "None",
-      });
+        //Set Client ID in Cache
+        Cookies.set("client_id", client_id, { expires: 1 });
+        Cookies.set("token", client_token, {
+          domain: ".pixells.io",
+          secure: true,
+          sameSite: "None",
+        });
 
-      //Redirect to Thank You Page
-      navigate("/gracias");
+        //Redirect to Thank You Page
+        navigate("/gracias");
+      }
     }
   };
 
