@@ -14,7 +14,6 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
-  const [payment_method_id, payment_method_idInfo] = useState(0);
 
   const handleSubmit = async (event) => {
     if (useCard === true) {
@@ -34,39 +33,59 @@ const CheckoutForm = () => {
         card: cardElement,
       });
 
-      payment_method_idInfo(paymentMethod?.id);
-
       if (error) {
         console.error(error);
         setLoading(false);
         setStripeError(true);
         return;
       }
-    }
 
-    // Enviar el PaymentMethod al backend para completar el proceso de suscripción
-    const response = await fetch(
-      `${import.meta.env.VITE_SERVER_URL}suscriptions/create-suscription`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}suscriptions/create-suscription`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            payment_method_id: paymentMethod?.id,
+            email: email,
+            password: password,
+            confirm_password: confirmPassword,
+            checkbox: checkbox,
+            plan: selectedPlan,
+            card_name: cardName,
+            name: name,
+            last_name: lastName,
+            cupon: cupon,
+            client_code: clientCode,
+          }),
         },
-        body: JSON.stringify({
-          payment_method_id: payment_method_id,
-          email: email,
-          password: password,
-          confirm_password: confirmPassword,
-          checkbox: checkbox,
-          plan: selectedPlan,
-          card_name: cardName,
-          name: name,
-          last_name: lastName,
-          cupon: cupon,
-          client_code: clientCode,
-        }),
-      },
-    );
+      );
+    } else {
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}suscriptions/create-suscription`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            payment_method_id: 0,
+            email: email,
+            password: password,
+            confirm_password: confirmPassword,
+            checkbox: checkbox,
+            plan: selectedPlan,
+            card_name: cardName,
+            name: name,
+            last_name: lastName,
+            cupon: cupon,
+            client_code: clientCode,
+          }),
+        },
+      );
+    }
 
     const session = await response.json();
 
@@ -936,7 +955,7 @@ const CheckoutForm = () => {
               )}
               <div className="mt-24 text-center">
                 <button
-                  disabled={loading || !stripe}
+                  //disabled={loading || !stripe}
                   type="button"
                   onClick={(e) => handleSubmit(e)}
                   className="rounded-xl bg-primario px-12 py-3 font-poppins text-sm text-white hover:bg-primarioBotones"

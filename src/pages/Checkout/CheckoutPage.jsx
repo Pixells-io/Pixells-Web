@@ -5,7 +5,7 @@ import CheckoutForm from "./CheckoutForm";
 
 function CheckoutPage() {
   const stripePromise = loadStripe(
-    "pk_test_51PyGmMKXSubr80miZXgW8qVSKvBrpYohdMoGkfDgEHTJygsL4LtgdC4DV0hY46Xp0lgpOWxukCgCMKichwyX2WUB00TIoOUkUt",
+    "pk_live_51PyGmMKXSubr80miO7KKKsK2txCnNGEzId43xAzGmuvuPhsLE8UXaB1esuKoHouhQpOkf86WzGNntjZ46SQGATUA00WnC2b1mC",
   );
 
   return (
