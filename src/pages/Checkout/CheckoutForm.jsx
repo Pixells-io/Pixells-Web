@@ -78,7 +78,7 @@ const CheckoutForm = () => {
         //Set Client ID in Cache
         Cookies.set("client_id", client_id, { expires: 1 });
         Cookies.set("token", client_token, {
-          domain: ".pixells.io",
+          domain: ".yacamba.io",
           secure: true,
           sameSite: "None",
         });
@@ -125,7 +125,7 @@ const CheckoutForm = () => {
         //Set Client ID in Cache
         Cookies.set("client_id", client_id, { expires: 1 });
         Cookies.set("token", client_token, {
-          domain: ".pixells.io",
+          domain: ".yacamba.com",
           secure: true,
           sameSite: "None",
         });
