@@ -63,6 +63,18 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Knowledge"
+          );
+          return {
+            Component,
+          };
+        },
+    
+      }
     ],
   },
   {
@@ -98,6 +110,8 @@ const router = createBrowserRouter([
       };
     },
   },
+
+ 
 ]);
 
 function App() {
