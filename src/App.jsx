@@ -107,6 +107,17 @@ const router = createBrowserRouter([
               };
             },
           },
+          {
+            path: "/ayuda/crm",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/CRM/CrmGeneral"
+              );
+              return {
+                Component,
+              };
+            },
+          },
         ]
     
       }

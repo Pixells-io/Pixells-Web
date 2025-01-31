@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, useLocation, Link } from "react-router-dom";
 import Footer from "@/layouts/Footer";
 import { arrayData } from "./arrayData";
 
 function HomePage() {
   const location = useLocation();
-  const [selectedModule, setSelectedModule] = useState(null);
-  const [selectedAction, setSelectedAction] = useState(null);
 
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex flex-1">
         {/* SideBar */}
-        <div className="w-[283px] shrink-0 bg-transparent px-8">
+        <div className="max-w-[283px] shrink-0 bg-transparent px-8">
           <div className="mt-10">
             <div className="flex flex-col space-y-5 pb-10 ">
               <span className="font-poppins font-normal text-grisHeading text-[14px]">
@@ -51,7 +49,7 @@ function HomePage() {
         </div>
 
         {/* Main */}
-        <div className="flex-1 overflow-auto p-4">
+        <div className="flex-1 p-5">
           <Outlet />
         </div>
       </div>

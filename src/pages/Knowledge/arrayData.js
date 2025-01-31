@@ -21,4 +21,13 @@ export const arrayData = [
       },
     ],
   },
+  {
+    name: "CRM",
+    sub_modules: [
+      {
+        name: "Alta nuevo Prospecto",
+       url: "/ayuda/crm"
+      },
+    ],
+  },
 ];
