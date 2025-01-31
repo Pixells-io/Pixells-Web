@@ -8,16 +8,7 @@ export const arrayData = [
           {
             title: "Alta nueva Área",
             description: `
-            <p> Para dar de alta una nueva área, ve al módulo Organización, en el submenú  “Usuarios Gestor” selecciona el botón “más” en el área principal de la pantalla, a continuación selecciona Área.
-            </p><br/>
-            <p>Debes completar los siguientes campos:</p></br>
-            <ol>
-            <li>Nombre del área, será el nombre como aparecerá el área en todo el sistema</li></br>
-            <li>Descripción del área, de forma breve explica a qué se dedicará el área deseada</li></br>
-            <li>Procesos, agrega todos los procesos que contenga el área presionando el botón más</li></br>
-            <li>Tipo de turno, matutino o vespertino</li></br>
-            <li>Coloca el horario de entrada y el horario de salida aproximado</li></br>
-            </ol><br/>
+            
             `,
           },
           {
@@ -29,45 +20,45 @@ export const arrayData = [
              <p> Llena las siguientes secciones:</p><br/>
 
              <h2>1. Información General</h2><br/>
-    <ol type="a">
-        <li>Selecciona área a la que pertenece</li><br/>
-        <li>Tipo o nivel de la posición</li><br/>
-        <li>Nombre de la posición</li><br/>
-        <li>Selecciona si esta posición tendrá acceso a dar permisos</li><br/>
-        <li>Indica qué posición tiene el jefe inmediato</li><br/>
-        <li>Si coordina con alguna posición en especial, selecciona de la lista</li><br/>
-        <li>Redacta cuál es el objetivo principal de esta posición</li><br/>
-    </ol>
+              <ol type="a">
+                  <li>Selecciona área a la que pertenece</li>
+                  <li>Tipo o nivel de la posición</li>
+                  <li>Nombre de la posición</li>
+                  <li>Selecciona si esta posición tendrá acceso a dar permisos</li>
+                  <li>Indica qué posición tiene el jefe inmediato</li>
+                  <li>Si coordina con alguna posición en especial, selecciona de la lista</li>
+                  <li>Redacta cuál es el objetivo principal de esta posición</li>
+              </ol>
 
-    <h2>2. Autoridad de la posición</h2><br/>
-    <ol type="a">
-        <li>Describe el nombre</li><br/>
-        <li>Si es una autoridad total, que solo esta posición tiene o se comparte con alguien más</li><br/>
-        <li>Selecciona con quién se comparte</li><br/>
-        <li>Puedes agregar hasta 5 autoridades diferentes</li><br/>
-    </ol><br/>
+                <h2>2. Autoridad de la posición</h2><br/>
+                <ol type="a">
+                    <li>Describe el nombre</li><br/>
+                    <li>Si es una autoridad total, que solo esta posición tiene o se comparte con alguien más</li><br/>
+                    <li>Selecciona con quién se comparte</li><br/>
+                    <li>Puedes agregar hasta 5 autoridades diferentes</li><br/>
+                </ol><br/>
 
-    <h2>3. Responsabilidad del puesto</h2><br/>
-    <ol type="a">
-        <li>Indica la responsabilidad que debe realizar esta posición. Debe estar redactado con dos verbos en infinitivo + la descripción + la finalidad que responde al porqué/ para qué de las acciones descritas</li><br/>
-        <li>Puedes agregar hasta 8 responsabilidades</li><br/>
-    </ol><br/>
+                <h2>3. Responsabilidad del puesto</h2><br/>
+                <ol type="a">
+                    <li>Indica la responsabilidad que debe realizar esta posición. Debe estar redactado con dos verbos en infinitivo + la descripción + la finalidad que responde al porqué/ para qué de las acciones descritas</li><br/>
+                    <li>Puedes agregar hasta 8 responsabilidades</li><br/>
+                </ol><br/>
 
-    <h2>4. Descripción de la posición</h2><br/>
-    <ol type="a">
-        <li>Años de experiencia que se requieren para cubrir este puesto</li><br/>
-        <li>Sector de experiencia de preferencia</li><br/>
-        <li>Describe una breve experiencia que se requiere para cubrir la posición</li><br/>
-        <li>Indica los estudios requeridos</li><br/>
-        <li>Especifica el estudio requerido</li><br/>
-        <li>Indica si se permite trabajo remoto (home office)</li><br/>
-        <li>Tipo o lugar en donde se va a laborar, ya sea en oficina o en campo</li><br/>
-        <li>Selecciona los idiomas necesarios y su respectivo porcentaje</li><br/>
-        <li>Determina los días de la semana que se requiere laborar</li><br/>
-        <li>Indica los horarios aproximados en que se debe tener disponibilidad</li><br/>
-        <li>Determina los conocimientos que se requieren para cubrir el puesto</li><br/>
-        <li>Puedes agregar hasta 8 conocimientos diferentes</li><br/>
-    </ol><br/>
+                <h2>4. Descripción de la posición</h2><br/>
+                <ol type="a">
+                    <li>Años de experiencia que se requieren para cubrir este puesto</li><br/>
+                    <li>Sector de experiencia de preferencia</li><br/>
+                    <li>Describe una breve experiencia que se requiere para cubrir la posición</li><br/>
+                    <li>Indica los estudios requeridos</li><br/>
+                    <li>Especifica el estudio requerido</li><br/>
+                    <li>Indica si se permite trabajo remoto (home office)</li><br/>
+                    <li>Tipo o lugar en donde se va a laborar, ya sea en oficina o en campo</li><br/>
+                    <li>Selecciona los idiomas necesarios y su respectivo porcentaje</li><br/>
+                    <li>Determina los días de la semana que se requiere laborar</li><br/>
+                    <li>Indica los horarios aproximados en que se debe tener disponibilidad</li><br/>
+                    <li>Determina los conocimientos que se requieren para cubrir el puesto</li><br/>
+                    <li>Puedes agregar hasta 8 conocimientos diferentes</li><br/>
+                </ol><br/>
 
 
            <p> Una vez que hayas llenado todos los campos, da click en guardar para registrar la nueva posición en el sistema.</p><br/>
@@ -75,9 +66,8 @@ export const arrayData = [
             `,
           },
           {
-            title: "Alta nuevo Puesto",
+            title: "Alta nuevo Usuario",
             description: `
-             <h2>Creación de Puestos</h2>
     <p>Una vez que hayas dado de alta el área, podrás crear puestos relacionados a ella. <br>
        Selecciona el botón <strong>más</strong> en el área principal de la pantalla y toca <strong>Puestos</strong>.</p>
 
@@ -483,7 +473,6 @@ Dentro del nombre de un proyecto, son las actividades relacionadas a dicho proye
 <p>Esta vista mostrará todas las actividades que debes realizar organizadas por cuatro estatus distintos, pendientes, en progreso, completadas y canceladas. No importa dentro de qué Objetivo Estratégico se encuentren.</p><br/>
 
             `,
-
           },
           {
             title: "Vistas rápidas de Todas los Proyectos",
@@ -504,8 +493,8 @@ Dentro del nombre de un proyecto, son las actividades relacionadas a dicho proye
 <p>Encontrarás todos los proyectos en forma de tablero, donde puedes acceder a los detalles del proyecto, posicionándote sobre el proyecto y dando click en el botón “Ver”.</p><br/><br/>
 
             
-            `
-          }
+            `,
+          },
         ],
       },
     ],
