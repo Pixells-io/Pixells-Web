@@ -118,6 +118,39 @@ const router = createBrowserRouter([
               };
             },
           },
+          {
+            path: "/ayuda/crm-oportunity",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/CRM/CrmOportunity"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+          {
+            path: "/ayuda/crm-general",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/CRM/CrmHome"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+          {
+            path: "/ayuda/crm-leads",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/CRM/CrmLeadsDashboard"
+              );
+              return {
+                Component,
+              };
+            },
+          },
         ]
     
       }

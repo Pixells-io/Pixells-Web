@@ -17,7 +17,7 @@ export const arrayData = [
     sub_modules: [
       {
         name: "Espacio de Trabajo",
-       url: "/ayuda/project-manager"
+        url: "/ayuda/project-manager",
       },
     ],
   },
@@ -26,8 +26,20 @@ export const arrayData = [
     sub_modules: [
       {
         name: "Alta nuevo Prospecto",
-       url: "/ayuda/crm"
+        url: "/ayuda/crm",
       },
+      {
+        name: "Alta nueva Oportunidad",
+        url: "/ayuda/crm-oportunity",
+      },
+      {
+        name: "CRM General",
+        url: "/ayuda/crm-general",
+      },
+      {
+        name: "Leads Dashboard",
+        url: "/ayuda/crm-leads"
+      }
     ],
   },
 ];

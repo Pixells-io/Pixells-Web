@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-function CrmOpotunity() {
+function CrmHome() {
   const article1Ref = useRef(null);
   const containerRef = useRef(null);
 
@@ -38,34 +38,84 @@ function CrmOpotunity() {
           CRM
         </span>
         <h2
-          ref={article1Ref}
+          
           className="pt-5 font-poppins text-[16px] text-grisHeading"
         >
-          Alta nueva Oportunidad
+          CRM General
         </h2>
         {/*ARTICLE 1 */}
-        <div>
+        <div ref={article1Ref}>
+        <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+            Leads
+            </span>
+  
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
-            <p>
-              En el submenú toca “Nuevo Oportunidad”, llena la siguiente
-              información:
-            </p>
+            <p>La información de la tabla nos muestra:</p>
             <br />
             <ol className="mt-4 mb-4">
               <li className="before:content-['1.'] before:mr-2">
-                Indica el nombre de la oportunidad.
+                El nombre de la compañía.
               </li>
               <li className="before:content-['2.'] before:mr-2">
-                Agrega el monto aproximado que consideras representa esta
-                oportunidad, e indica su tipo de moneda.
+                El nombre del contacto
               </li>
               <li className="before:content-['3.'] before:mr-2">
-                Selecciona el prospecto que quieres asociar.
+                El teléfono del contacto
               </li>
               <li className="before:content-['4.'] before:mr-2">
-                Indica en qué proceso de venta quieres colocar a la oportunidad.
+                Proceso de venta donde se encuentra colocado
+              </li>
+              <li className="before:content-['5.'] before:mr-2">
+                Un icono “i” para ver la información completa del lead en la
+                vista “Información de Prospecto”
               </li>
             </ol>
+
+            <p>Ver la información completa de Prospecto:</p>
+            <br />
+
+            <p>Acerca de la empresa:</p>
+            <br />
+            <ol className="mt-4 mb-4">
+              <li className="before:content-['1.'] before:mr-2">
+                Tipo de persona, física o moral.
+              </li>
+              <br />
+              <li className="before:content-['2.'] before:mr-2">
+                Nombre de la empresa.
+              </li>
+              <br />
+              <li className="before:content-['3.'] before:mr-2">
+                Nombre del contacto.
+              </li>
+              <br />
+              <li className="before:content-['4.'] before:mr-2">
+                Teléfono del contacto.
+              </li>
+              <br />
+              <li className="before:content-['5.'] before:mr-2">
+                Correo del contacto.
+              </li>
+              <br />
+            </ol>
+
+            <p>
+              Para editar la información del prospecto, da click en el botón
+              “editar”, modifica la información correspondiente, toca “guardar”
+              para finalizar.
+            </p>
+            <br />
+
+            <p>Historial de proceso de Lead.</p>
+            <br />
+
+            <p>
+              El historial del proceso de lead, muestra todas las acciones que
+              se han generado con el lead y es una vista para poder rastrear
+              cualquier intervención generada con el lead, dentro de Lead
+              Dashboard.
+            </p>
+            <br />
           </article>
         </div>
       </div>
@@ -81,7 +131,7 @@ function CrmOpotunity() {
                 }`}
           >
             {" "}
-            Alta nueva Oportunidad
+            Leads
           </button>
         </div>
       </section>
@@ -89,4 +139,4 @@ function CrmOpotunity() {
   );
 }
 
-export default CrmOpotunity;
+export default CrmHome;
