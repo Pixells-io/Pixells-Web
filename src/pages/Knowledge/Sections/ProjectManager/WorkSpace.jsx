@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { IonIcon } from "@ionic/react";
 import { chevronBack, chevronForward, ellipsisVertical } from "ionicons/icons";
 function WorkSpace() {
+    const containerRef = useRef(null);
   const article1Ref = useRef(null);
   const article2Ref = useRef(null);
   const article3Ref = useRef(null);
@@ -16,23 +17,40 @@ function WorkSpace() {
   const [activeButton, setActiveButton] = useState(null);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
-    articleRef.current?.scrollIntoView({ behavior: "smooth" });
-    setActiveButton(buttonIndex);
+    const container = containerRef.current;
+    const article = articleRef.current;
+
+    if (container && article) {
+      // Obtener la posición del artículo relativa al contenedor
+      const containerRect = container.getBoundingClientRect();
+      const articleRect = article.getBoundingClientRect();
+
+      // Calcular la posición de scroll
+      const scrollPosition = article.offsetTop - container.offsetTop;
+
+      // Hacer el scroll
+      container.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      });
+
+      setActiveButton(buttonIndex);
+    }
   };
 
   return (
     <div className="w-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div className="w-full max-h-[70vh] overflow-auto col-span-8 px-6 py-10">
+      <div ref={containerRef} className="w-full max-h-[70vh] overflow-auto col-span-8 px-6 py-10">
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           PROJECT MANAGER
         </span>
-        <h2 className="pt-5 font-poppins text-[16px] text-grisHeading">
+        <h2 ref={article11Ref} className="pt-5 font-poppins text-[16px] text-grisHeading">
           Espacio de Trabajo
         </h2>
         {/*ARTICLE 1 */}
 
-        <div ref={article11Ref} className="mt-6">
+        <div  className="mt-6">
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               Un espacio de trabajo es el lugar donde podrás crear distintos

@@ -1,25 +1,44 @@
 import React, { useRef, useState } from "react";
 
 function UserManagement() {
+  const containerRef = useRef(null);
+
   const article4Ref = useRef(null);
   const article5Ref = useRef(null);
 
   const [activeButton, setActiveButton] = useState(null);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
-    articleRef.current?.scrollIntoView({ behavior: "smooth" });
-    setActiveButton(buttonIndex);
+    const container = containerRef.current;
+    const article = articleRef.current;
+
+    if (container && article) {
+      // Obtener la posición del artículo relativa al contenedor
+      const containerRect = container.getBoundingClientRect();
+      const articleRect = article.getBoundingClientRect();
+
+      // Calcular la posición de scroll
+      const scrollPosition = article.offsetTop - container.offsetTop;
+
+      // Hacer el scroll
+      container.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      });
+
+      setActiveButton(buttonIndex);
+    }
   };
-  
+
   return (
     <div className="w-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div className="w-full max-h-[70vh] overflow-auto col-span-8 px-6 py-10">
+      <div ref={containerRef}  className="w-full max-h-[70vh] overflow-auto col-span-8 px-6 py-10">
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           ORGANIZACIÓN
         </span>
         <h2 className="pt-5 font-poppins text-[16px] text-grisHeading">
-        Control de Acceso
+          Control de Acceso
         </h2>
 
         {/*ARTICLE 1  */}
@@ -92,22 +111,25 @@ function UserManagement() {
       </div>
       <section className="col-span-4 max-h-[70vh] overflow-auto px-8 py-6">
         <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
-         
           <button
             onClick={() => scrollToArticle(article4Ref, 1)}
             className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${activeButton === 1 
-                  ? 'border-l border-[#000000] text-grisHeading font-semibold' 
-                  : 'text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold'}`}
+                ${
+                  activeButton === 1
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
           >
             Asignar permisos de un Puesto
           </button>
           <button
             onClick={() => scrollToArticle(article5Ref, 2)}
             className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${activeButton === 2 
-                  ? 'border-l border-[#000000] text-grisHeading font-semibold' 
-                  : 'text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold'}`}
+                ${
+                  activeButton === 2
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
           >
             Consultar y Editar el perfil de un usuario
           </button>

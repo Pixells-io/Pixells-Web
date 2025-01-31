@@ -18,7 +18,15 @@ function CrmOpotunity() {
               información:
             </p>
             <br />
-
+            <ol className="mt-4 mb-4">
+              <li className="before:content-['1.'] before:mr-2">
+              Indica el nombre de la oportunidad.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">Agrega el monto aproximado que consideras representa esta oportunidad, e indica su tipo de moneda.</li>
+              <li>Selecciona el prospecto que quieres asociar.
+              </li>
+              <li>Indica en qué proceso de venta quieres colocar a la oportunidad.</li>
+              </ol>
           </article>
         </div>
       </div>
