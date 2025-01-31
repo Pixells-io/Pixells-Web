@@ -73,6 +73,41 @@ const router = createBrowserRouter([
             Component,
           };
         },
+        children: [
+          {
+            index: true,
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/Organization/UserManagement"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+          {
+            path: "/ayuda/control",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/Organization/ControlUsers"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+          {
+            path: "/ayuda/project-manager",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/ProjectManager/WorkSpace"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+        ]
     
       }
     ],
