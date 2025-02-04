@@ -13,10 +13,6 @@ function UserManagement() {
     const article = articleRef.current;
     
     if (container && article) {
-      // Obtener la posición del artículo relativa al contenedor
-      const containerRect = container.getBoundingClientRect();
-      const articleRect = article.getBoundingClientRect();
-      
       // Calcular la posición de scroll
       const scrollPosition = article.offsetTop - container.offsetTop;
       

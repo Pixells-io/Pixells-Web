@@ -35,8 +35,8 @@ function HomePage() {
                       to={subModule.url}
                       className={`block cursor-pointer ${
                         location.pathname === subModule.url
-                          ? 'bg-[#008EF9] text-white'
-                          : 'hover:text-white hover:bg-[#008EF9] text-grisHeading'
+                          ? "bg-[#008EF9] text-white"
+                          : "hover:text-white hover:bg-[#008EF9] text-grisHeading"
                       } rounded-lg px-4 py-2 font-roboto font-normal text-[14px]`}
                     >
                       {subModule.name}
