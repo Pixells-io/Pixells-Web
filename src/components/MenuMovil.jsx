@@ -56,6 +56,13 @@ function MenuMovil({ modal, setModal }) {
         >
           CONTACTO
         </button>
+        <button
+          type="button"
+          onClick={() => redirectFunction("/ayuda")}
+          className="w-full py-4 text-left font-poppins text-sm text-grisHeading"
+        >
+          AYUDA
+        </button>
         <div className="space-y-6 pt-24 text-center">
           <button
             type="button"

@@ -9,22 +9,24 @@ function PrivacyNotice() {
           AVISO DE PRIVACIDAD
         </span>
         <div className="pt-14 text-justify font-roboto text-base text-grisHeading sm:px-20">
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>1. Responsable del Tratamiento de Datos Personales</strong>
             <br />
-            Yacamba (en adelante, "la Empresa"), con domicilio en Justo Sierra
-            1830, Col. Ladrón de Guevara, Gdl, Jal, es responsable del
-            tratamiento de sus datos personales conforme a lo dispuesto en la
-            Ley Federal de Protección de Datos Personales en Posesión de los
-            Particulares (LFPDPPP).
+            <span>
+              Kilauea (en adelante, "la Empresa"), con domicilio en Justo Sierra
+              1830, Col. Ladrón de Guevara, Gdl, Jal, es responsable del
+              tratamiento de sus datos personales conforme a lo dispuesto en la
+              Ley Federal de Protección de Datos Personales en Posesión de los
+              Particulares (LFPDPPP).
+            </span>
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>2. Finalidad del Tratamiento de Datos</strong>
             <br />
             Los datos personales que recabamos de usted serán utilizados para
             las siguientes finalidades:
-            <ul className="ml-6 mt-2 list-disc">
+            <ul class="ml-6 mt-2 list-disc">
               <li>Proveer los servicios y productos solicitados por usted.</li>
               <li>Informar sobre cambios o nuevos productos o servicios.</li>
               <li>Cumplir con obligaciones contractuales y fiscales.</li>
@@ -36,27 +38,30 @@ function PrivacyNotice() {
             </ul>
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>3. Datos Personales Recabados</strong>
             <br />
-            Para llevar a cabo las finalidades descritas, utilizaremos los
-            siguientes datos personales:
-            <ul className="ml-6 mt-2 list-disc">
+            Para llevar a cabo las finalidades descritas en el presente aviso de
+            privacidad, utilizaremos los siguientes datos personales:
+            <ul class="ml-6 mt-2 list-disc">
               <li>Nombre completo</li>
               <li>Dirección de correo electrónico</li>
               <li>Número de teléfono</li>
               <li>Dirección postal</li>
-              <li>Información financiera (cuando sea necesaria)</li>
+              <li>
+                Información financiera, en caso de ser necesaria para el pago de
+                nuestros productos o servicios
+              </li>
             </ul>
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>4. Transferencia de Datos Personales</strong>
             <br />
             La Empresa podrá compartir sus datos personales con terceros
             nacionales o extranjeros que sean necesarios para cumplir con las
             finalidades descritas, incluyendo:
-            <ul className="ml-6 mt-2 list-disc">
+            <ul class="ml-6 mt-2 list-disc">
               <li>
                 Proveedores de servicios de TI, para el almacenamiento y
                 procesamiento de datos.
@@ -68,45 +73,80 @@ function PrivacyNotice() {
             </ul>
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>5. Derechos ARCO</strong>
             <br />
-            Usted tiene derecho a Acceso, Rectificación, Cancelación y Oposición
-            de sus datos personales. Para ejercer estos derechos, envíe una
-            solicitud a nuestro correo electrónico incluyendo:
-            <ul className="ml-6 mt-2 list-disc">
-              <li>Nombre completo y datos de contacto</li>
+            Usted tiene derecho a conocer qué datos personales tenemos de usted,
+            para qué los utilizamos y las condiciones del uso que les damos
+            (Acceso). Asimismo, es su derecho solicitar la corrección de su
+            información personal en caso de que esté desactualizada, sea
+            inexacta o incompleta (Rectificación); que la eliminemos de nuestros
+            registros o bases de datos cuando considere que la misma no está
+            siendo utilizada conforme a los principios, deberes y obligaciones
+            previstas en la normativa (Cancelación); así como oponerse al uso de
+            sus datos personales para fines específicos (Oposición).
+            <br />
+            Para ejercer cualquiera de los derechos ARCO, deberá enviar una
+            solicitud a nuestro correo electrónico [correo electrónico de
+            contacto] o por escrito a nuestra dirección física. La solicitud
+            deberá incluir:
+            <ul class="ml-6 mt-2 list-disc">
               <li>
-                Descripción clara de los datos personales y derechos a ejercer
+                Nombre completo y correo electrónico o domicilio para comunicar
+                la respuesta.
               </li>
-              <li>Documentación que facilite la localización de los datos</li>
+              <li>
+                Descripción clara y precisa de los datos personales respecto de
+                los cuales se busca ejercer alguno de los derechos ARCO.
+              </li>
+              <li>
+                Cualquier otro elemento que facilite la localización de los
+                datos personales.
+              </li>
             </ul>
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>6. Modificaciones al Aviso de Privacidad</strong>
             <br />
-            La Empresa se reserva el derecho de realizar modificaciones a este
-            aviso de privacidad. Las actualizaciones estarán disponibles en
-            yacamba.com.
+            La Empresa se reserva el derecho de realizar en cualquier momento
+            modificaciones o actualizaciones al presente aviso de privacidad,
+            para la atención de novedades legislativas, políticas internas o
+            nuevos requerimientos para la prestación u ofrecimiento de nuestros
+            servicios o productos.
+            <br />
+            Estas modificaciones estarán disponibles al público a través de
+            nuestro sitio web{" "}
+            <a href="https://pixels.io" target="_blank">
+              pixels.io
+            </a>{" "}
+            o se las haremos llegar al último correo electrónico que nos haya
+            proporcionado.
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>7. Aceptación del Aviso de Privacidad</strong>
             <br />
-            El uso de nuestros servicios implica que ha leído y aceptado los
-            términos de este aviso de privacidad.
+            El uso de nuestros servicios o la contratación de nuestros productos
+            implica que ha leído, entendido y aceptado los términos de este
+            aviso de privacidad. Si no está de acuerdo con los términos, le
+            solicitamos que no utilice nuestros servicios.
           </p>
 
-          <p className="mb-4">
+          <p class="mb-4">
             <strong>8. Contacto</strong>
             <br />
-            Para dudas o aclaraciones:
-            <br />
-            Correo electrónico: <strong>hola@yacamba.com</strong>
-            <br />
-            Dirección:{" "}
-            <strong>Justo Sierra 1830, Col. Ladrón de Guevara, Gdl, Jal</strong>
+            Si tiene alguna duda sobre este Aviso de Privacidad, puede
+            contactarnos en:
+            <ul class="ml-6 mt-2 list-disc">
+              <li>
+                Correo electrónico:{" "}
+                <a href="mailto:hola@yacamba.com">hola@yacamba.com</a>
+              </li>
+              <li>
+                Dirección: Justo Sierra 1830, Col. Ladrón de Guevara, Gdl, Jal
+              </li>
+            </ul>
           </p>
         </div>
       </div>
