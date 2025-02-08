@@ -57,6 +57,7 @@ const CheckoutForm = () => {
             card_name: cardName,
             name: name,
             last_name: lastName,
+            business_name: businessName,
             cupon: cupon,
             client_code: clientCode,
           }),
@@ -104,6 +105,7 @@ const CheckoutForm = () => {
             card_name: cardName,
             name: name,
             last_name: lastName,
+            business_name: businessName,
             cupon: cupon,
             client_code: clientCode,
           }),
@@ -163,6 +165,8 @@ const CheckoutForm = () => {
   const [lastNameError, setLastNameError] = useState(false);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
+  const [businessName, setBusinessName] = useState("");
+  const [businessNameError, setBusinessNameError] = useState(false);
   const [emailDuplicated, setEmailDuplicated] = useState(false);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);
@@ -209,6 +213,14 @@ const CheckoutForm = () => {
       setLastNameError(false);
     } else {
       setLastNameError(true);
+
+      return;
+    }
+
+    if (businessName.length > 0) {
+      setBusinessNameError(false);
+    } else {
+      setBusinessNameError(true);
 
       return;
     }
@@ -365,7 +377,7 @@ const CheckoutForm = () => {
         hidden={step != 1 ? true : false}
       >
         <div>
-          <div className="flex items-center justify-center py-6 text-center">
+          <div className="flex items-center justify-center py-4 text-center">
             <Link to={"/"}>
               <img src="/logos/icono_yacamba_azul.webp" width={"60px"} />
             </Link>
@@ -382,7 +394,7 @@ const CheckoutForm = () => {
               controlados.
             </span>
           </div>
-          <div className="mt-10 space-y-6 text-left">
+          <div className="mt-8 space-y-4 text-left">
             <div className="flex gap-4">
               <InputForm
                 type="name"
@@ -401,6 +413,14 @@ const CheckoutForm = () => {
                 placeholder="Apellido"
               />
             </div>
+            <InputForm
+              type="text"
+              name="name_business"
+              value={businessName}
+              color={businessNameError}
+              onChange={(e) => setBusinessName(e.target.value, 1)}
+              placeholder="Nombre del Negocio"
+            />
             <InputForm
               type="email"
               name="email"
@@ -481,7 +501,7 @@ const CheckoutForm = () => {
               para el uso de Yacamba.
             </span>
           </div>
-          <div className="mt-12">
+          <div className="mt-6">
             <button
               disabled={buttonState}
               type="button"
@@ -495,7 +515,7 @@ const CheckoutForm = () => {
               Continuar
             </button>
           </div>
-          <div className="mt-6">
+          <div className="mt-4">
             <span className="font-poppins text-xs text-grisHeading">
               Si ya tienes una cuenta,{" "}
               <Link
