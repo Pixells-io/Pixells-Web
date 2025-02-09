@@ -532,7 +532,7 @@ const CheckoutForm = () => {
       {/* STEP 2 */}
       <div className="w-full" hidden={step != 2 ? true : false}>
         <div className="mt-8 flex justify-center text-center align-middle">
-          <div className="items-center justify-center sm:w-3/5">
+          <div className="sm:w-2/7 items-center justify-center">
             <span className="font-poppins text-3xl font-semibold tracking-wide">
               Escoge tu plan
             </span>
@@ -547,15 +547,19 @@ const CheckoutForm = () => {
                 >
                   Mensual
                 </TabsTrigger>
+
+                {/* 
                 <TabsTrigger
                   className="rounded-3xl bg-transparent px-4 py-2 font-roboto text-sm font-medium text-grisSubText data-[state=active]:bg-black data-[state=active]:text-white"
                   value="anual"
                 >
                   Anual
                 </TabsTrigger>
+                */}
               </TabsList>
               <TabsContent value="monthly">
                 <div className="mt-8 rounded-xl border border-grisDisabled sm:flex">
+                  {/* 
                   <div className="border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2">
                     <span className="font-poppins text-xl font-medium text-black">
                       Gratuito
@@ -619,7 +623,8 @@ const CheckoutForm = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="px-6 py-6 text-left sm:w-1/2">
+                  */}
+                  <div className="px-6 py-6 text-left">
                     <div className="flex gap-2">
                       <IonIcon
                         icon={sparklesSharp}

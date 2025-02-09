@@ -11,11 +11,15 @@ function MenuMovil({ modal, setModal }) {
     setModal(false);
   }
 
+  function redirectFunctionOut(url) {
+    window.location.href = url;
+  }
+
   return (
     <div
       className={`${
         modal ? "block" : "hidden"
-      } fixed left-0 top-0 z-50 h-screen w-screen overflow-hidden overflow-y-hidden bg-white px-8 py-3`}
+      } fixed left-0 top-0 z-50 h-screen w-screen overflow-hidden overflow-y-hidden bg-white px-6 py-3`}
     >
       <div className="flex items-center justify-between">
         <Link to="/" className="flex items-center">
@@ -69,14 +73,17 @@ function MenuMovil({ modal, setModal }) {
             onClick={() => redirectFunction("/checkout")}
             className="w-full rounded-lg bg-primarioBotones py-2 font-roboto text-xs font-semibold tracking-widest text-white"
           >
-            Comenzar Gratis
+            Comenzar
           </button>
-          <Link
+          <button
+            type="button"
+            onClick={() =>
+              redirectFunctionOut("https://sistema.yacamba.com/login")
+            }
             className="w-full rounded-lg border border-primarioBotones py-2 font-roboto text-xs font-semibold tracking-widest text-primarioBotones"
-            to={"https://sistema.yacamba.com/login"}
           >
             Iniciar Sesión
-          </Link>
+          </button>
         </div>
         <div className="pt-8 text-center"></div>
       </div>

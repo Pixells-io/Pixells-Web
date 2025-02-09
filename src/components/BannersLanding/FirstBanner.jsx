@@ -137,7 +137,7 @@ function FirstBanner() {
             to={"/checkout"}
             className="rounded-xl bg-primario px-2 py-2 font-roboto text-xs font-semibold text-white hover:bg-primarioBotones"
           >
-            Comenzar Gratis
+            Comenzar
           </Link>
         </div>
         <div className="mt-32">

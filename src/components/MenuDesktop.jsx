@@ -25,7 +25,7 @@ function MenuDesktop() {
 
   return (
     <div
-      className={`sticky top-0 z-20 flex justify-between bg-white px-8 py-3 ${
+      className={`sticky top-0 z-20 flex justify-between bg-white px-6 py-3 ${
         isScrolled ? "border-b border-blancoBox" : ""
       }`}
     >
@@ -82,7 +82,7 @@ function MenuDesktop() {
           to={"/checkout"}
           className="rounded-xl bg-primarioBotones px-2 py-2 font-roboto text-xs font-semibold text-white hover:bg-primario"
         >
-          Comenzar Gratis
+          Comenzar
         </Link>
         <IonIcon
           icon={menuOutline}
