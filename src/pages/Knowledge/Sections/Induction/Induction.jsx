@@ -42,7 +42,7 @@ function InductionCreator() {
           Inducción{" "}
         </h2>
 
-        <div className="mt-6">
+        <div>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               El proceso de inducción permite presentar la filosofía
@@ -258,7 +258,7 @@ function InductionCreator() {
                 onClick={() => scrollToArticle(article2Ref, 1)}
                 className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 1 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
               >
-                Insertar material de la capacitación{" "}
+                Insertar material de inducción
               </button>
               <button
                 onClick={() => scrollToArticle(article3Ref, 2)}

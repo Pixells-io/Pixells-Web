@@ -3,6 +3,8 @@ function Capacitation() {
   const containerRef = useRef(null);
   const article1Ref = useRef(null);
   const article2Ref = useRef(null);
+  const article3Ref = useRef(null);
+  const article4Ref = useRef(null);
 
   const [showMenu, setShowMenu] = useState(1);
   const [activeButton, setActiveButton] = useState(0);
@@ -40,7 +42,7 @@ function Capacitation() {
           Capacitación
         </h2>
 
-        <div className="mt-6">
+        <div>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               El proceso de capacitación permite administrar el programa de
@@ -84,7 +86,7 @@ function Capacitation() {
               Para crear el programa de capacitación, debes dar de alta cada una
               de las capacitaciones completando los siguientes campos:
             </p>
-            <ol className="mt-4 mb-4">
+            <ol className="">
               <li className="before:content-['1.'] before:mr-2">
                 Nombre de la capacitación.
               </li>
@@ -100,21 +102,28 @@ function Capacitation() {
               <li className="before:content-['5.'] before:mr-2">
                 Seleccionar si la capacitación será interna o externa.
               </li>
+              <ol className="px-8 mt-4 mb-4">
+                <li className="before:content-['a.'] before:mr-2">
+                  Seleccionar si la capacitación será interna o externa.
+                </li>
+                <li className="before:content-['b.'] before:mr-2">
+                  Si es interna, se especifica si es online o presencial. Y se
+                  asigna al responsable de impartir.
+                </li>
+              </ol>
+
               <li className="before:content-['6.'] before:mr-2">
-                Si es interna, se especifica si es online o presencial. Y se
-                asigna al responsable de impartir.
-              </li>
-              <li className="before:content-['7.'] before:mr-2">
                 Si es externa se establece el lugar y se especifica el nombre
                 del capacitador.
               </li>
-              <li className="before:content-['8.'] before:mr-2">
+              <li className="before:content-['7.'] before:mr-2">
                 Se establece la fecha tentativa de dicha “capacitación”.
               </li>
-              <li className="before:content-['9.'] before:mr-2">
+              <li className="before:content-['8.'] before:mr-2">
                 Dar clic en “Guardar”.
               </li>
             </ol>
+            <br />
 
             <p>
               Una vez guardada la capacitación, aparecerá en forma de lista, en
@@ -151,92 +160,108 @@ function Capacitation() {
               ya se creo.
             </p>
             <br />
-            <span>Creación de examen</span>
+            <span ref={article3Ref} className="font-semibold">
+              Creación de examen
+            </span>
             <br />
             <p>
-              Para crear un examen deberán completarse los siguientes campos
+              Esto aplica en caso de ser una capacitación interna. Para crear un
+              examen deberán completarse los siguientes campos
             </p>
             <br />
-            <ol className="mt-4 mb-4">
+            <ol className="mb-4">
               <li className="before:content-['1.'] before:mr-2">
                 Nombre del examen.
               </li>
-              <br />
               <li className="before:content-['2.'] before:mr-2">
-                Escribir el límite de minutos para responderlo.
+                Escribir el límite de minutos para responder.
               </li>
-              <br />
               <li className="before:content-['3.'] before:mr-2">
                 Agregar la pregunta 1.
               </li>
-              <br />
               <li className="before:content-['4.'] before:mr-2">
                 Especificar el tipo de pregunta, si es singular (una sóla
                 respuesta correcta) o múltiple (varias respuestas correctas).
               </li>
-              <br />
               <li className="before:content-['5.'] before:mr-2">
                 Cuando es pregunta de tipo singular, escribes las respuestas y
                 sólo una de ella podrá seleccionarse como verdadera, las demás
                 no seleccionadas el sistema las detectará como falsas.
               </li>
-              <br />
               <li className="before:content-['6.'] before:mr-2">
                 Cuando es pregunta de tipo múltiple, escribes las respuestas y
                 se pueden seleccionar más de una como correcta, las no
                 seleccionadas el sistema las detectará como falsas.
               </li>
-              <br />
               <li className="before:content-['7.'] before:mr-2">
                 Agregar consecutivamente el número de preguntas necesarias para
                 dicho examen.
               </li>
-              <br />
               <li className="before:content-['8.'] before:mr-2">
                 Dar clic en “Enviar” una vez que estén terminadas todas las
                 preguntas y respuestas.
               </li>
-              <br />
             </ol>
 
             <p>
-              Para consultar el estatus de respuesta de las inducciones
+              Para consultar el estatus de respuesta de las capacitaciones
               asignadas hay que dar “clic” en el botón abajo de la columna
               “Historial” y ahí se podrán monitorear por usuario, los
               colaboradores que hayan respondido dicha inducción, así como su
               calificación.
             </p>
             <br />
+            <p>
+              En la tabla de capacitaciones se podrá observar dos fechas
+              “Tentativa” y “Real”.
+            </p>
+            <br />
+            <ol className="mb-4">
+              <li className="before:content-['1.'] before:mr-2">
+                La fecha tentativa se establece en el formulario inicial cuando
+                se da de alta la capacitación.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">
+                La fecha real está disponible para establecer y confirmar la
+                fecha real en que se impartirá dicha capacitación.
+              </li>
+            </ol>
+            <p>
+              Considerar que las capacitaciones que se hayan agregado como
+              externas, se omiten los campos de “Archivos” y “Examen” quedando
+              únicamente “Evidencia” en donde se subirá el comprobante que emita
+              la institución que la impartió.
+            </p>
           </article>
         </div>
 
-        {/*ARTICLE 2 */}
-        <div ref={article2Ref} className="mt-6">
-          <span className="font-poppins font-semibold text-[18px] text-grisHeading">
-            MIS INDUCCIONES
+        <div className="mt-6">
+          <span
+            ref={article4Ref}
+            className="font-poppins font-semibold text-[18px] text-grisHeading"
+          >
+            MIS CAPACITACIONES
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
-              Tus inducciones asignadas las podrás encontrar en esta sección y
-              se podrán filtrar por el tipo de inducción, es de decir si es
-              “General” o es de la “Posición”.
+              Tus capacitaciones asignadas las podrás encontrar en esta sección
+              y se podrán filtrar por el tipo de inducción.
             </p>
             <br />
-
             <p>
-              En ambos casos, las pueden visualizar en forma de rectángulos para
-              únicamente dando “clic” en la caja, se podrá consultar la
-              información asignada a dicha inducción. Así mismo dando “clic” en
-              el botón de “play” se podrá responder el examen.
+              Estas se pueden visualizar en forma de rectángulos para únicamente
+              dando “clic” en la caja, se podrá consultar la información
+              asignada a dicha capacitación interna. Así mismo dando “clic” en
+              el botón de “play” se podrá responder el examen. En el caso de las
+              capacitaciones externas no tendrán cargada información ni se podrá
+              responder al examen.
             </p>
             <br />
-
             <p>
               Es importante que sepas, que el examen tiene un tiempo para
               responder, de exceder este tiempo el examen se cerrará y
               únicamente calificará las preguntas contestadas.
             </p>
-            <br />
           </article>
         </div>
       </div>
@@ -256,7 +281,7 @@ function Capacitation() {
                     : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
                 }`}
           >
-            CREADOR
+            Creador
           </button>
           {showMenu === 1 ? (
             <div className="flex flex-col px-8 items-start space-y-5">
@@ -264,7 +289,19 @@ function Capacitation() {
                 onClick={() => scrollToArticle(article1Ref, 0)}
                 className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 0 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
               >
-                Creación de inducciones
+                Creación de capacitaciones
+              </button>
+              <button
+                onClick={() => scrollToArticle(article2Ref, 1)}
+                className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 1 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+              >
+                Insertar material de la capacitación{" "}
+              </button>
+              <button
+                onClick={() => scrollToArticle(article3Ref, 2)}
+                className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 2 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+              >
+                Creación de examen
               </button>
             </div>
           ) : null}
@@ -280,15 +317,15 @@ function Capacitation() {
                     : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
                 }`}
           >
-            MIS INDUCCIONES
+            Mis capacitaciones
           </button>
           {showMenu === 2 ? (
             <div className="flex flex-col px-8 items-start space-y-5">
               <button
-                onClick={() => scrollToArticle(article2Ref, 1)}
-                className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 1 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+                onClick={() => scrollToArticle(article4Ref, 3)}
+                className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 3 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
               >
-                Inducciones Asignadas
+                Capacitaciones Generales
               </button>
             </div>
           ) : null}
