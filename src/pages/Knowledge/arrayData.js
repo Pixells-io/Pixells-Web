@@ -43,7 +43,7 @@ export const arrayData = [
     ],
   },
   {
-    name: "DESARROLLO ORGANIZACIONAL",
+    name: "Desarrollo Organizacional",
     sub_modules:[
       {
         name:"Inducción General",
@@ -53,6 +53,16 @@ export const arrayData = [
         name:"Capacitación General",
         url:"/ayuda/capacitation"
       }
+    ]
+
+  },
+  {
+    name: "Ticket",
+    sub_modules:[
+      {
+        name:"Tickets General",
+        url:"/ayuda/tickets-general"
+      },
     ]
 
   }

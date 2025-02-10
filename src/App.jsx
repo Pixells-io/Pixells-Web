@@ -173,6 +173,17 @@ const router = createBrowserRouter([
               };
             },
           },
+          {
+            path: "/ayuda/tickets-general",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/Ticket/Tickets"
+              );
+              return {
+                Component,
+              };
+            },
+          }
         ]
     
       }
