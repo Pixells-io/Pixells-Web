@@ -151,6 +151,28 @@ const router = createBrowserRouter([
               };
             },
           },
+          {
+            path: "/ayuda/induction",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/Induction/Induction"
+              );
+              return {
+                Component,
+              };
+            },
+          },
+          {
+            path: "/ayuda/capacitation",
+            lazy: async () => {
+              const { default: Component } = await import(
+                "./pages/Knowledge/Sections/Induction/Capacitation"
+              );
+              return {
+                Component,
+              };
+            },
+          },
         ]
     
       }

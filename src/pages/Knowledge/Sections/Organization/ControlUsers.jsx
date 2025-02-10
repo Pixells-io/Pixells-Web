@@ -6,6 +6,7 @@ function UserManagement() {
   const article4Ref = useRef(null);
   const article5Ref = useRef(null);
 
+ const [showMenu, setShowMenu] = useState(1);
   const [activeButton, setActiveButton] = useState(null);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
@@ -106,8 +107,8 @@ function UserManagement() {
           </article>
         </div>
       </div>
-      <section className="col-span-4 max-h-[70vh] overflow-auto px-8 py-6">
-        <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
+        <section className="col-span-4 max-h-[70vh] overflow-auto px-8 py-6">
+        <div className="flex w-full justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
           <button
             onClick={() => scrollToArticle(article4Ref, 1)}
             className={`px-3 py-2 font-roboto font-normal text-[14px] 

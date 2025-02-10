@@ -42,4 +42,18 @@ export const arrayData = [
       }
     ],
   },
+  {
+    name: "DESARROLLO ORGANIZACIONAL",
+    sub_modules:[
+      {
+        name:"Inducción General",
+        url:"/ayuda/induction"
+      },
+      {
+        name:"Capacitación General",
+        url:"/ayuda/capacitation"
+      }
+    ]
+
+  }
 ];

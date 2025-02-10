@@ -23,10 +23,10 @@ function HomePage() {
                 Mi Cuenta
               </span>
             </div>
-            <div className="flex flex-col space-y-5">
+            <div className="flex flex-col overflow-auto space-y-5">
               {arrayData.map((module) => (
-                <div key={module.name} className="space-y-3">
-                  <span className="font-poppins font-semibold text-grisHeading">
+                <div key={module.name} className="space-y-3 pb-5">
+                  <span className="font-poppins font-semibold text-grisHeading text-[14px]">
                     {module.name}
                   </span>
                   {module.sub_modules.map((subModule) => (

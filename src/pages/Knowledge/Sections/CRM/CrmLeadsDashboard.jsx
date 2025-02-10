@@ -1,7 +1,12 @@
 import React, { useRef, useState } from "react";
 function CrmLeadsDashboard() {
-  const article1Ref = useRef(null);
   const containerRef = useRef(null);
+  const article1Ref = useRef(null);
+  const article2Ref = useRef(null);
+  const article3Ref = useRef(null);
+  const article4Ref = useRef(null);
+  const article5Ref = useRef(null);
+  const article6Ref = useRef(null);
 
   const [activeButton, setActiveButton] = useState(null);
 
@@ -99,7 +104,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 2 */}
-        <div className="mt-6">
+        <div ref={article2Ref} className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Perfil de Lead
           </span>
@@ -123,7 +128,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 3 */}
-        <div className="mt-6">
+        <div ref={article3Ref} className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Process Dashboard
           </span>
@@ -186,7 +191,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 4 */}
-        <div className="mt-6">
+        <div ref={article4Ref} className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Perfil de cliente
           </span>
@@ -243,20 +248,22 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 5 */}
-        <div className="mt-6">
+        <div ref={article5Ref} className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Agreements Console
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <span>1. Creación de plantillas de contratos</span>
-            <ol className="mt-4 mb-4">
+            <ol className="px-8 mt-4 mb-4">
               <li className="before:content-['a.'] before:mr-2">
                 Da click en el botón “+” a un costado de templates y contratos.
               </li>
+
               <br />
               <li className="before:content-['b.'] before:mr-2">
                 Selecciona el servicio donde deseas guardar el template.
               </li>
+
               <br />
               <li className="before:content-['c.'] before:mr-2">
                 Escribe toda la información dentro del área de trabajo.
@@ -281,14 +288,148 @@ function CrmLeadsDashboard() {
             <span>2. Crear contrato a partir de plantilla</span>
             <ol className="mt-4 mb-4">
               <li className="before:content-['a.'] before:mr-2">
-                Da click en el botón “+” a un costado de templates y contratos.
+                Selecciona los tres puntos en la esquina superior derecha del
+                template y da click en crear.
               </li>
+              <ol className="px-8 mt-4 mb-4">
+                <li className="before:content-['I.'] before:mr-2">
+                  Selecciona el cliente.
+                </li>
+                <li className="before:content-['II.'] before:mr-2">
+                  Si deseas modificar algo, hazlo antes de guardar.
+                </li>
+                <li className="before:content-['III.'] before:mr-2">
+                  Coloca el nombre del contrato.
+                </li>
+                <li className="before:content-['IV.'] before:mr-2">Guarda.</li>
+              </ol>
+
+              <br />
+              <li className="before:content-['b.'] before:mr-2">
+                Si deseas editar el contrato, da click en los tres puntos en la
+                esquina superior derecha, después en show, cambia y guarda.
+              </li>
+              <br />
+              <li className="before:content-['c.'] before:mr-2">
+                Si deseas imprimir, da click en print y se abrirá en una nueva
+                pestaña para mandar a imprimir.
+              </li>
+              <br />
+            </ol>
+          </article>
+        </div>
+        {/*ARTICLE 6 */}
+        <div ref={article6Ref} className="mt-6">
+          <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+            Administración de Servicios
+          </span>
+          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+            <p>1. Servicios </p>
+            <ol className="mt-4 mb-4">
+              <li className="before:content-['a.'] before:mr-2">
+                Alta de servicio, selecciona el “+”, después servicio y llena el
+                formulario.
+              </li>
+              <li className="before:content-['b.'] before:mr-2">
+                Para visualizar, editar o eliminar el servicio, da click en el
+                botón de “i”.
+              </li>
+              <ol className="px-8 mt-4 mb-4">
+                <li className="before:content-['I.'] before:mr-2">
+                  Selecciona el cliente.
+                </li>
+                <li className="before:content-['II.'] before:mr-2">
+                  Si deseas modificar algo, hazlo antes de guardar.
+                </li>
+                <li className="before:content-['III.'] before:mr-2">
+                  Coloca el nombre del contrato.
+                </li>
+                <li className="before:content-['IV.'] before:mr-2">Guarda.</li>
+              </ol>
+              <li className="before:content-['c.'] before:mr-2">
+                Crear una entrevista dentro del servicio
+              </li>
+              <ol className="px-8 mt-4 mb-4">
+                <li className="before:content-['a.'] before:mr-2">
+                  Da click en el botón de “+” en la tarjeta de interview.
+                </li>
+                <li className="before:content-['b.'] before:mr-2">
+                  Dale un nombre a la entrevista.
+                </li>
+                <li className="before:content-['c.'] before:mr-2">
+                  Después agrega las preguntas.
+                </li>
+                <li className="before:content-['d.'] before:mr-2">Guarda.</li>
+                <li className="before:content-['e.'] before:mr-2">
+                  Para consultarla, da click en el botón “show”.
+                </li>
+              </ol>
+            </ol>
+
+            <p>2. Categorías</p>
+            <ol className="mt-4 mb-4">
+              <li className="before:content-['a.'] before:mr-2">
+                Alta de categoría, selecciona el “+”, después categoría y llena
+                el formulario.
+              </li>
+              <br />
+              <li className="before:content-['b.'] before:mr-2">
+                Para visualizar, editar o eliminar la categoría, da click en el
+                botón de “i”.
+              </li>
+
+              <ol className="px-8 mt-4 mb-4">
+                <li className="before:content-['I.'] before:mr-2">
+                  Para editar la información, da click en los 3 puntos a un
+                  costado de "category information" y modifica la información,
+                  después guarda.
+                </li>
+                <li className="before:content-['II.'] before:mr-2">
+                  Para eliminar el servicio, da click en el botón rojo “Delete
+                  service”.
+                </li>
+                <li className="before:content-['III.'] before:mr-2">
+                  Para agregar un servicio nuevo a la categoría, da click en el
+                  botón “+”, selecciona el servicio y guarda.
+                </li>
+                <li className="before:content-['IV.'] before:mr-2">
+                  Para eliminar un servicio por individual, da click en el botón
+                  de “basurero”.
+                </li>
+              </ol>
+            </ol>
+
+            <p>3. Membresías</p>
+            <ol className="mt-4 mb-4">
+              <li className="before:content-['a.'] before:mr-2">
+                Alta de membresía, selecciona el “+”, después membresía y llena
+                el formulario
+              </li>
+              <li className="before:content-['b.'] before:mr-2">
+                Para visualizar o editar la membresía, da click en el botón de
+                “i”.
+              </li>
+              <ol className="mt-4 mb-4 px-8">
+                <li className="before:content-['I.'] before:mr-2">
+                  Para editar la información, da click en los 3 puntos a un
+                  costado de "membership information" y modifica la información,
+                  después guarda.
+                </li>
+                <li className="before:content-['II.'] before:mr-2">
+                  Para agregar un servicio nuevo a la membresía, da click en el
+                  botón “+”, selecciona el servicio y guarda.
+                </li>
+                <li className="before:content-['III.'] before:mr-2">
+                  Para eliminar un servicio por individual, da click en el botón
+                  de “basurero”.
+                </li>
+              </ol>
             </ol>
           </article>
         </div>
       </div>
       <section className="col-span-4 max-h-[60vh] overflow-auto px-8 py-6">
-        <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
+        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
           <button
             onClick={() => scrollToArticle(article1Ref, 0)}
             className={`px-3 py-2 font-roboto font-normal text-[14px] 
@@ -301,6 +442,68 @@ function CrmLeadsDashboard() {
             {" "}
             Leads Dashboard
           </button>
+          <button
+            onClick={() => scrollToArticle(article2Ref, 1)}
+            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                ${
+                  activeButton === 1
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
+          >
+            {" "}
+            Perfil de Lead
+          </button>
+          <button
+            onClick={() => scrollToArticle(article3Ref, 2)}
+            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                ${
+                  activeButton === 2
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
+          >
+            {" "}
+            Process Dashboard
+            </button>
+            <button
+            onClick={() => scrollToArticle(article4Ref, 3)}
+            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                ${
+                  activeButton === 3
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
+          >
+            {" "}
+            Perfil de cliente
+            </button>
+
+            <button
+            onClick={() => scrollToArticle(article5Ref, 4)}
+            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                ${
+                  activeButton === 4
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
+          >
+            {" "}
+            Agreements Console
+            </button>
+            <button
+            onClick={() => scrollToArticle(article6Ref, 5)}
+            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                ${
+                  activeButton === 5
+                    ? "border-l border-[#000000] text-grisHeading font-semibold"
+                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                }`}
+          >
+            {" "}
+            Administración de Servicios
+
+            </button>
         </div>
       </section>
     </div>
