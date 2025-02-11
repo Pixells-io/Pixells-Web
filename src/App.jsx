@@ -63,130 +63,7 @@ const router = createBrowserRouter([
           };
         },
       },
-      {
-        path: "/ayuda",
-        lazy: async () => {
-          const { default: Component } = await import(
-            "./pages/Knowledge/Knowledge"
-          );
-          return {
-            Component,
-          };
-        },
-        children: [
-          {
-            index: true,
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/Organization/UserManagement"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/control",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/Organization/ControlUsers"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/project-manager",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/ProjectManager/WorkSpace"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/crm",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/CRM/CrmGeneral"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/crm-oportunity",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/CRM/CrmOportunity"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/crm-general",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/CRM/CrmHome"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/crm-leads",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/CRM/CrmLeadsDashboard"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/induction",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/Induction/Induction"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/capacitation",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/Induction/Capacitation"
-              );
-              return {
-                Component,
-              };
-            },
-          },
-          {
-            path: "/ayuda/tickets-general",
-            lazy: async () => {
-              const { default: Component } = await import(
-                "./pages/Knowledge/Sections/Ticket/Tickets"
-              );
-              return {
-                Component,
-              };
-            },
-          }
-        ]
-    
-      }
+     
     ],
   },
   {
@@ -222,6 +99,130 @@ const router = createBrowserRouter([
       };
     },
   },
+  {
+    path: "/ayuda",
+    lazy: async () => {
+      const { default: Component } = await import(
+        "./pages/Knowledge/Knowledge"
+      );
+      return {
+        Component,
+      };
+    },
+    children: [
+      {
+        index: true,
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Organization/UserManagement"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/control",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Organization/ControlUsers"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/project-manager",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/ProjectManager/WorkSpace"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/crm",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/CRM/CrmGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/crm-oportunity",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/CRM/CrmOportunity"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/crm-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/CRM/CrmHome"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/crm-leads",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/CRM/CrmLeadsDashboard"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/induction",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Induction/Induction"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/capacitation",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Induction/Capacitation"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/tickets-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Ticket/Tickets"
+          );
+          return {
+            Component,
+          };
+        },
+      }
+    ]
+
+  }
 
  
 ]);

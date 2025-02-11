@@ -1,17 +1,20 @@
 import React from "react";
 import { Outlet, useLocation, Link } from "react-router-dom";
 import Footer from "@/layouts/Footer";
+import Menu from "@/layouts/Menu";
 import { arrayData } from "./arrayData";
+import MenuDesktop from "@/components/MenuDesktop";
 
 function HomePage() {
   const location = useLocation();
 
   return (
     <div className="flex flex-col min-h-screen">
+      <MenuDesktop/>
       <div className="flex flex-1">
         {/* SideBar */}
-        <div className="max-w-[283px] shrink-0 bg-transparent px-8">
-          <div className="mt-10">
+        <div className="max-w-[320px] shrink-0 bg-transparent px-8">
+          <div className="mt-10 px-6 max-h-[90vh] overflow-auto">
             <div className="flex flex-col space-y-5 pb-10 ">
               <span className="font-poppins font-normal text-grisHeading text-[14px]">
                 Introducción
@@ -23,7 +26,7 @@ function HomePage() {
                 Mi Cuenta
               </span>
             </div>
-            <div className="flex flex-col overflow-auto space-y-5">
+            <div className="flex flex-col space-y-5">
               {arrayData.map((module) => (
                 <div key={module.name} className="space-y-3 pb-5">
                   <span className="font-poppins font-semibold text-grisHeading text-[14px]">
@@ -37,7 +40,7 @@ function HomePage() {
                         location.pathname === subModule.url
                           ? "bg-[#008EF9] text-white"
                           : "hover:text-white hover:bg-[#008EF9] text-grisHeading"
-                      } rounded-lg px-4 py-2 font-roboto font-normal text-[14px]`}
+                      } rounded-lg px-4 py-1 h-[32px] font-roboto font-light text-[14px]`}
                     >
                       {subModule.name}
                     </Link>
@@ -49,13 +52,13 @@ function HomePage() {
         </div>
 
         {/* Main */}
-        <div className="flex-1 p-5">
+        <div className="flex-1 px-5">
           <Outlet />
         </div>
       </div>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

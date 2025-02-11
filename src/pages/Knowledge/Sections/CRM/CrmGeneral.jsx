@@ -4,7 +4,7 @@ function CrmGeneral() {
   const article1Ref = useRef(null);
   const containerRef = useRef(null);
 
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState(0);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
     const container = containerRef.current;
@@ -28,7 +28,7 @@ function CrmGeneral() {
 
   return (
     <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div ref={containerRef} className="w-full max-h-[70vh] overflow-auto col-span-8 px-6 py-10">
+      <div ref={containerRef} className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10">
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           CRM
@@ -109,7 +109,7 @@ function CrmGeneral() {
           </article>
         </div>
       </div>
-      <section className="col-span-4 max-h-[60vh] overflow-auto px-8 py-6">
+      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
         <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
           <button
             onClick={() => scrollToArticle(article1Ref, 0)}
