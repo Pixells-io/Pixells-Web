@@ -78,6 +78,9 @@ export const arrayData = [
     sub_modules:[{
       name: "Clientes",
       url: "/ayuda/ventas"
+    },{
+      name:"Ticket/Remisión",
+      url: "/ayuda/tickets"
     }]
   },
   

@@ -1,5 +1,3 @@
-import { IonIcon } from "@ionic/react";
-import { cogOutline, settingsSharp } from "ionicons/icons";
 import React, { useRef, useState } from "react";
 
 function Sales() {
@@ -136,7 +134,7 @@ function Sales() {
         <div className="mt-6">
           <span
             ref={sections[1].subsections[0].ref}
-            className="font-roboto font-semibold text-[14px] text-grisHeading"
+           className="font-poppins font-semibold text-[18px] text-grisHeading"
           >
             Sección Información
           </span>
@@ -264,7 +262,7 @@ function Sales() {
         </div>
         {/*ARTICLE 5 */}
         <div className="mt-6">
-          <span className="font-roboto font-semibold text-[14px] text-grisHeading">
+        <span ref={sections[2].subsections[0].ref} className="font-poppins font-semibold text-[18px] text-grisHeading">
             Sección Resumen
           </span>
           <article className="font-roboto font-light text-[14px] text-grisHeading">
@@ -274,7 +272,7 @@ function Sales() {
             </p>
             <br />
             <span
-              ref={sections[2].subsections[0].ref}
+              
               className="font-semibold"
             >
               Ventas Realizadas
@@ -495,7 +493,7 @@ function Sales() {
         </div>
 
         <div className="mt-6">
-          <span className="font-roboto font-semibold text-[14px] text-grisHeading">
+        <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Sección Actividad
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -548,7 +546,6 @@ function Sales() {
               imágenes y documentos PDF, para llevar un control de cualquier
               detalle a considerar durante el proceso con el cliente{" "}
             </p>
-            <br />
           </article>
         </div>
       </div>
