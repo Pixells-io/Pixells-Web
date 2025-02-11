@@ -81,5 +81,23 @@ export const arrayData = [
       url: "/ayuda/user-side"
     }
     ]
+  },
+  {
+    name: "Transaccionales",
+    sub_modules:[
+    {
+      name: "Introducción",
+      url: "/ayuda/transactional"
+    }
+    ]
+  },
+  {
+    name: "Configuraciones",
+    sub_modules:[
+    {
+      name: "General",
+      url: "/ayuda/configuration"
+    }
+    ]
   }
 ];

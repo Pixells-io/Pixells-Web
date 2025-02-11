@@ -241,6 +241,28 @@ const router = createBrowserRouter([
             Component,
           };
         },
+      },
+      {
+        path: "/ayuda/transactional",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Transactional/Transactional"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/configuration",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Configuration/ConfigurationGeneral"
+          );
+          return {
+            Component,
+          };
+        },
       }
     ]
 
