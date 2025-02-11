@@ -74,30 +74,11 @@ export const arrayData = [
     }]
   },
   {
-    name: "Plataforma Cliente",
-    sub_modules:[
-    {
-      name: "General",
-      url: "/ayuda/user-side"
-    }
-    ]
+    name: "Ventas",
+    sub_modules:[{
+      name: "Clientes",
+      url: "/ayuda/ventas"
+    }]
   },
-  {
-    name: "Transaccionales",
-    sub_modules:[
-    {
-      name: "Introducción",
-      url: "/ayuda/transactional"
-    }
-    ]
-  },
-  {
-    name: "Configuraciones",
-    sub_modules:[
-    {
-      name: "General",
-      url: "/ayuda/configuration"
-    }
-    ]
-  }
+  
 ];
