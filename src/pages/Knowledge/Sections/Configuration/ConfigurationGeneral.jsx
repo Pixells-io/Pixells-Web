@@ -1,5 +1,5 @@
 import { IonIcon } from "@ionic/react";
-import { settingsSharp } from "ionicons/icons";
+import { cogOutline, settingsSharp } from "ionicons/icons";
 import React, { useRef, useState } from "react";
 
 function ConfigurationGeneral() {
@@ -38,7 +38,7 @@ function ConfigurationGeneral() {
         CONFIGURACIÓN
         </span>
         <div className="mt-6">
-            <p>El módulo de Configuración <IonIcon icon={settingsSharp} className="text-[14px] text-grisHeading"/>  es recomendable que solo tenga acceso el usuario maestro de la empresa o el dueño de la misma. 
+            <p>El módulo de Configuración <IonIcon icon={cogOutline} className="text-[14px] text-grisHeading"/>  es recomendable que solo tenga acceso el usuario maestro de la empresa o el dueño de la misma. 
             </p><br />
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
 

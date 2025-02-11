@@ -1,21 +1,21 @@
 import React from "react";
 import { Outlet, useLocation, Link } from "react-router-dom";
 import Footer from "@/layouts/Footer";
-import Menu from "@/layouts/Menu";
 import { arrayData } from "./arrayData";
 import MenuDesktop from "@/components/MenuDesktop";
 
 function HomePage() {
   const location = useLocation();
-
+  
   return (
-    <div className="flex flex-col py-5 min-h-screen">
-      <MenuDesktop/>
-      <div className="flex flex-1">
+    <div className="flex flex-col min-h-screen">
+      <MenuDesktop />
+      {/* Wrapper div with bottom padding */}
+      <div className="flex flex-1 pb-8">
         {/* SideBar */}
         <div className="max-w-[320px] shrink-0 bg-transparent px-8">
-          <div className="mt-10 px-6 max-h-[90vh] overflow-auto">
-            <div className="flex flex-col space-y-5 pb-10 ">
+          <div className="mt-10 px-6 max-h-[calc(90vh-2rem)] overflow-auto">
+            <div className="flex flex-col space-y-5 pb-10">
               <span className="font-poppins font-normal text-grisHeading text-[14px]">
                 Introducción
               </span>
@@ -50,15 +50,12 @@ function HomePage() {
             </div>
           </div>
         </div>
-
+        
         {/* Main */}
         <div className="flex-1 px-5">
           <Outlet />
         </div>
       </div>
-
-      {/* Footer */}
-      {/* <Footer /> */}
     </div>
   );
 }
