@@ -36,11 +36,11 @@ function HomePage() {
                     <Link
                       key={subModule.name}
                       to={subModule.url}
-                      className={`block cursor-pointer ${
+                      className={`cursor-pointer ${
                         location.pathname === subModule.url
                           ? "bg-[#008EF9] text-white"
                           : "hover:text-white hover:bg-[#008EF9] text-grisHeading"
-                      } rounded-lg px-4 py-1 h-[32px] font-roboto font-light text-[14px]`}
+                      } rounded-lg flex items-center px-4 py-2 h-[32px] font-roboto font-light text-[14px]`}
                     >
                       {subModule.name}
                     </Link>

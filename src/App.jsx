@@ -219,6 +219,28 @@ const router = createBrowserRouter([
             Component,
           };
         },
+      },
+      {
+        path: "/ayuda/chat-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Chat/ChatGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/user-side",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/UserSide/UserSide"
+          );
+          return {
+            Component,
+          };
+        },
       }
     ]
 

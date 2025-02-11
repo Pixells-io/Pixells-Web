@@ -3,8 +3,8 @@ import React, { useRef, useState } from "react";
 function TicketsGeneral() {
   const article1Ref = useRef(null);
   const containerRef = useRef(null);
-
-  const [activeButton, setActiveButton] = useState(null);
+  const [showMenu, setShowMenu] = useState(1);
+  const [activeButton, setActiveButton] = useState(0);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
     const container = containerRef.current;
@@ -34,13 +34,16 @@ function TicketsGeneral() {
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           TICKETS
         </span>
-        <h2 className="pt-5 font-poppins text-[16px] text-grisHeading">
+        <h2 
+            ref={article1Ref} className="pt-5 font-poppins text-[16px] text-grisHeading">
           Descripción
         </h2>
 
         {/*ARTICLE 1 */}
         <div>
-          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article
+            className="pt-5 font-roboto font-light text-[14px] text-grisHeading"
+          >
             <p>
               El módulo de “Tickets” está destinado para solicitar apoyo de
               otras áreas para resolver algún problema tipificado para que éste
@@ -160,23 +163,53 @@ function TicketsGeneral() {
                 todos los pertenecientes del área.
               </li>
             </ol>
+            <p>
+              A partir de que se agrega la primera acción, el estatus del ticket
+              cambia a “En proceso”
+            </p>
+            <br />
+            <span>
+              3. En el centro de la pantalla se podrá visualizar el histórico de
+              las acciones.
+            </span>
+            <br />
+            <br />
+            <p>
+              Una vez completado el ticket, se actualizará en la lista general
+              de tickets el estatus como “Completado”.
+            </p>
+            <br />
           </article>
         </div>
       </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
+      <section
+        className="col-span-4 max
+        -h-[90vh] overflow-auto px-8 py-6"
+      >
+        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
           <button
-            onClick={() => scrollToArticle(article1Ref, 0)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+            onClick={() => {
+              setShowMenu(1);
+            }}
+            className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
                 ${
-                  activeButton === 0
+                  showMenu === 1
                     ? "border-l border-[#000000] text-grisHeading font-semibold"
                     : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
                 }`}
           >
-            {" "}
-            Alta nueva Prospecto
+            Tickets
           </button>
+          {showMenu === 1 ? (
+            <div className="flex flex-col px-8 items-start space-y-5">
+              <button
+                onClick={() => scrollToArticle(article1Ref, 0)}
+                className={`px-3 py-2 font-roboto font-normal text-[14px] ${activeButton === 0 ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+              >
+                Descripción{" "}
+              </button>
+            </div>
+          ) : null}
         </div>
       </section>
     </div>

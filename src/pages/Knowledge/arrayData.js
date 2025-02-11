@@ -65,5 +65,21 @@ export const arrayData = [
       },
     ]
 
+  },
+  {
+    name: "Chat",
+    sub_modules:[{
+      name: "Chat General",
+      url: "/ayuda/chat-general"
+    }]
+  },
+  {
+    name: "Plataforma Cliente",
+    sub_modules:[
+    {
+      name: "General",
+      url: "/ayuda/user-side"
+    }
+    ]
   }
 ];

@@ -35,7 +35,7 @@ function Capacitation() {
       >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
-          Desarrollo Organizacional
+          DESARROLLO ORGANIZACIONAL
         </span>
 
         <h2 className="pt-5 font-poppins text-[16px] text-grisHeading">
