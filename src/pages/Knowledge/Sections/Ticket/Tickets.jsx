@@ -129,6 +129,27 @@ function TicketsGeneral() {
   <li className="before:content-['a.'] before:mr-2">
     Acciones.
   </li>
+  <ol className="mt-4 mb-4">
+  <li className="before:content-['I.'] before:mr-2">
+    Visita: se agregan los comentarios.
+  </li>
+  <li className="before:content-['II.'] before:mr-2">
+    Llamada telefónica: se agregan los comentarios.
+  </li>
+  <li className="before:content-['III.'] before:mr-2">
+    Mensaje: se agregan los comentarios.
+  </li>
+  <li className="before:content-['IV.'] before:mr-2">
+    E-mail: se agregan los comentarios.
+  </li>
+  <li className="before:content-['V.'] before:mr-2">
+    Documento: se adjunta documento.
+  </li>
+  <li className="before:content-['VI.'] before:mr-2">
+    Completado: se agregan comentarios.
+  </li>
+</ol>
+
   <li className="before:content-['b.'] before:mr-2">
     Agregar más “Responsables” si fuera necesario. Esto le llegará a todos los pertenecientes del área.
   </li>
