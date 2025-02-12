@@ -38,50 +38,60 @@ export const arrayData = [
       },
       {
         name: "Leads Dashboard",
-        url: "/ayuda/crm-leads"
-      }
+        url: "/ayuda/crm-leads",
+      },
     ],
   },
   {
     name: "Desarrollo Organizacional",
-    sub_modules:[
+    sub_modules: [
       {
-        name:"Inducción General",
-        url:"/ayuda/induction"
+        name: "Inducción General",
+        url: "/ayuda/induction",
       },
       {
-        name:"Capacitación General",
-        url:"/ayuda/capacitation"
-      }
-    ]
-
+        name: "Capacitación General",
+        url: "/ayuda/capacitation",
+      },
+    ],
   },
   {
     name: "Ticket",
-    sub_modules:[
+    sub_modules: [
       {
-        name:"Tickets General",
-        url:"/ayuda/tickets-general"
+        name: "Tickets General",
+        url: "/ayuda/tickets-general",
       },
-    ]
-
+    ],
   },
   {
     name: "Chat",
-    sub_modules:[{
-      name: "Chat General",
-      url: "/ayuda/chat-general"
-    }]
+    sub_modules: [
+      {
+        name: "Chat General",
+        url: "/ayuda/chat-general",
+      },
+    ],
   },
   {
     name: "Ventas",
-    sub_modules:[{
-      name: "Clientes",
-      url: "/ayuda/ventas"
-    },{
-      name:"Ticket/Remisión",
-      url: "/ayuda/tickets"
-    }]
+    sub_modules: [
+      {
+        name: "Clientes",
+        url: "/ayuda/ventas",
+      },
+      {
+        name: "Ticket/Remisión",
+        url: "/ayuda/tickets",
+      },
+      {
+        name: "Pedido de Venta",
+        url: "/ayuda/orden",
+      },
+      {
+        name: "Cotización de Venta",
+        url: "/ayuda/cotizacion",
+      },
+    ],
   },
-  
 ];

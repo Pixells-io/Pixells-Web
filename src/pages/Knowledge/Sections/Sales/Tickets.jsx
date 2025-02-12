@@ -68,6 +68,9 @@ function TicketsGeneral() {
         </span>
         {/*ARTICLE 1 */}
         <div className="mt-6">
+        <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+            TICKETS
+          </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               Este submódulo es de suma importancia para generar ventas a
