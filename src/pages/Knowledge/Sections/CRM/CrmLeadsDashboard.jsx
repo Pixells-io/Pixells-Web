@@ -1,45 +1,51 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
+const section = [
+  { title: "Leads Dashboard", ref: "article1", index: 1 },
+  { title: "Perfil de Lead", ref: "article2", index: 2 },
+  { title: "Process Dashboard", ref: "article3", index: 3 },
+  { title: "Perfil de cliente", ref: "article4", index: 4 },
+  { title: "Agreements Console", ref: "article5", index: 5 },
+  { title: "Administración de Servicios", ref: "article6", index: 6 },
+];
 function CrmLeadsDashboard() {
-  const containerRef = useRef(null);
-  const article1Ref = useRef(null);
-  const article2Ref = useRef(null);
-  const article3Ref = useRef(null);
-  const article4Ref = useRef(null);
-  const article5Ref = useRef(null);
-  const article6Ref = useRef(null);
-
-  const [activeButton, setActiveButton] = useState(0);
-
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
-
-    if (container && article) {
-      // Calcular la posición de scroll
-      const scrollPosition = article.offsetTop - container.offsetTop;
-
-      // Hacer el scroll
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
-
-      setActiveButton(buttonIndex);
-    }
-  };
+    const [activeButton, setActiveButton] = useState(0);
+    const scrollAreaRef = useRef(null);
+  
+    const scrollToArticle = (articleId, buttonIndex) => {
+      const article = document.getElementById(articleId);
+  
+      if (scrollAreaRef.current && article) {
+        // Get the viewport element from the ScrollArea component
+        const viewport = scrollAreaRef.current.querySelector(
+          "[data-radix-scroll-area-viewport]"
+        );
+  
+        if (viewport) {
+          const scrollPosition = article.offsetTop;
+  
+          viewport.scrollTo({
+            top: scrollPosition,
+            behavior: "smooth",
+          });
+  
+          setActiveButton(buttonIndex);
+        }
+      }
+    };
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div
-        ref={containerRef}
-        className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10"
-      >
+      <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+             <ScrollArea
+               ref={scrollAreaRef}
+               className="w-full h-full col-span-8 px-6 py-2"
+             >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           CRM
         </span>
         <h2
-          ref={article1Ref}
+          id="article1"
           className="pt-5 font-poppins text-[16px] text-grisHeading"
         >
           Leads Dashboard
@@ -104,7 +110,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 2 */}
-        <div ref={article2Ref} className="mt-6">
+        <div id="article2" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Perfil de Lead
           </span>
@@ -128,7 +134,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 3 */}
-        <div ref={article3Ref} className="mt-6">
+        <div id="article3" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Process Dashboard
           </span>
@@ -191,7 +197,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 4 */}
-        <div ref={article4Ref} className="mt-6">
+        <div id="article4" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Perfil de cliente
           </span>
@@ -248,7 +254,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 5 */}
-        <div ref={article5Ref} className="mt-6">
+        <div id="article5" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Agreements Console
           </span>
@@ -319,7 +325,7 @@ function CrmLeadsDashboard() {
           </article>
         </div>
         {/*ARTICLE 6 */}
-        <div ref={article6Ref} className="mt-6">
+        <div  id="article6" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Administración de Servicios
           </span>
@@ -427,85 +433,29 @@ function CrmLeadsDashboard() {
             </ol>
           </article>
         </div>
-      </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          <button
-            onClick={() => scrollToArticle(article1Ref, 0)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 0
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Leads Dashboard
-          </button>
-          <button
-            onClick={() => scrollToArticle(article2Ref, 1)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 1
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Perfil de Lead
-          </button>
-          <button
-            onClick={() => scrollToArticle(article3Ref, 2)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 2
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Process Dashboard
-            </button>
-            <button
-            onClick={() => scrollToArticle(article4Ref, 3)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 3
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Perfil de cliente
-            </button>
-
-            <button
-            onClick={() => scrollToArticle(article5Ref, 4)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 4
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Agreements Console
-            </button>
-            <button
-            onClick={() => scrollToArticle(article6Ref, 5)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 5
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Administración de Servicios
-
-            </button>
-        </div>
-      </section>
+      </ScrollArea>
+       <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+                   <ScrollArea className="h-full">
+                     <div className="flex flex-col space-y-4">
+                       {section.map((section) => {
+                         return (
+                           <button
+                             key={section.index}
+                             onClick={() => scrollToArticle(section.ref, section.index)}
+                             className={`px-3 py-2 font-roboto font-normal text-[14px] text-left
+                      ${
+                        activeButton === section.index
+                          ? "border-l border-[#000000] text-grisHeading font-semibold"
+                          : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                      }`}
+                           >
+                             {section.title}
+                           </button>
+                         );
+                       })}
+                     </div>
+                   </ScrollArea>
+                 </section>
     </div>
   );
 }

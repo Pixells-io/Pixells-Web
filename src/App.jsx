@@ -308,6 +308,28 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/servicios",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/ServiceGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/almacenes",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/Warehouse"
+          );
+          return {
+            Component,
+          };
+        },
+      },
      
     ]
 

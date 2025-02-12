@@ -3,6 +3,7 @@ import { Outlet, useLocation, Link } from "react-router-dom";
 import Footer from "@/layouts/Footer";
 import { arrayData } from "./arrayData";
 import MenuDesktop from "@/components/MenuDesktop";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 function HomePage() {
   const location = useLocation();
@@ -10,47 +11,51 @@ function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <MenuDesktop />
-      {/* Wrapper div with bottom padding */}
-      <div className="flex flex-1 pb-1">
+      <div className="flex flex-1">
         {/* SideBar */}
-        <div className="max-w-[320px] shrink-0 bg-transparent px-8">
-          <div className="mt-10 px-6 max-h-[calc(90vh-2rem)] overflow-auto">
-            <div className="flex flex-col space-y-5 pb-10">
-              <span className="font-poppins font-normal text-grisHeading text-[14px]">
-                Introducción
-              </span>
-              <span className="font-poppins font-normal text-grisHeading text-[14px]">
-                Configuracion
-              </span>
-              <span className="font-poppins font-normal text-grisHeading text-[14px]">
-                Mi Cuenta
-              </span>
-            </div>
-            <div className="flex flex-col space-y-5">
-              {arrayData.map((module) => (
-                <div key={module.name} className="space-y-3 pb-5">
-                  <span className="font-poppins font-semibold text-grisHeading text-[14px]">
-                    {module.name}
+        <div className="w-[320px] mt-10 shrink-0 bg-transparent px-8">
+          {/* Set a fixed height for the ScrollArea container */}
+          <div className="h-[calc(100vh-6rem)]">
+            <ScrollArea className="h-full w-full">
+              <div className="pr-4">
+                <div className="flex flex-col space-y-5 pb-10">
+                  <span className="font-poppins font-normal text-grisHeading text-[14px]">
+                    Introducción
                   </span>
-                  {module.sub_modules.map((subModule) => (
-                    <Link
-                      key={subModule.name}
-                      to={subModule.url}
-                      className={`cursor-pointer ${
-                        location.pathname === subModule.url
-                          ? "bg-[#008EF9] text-white"
-                          : "hover:text-white hover:bg-[#008EF9] text-grisHeading"
-                      } rounded-lg flex items-center px-4 py-2 h-[32px] font-roboto font-light text-[14px]`}
-                    >
-                      {subModule.name}
-                    </Link>
+                  <span className="font-poppins font-normal text-grisHeading text-[14px]">
+                    Configuracion
+                  </span>
+                  <span className="font-poppins font-normal text-grisHeading text-[14px]">
+                    Mi Cuenta
+                  </span>
+                </div>
+                <div className="flex flex-col space-y-5">
+                  {arrayData.map((module) => (
+                    <div key={module.name} className="space-y-3 pb-5">
+                      <span className="font-poppins font-semibold text-grisHeading text-[14px]">
+                        {module.name}
+                      </span>
+                      {module.sub_modules.map((subModule) => (
+                        <Link
+                          key={subModule.name}
+                          to={subModule.url}
+                          className={`cursor-pointer ${
+                            location.pathname === subModule.url
+                              ? "bg-[#008EF9] text-white"
+                              : "hover:text-white hover:bg-[#008EF9] text-grisHeading"
+                          } rounded-lg flex items-center px-4 py-2 h-[32px] font-roboto font-light text-[14px]`}
+                        >
+                          {subModule.name}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            </ScrollArea>
           </div>
         </div>
-        
+
         {/* Main */}
         <div className="flex-1 px-5">
           <Outlet />

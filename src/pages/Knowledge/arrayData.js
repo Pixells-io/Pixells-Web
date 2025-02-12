@@ -114,6 +114,14 @@ export const arrayData = [
         name: "Artículos General",
         url: "/ayuda/inventario",
       },
+      {
+        name: "Servicios General",
+        url: "/ayuda/servicios",
+      },
+      {
+        name: "Almacenes General",
+        url: "/ayuda/almacenes",
+      },
     ],
   },
 ];

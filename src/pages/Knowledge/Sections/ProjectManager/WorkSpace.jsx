@@ -1,53 +1,66 @@
 import React, { useRef, useState } from "react";
 import { IonIcon } from "@ionic/react";
 import { chevronBack, chevronForward, ellipsisVertical } from "ionicons/icons";
+import { ScrollArea } from "@/components/ui/scroll-area";
+const section = [
+  { title: "Espacio de trabajo", ref: "article1", index: 1 },
+  { title: "Canales", ref: "article2", index: 2 },
+  { title: "Agregar Objetivo Estratégico", ref: "article3", index: 3 },
+  { title: "Compartir", ref: "article4", index: 4 },
+  { title: "Agregar una Tarea o un Proyecto", ref: "article5", index: 5 },
+  { title: "Compartir", ref: "article6", index: 6 },
+  { title: "Visualizar las repeticiones de una Tarea", ref: "article7", index: 7 },
+  { title: "Configuración de un Proyecto", ref: "article8", index: 8 },
+  { title: "Completar, editar y eliminar una actividad", ref: "article9", index: 9 },
+  { title: "Vistas rápidas de Todas la Actividades", ref: "article10", index: 10 },
+  { title: "Vistas rápidas de Todas los Proyectos", ref: "article11", index: 11 },
+
+];
 function WorkSpace() {
-    const containerRef = useRef(null);
-  const article1Ref = useRef(null);
-  const article2Ref = useRef(null);
-  const article3Ref = useRef(null);
-  const article4Ref = useRef(null);
-  const article5Ref = useRef(null);
-  const article6Ref = useRef(null);
-  const article7Ref = useRef(null);
-  const article8Ref = useRef(null);
-  const article9Ref = useRef(null);
-  const article10Ref = useRef(null);
-  const article11Ref = useRef(null);
-  const [activeButton, setActiveButton] = useState(10);
+  const [activeButton, setActiveButton] = useState(0);
+  const scrollAreaRef = useRef(null);
 
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
+  const scrollToArticle = (articleId, buttonIndex) => {
+    const article = document.getElementById(articleId);
 
-    if (container && article) {
+    if (scrollAreaRef.current && article) {
+      // Get the viewport element from the ScrollArea component
+      const viewport = scrollAreaRef.current.querySelector(
+        "[data-radix-scroll-area-viewport]"
+      );
 
-      // Calcular la posición de scroll
-      const scrollPosition = article.offsetTop - container.offsetTop;
+      if (viewport) {
+        const scrollPosition = article.offsetTop;
 
-      // Hacer el scroll
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
+        viewport.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
 
-      setActiveButton(buttonIndex);
+        setActiveButton(buttonIndex);
+      }
     }
   };
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div ref={containerRef} className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10">
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+      <ScrollArea
+        ref={scrollAreaRef}
+        className="w-full h-full col-span-8 px-6 py-2"
+      >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           PROJECT MANAGER
         </span>
-        <h2 ref={article11Ref} className="pt-5 font-poppins text-[16px] text-grisHeading">
+        <h2
+          id="article1"
+          className="pt-5 font-poppins text-[16px] text-grisHeading"
+        >
           Espacio de Trabajo
         </h2>
         {/*ARTICLE 1 */}
 
-        <div  className="mt-6">
+        <div className="mt-6">
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               Un espacio de trabajo es el lugar donde podrás crear distintos
@@ -90,7 +103,7 @@ function WorkSpace() {
         </div>
 
         {/**ARTICLE 2  */}
-        <div ref={article1Ref} className="mt-6">
+        <div id="article2" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Canales
           </span>
@@ -165,7 +178,7 @@ function WorkSpace() {
 
         {/*ARTICLE 3 */}
 
-        <div ref={article2Ref} className="mt-6">
+        <div id="article3" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Agregar Objetivo Estratégico
           </span>
@@ -186,7 +199,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 4 */}
-        <div ref={article3Ref} className="mt-6">
+        <div id="article4" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Compartir
           </span>
@@ -258,7 +271,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 5 */}
-        <div ref={article4Ref} className="mt-6">
+        <div id="article5" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Agregar una Tarea o un Proyecto
           </span>
@@ -336,7 +349,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 6 */}
-        <div ref={article5Ref} className="mt-6">
+        <div id="article6" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Compartir
           </span>
@@ -383,7 +396,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 7 */}
-        <div ref={article6Ref} className="mt-6">
+        <div id="article7" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Visualizar las repeticiones de una Tarea
           </span>
@@ -408,7 +421,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 8 */}
-        <div ref={article7Ref} className="mt-6">
+        <div id="article8" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Configuración de un Proyecto
           </span>
@@ -510,7 +523,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 9 */}
-        <div ref={article8Ref} className="mt-6">
+        <div id="article9" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Completar, editar y eliminar una actividad
           </span>
@@ -594,7 +607,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 10 */}
-        <div ref={article9Ref} className="mt-6">
+        <div id="article10" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Vistas rápidas de Todas la Actividades
           </span>
@@ -637,7 +650,7 @@ function WorkSpace() {
           </article>
         </div>
         {/*ARTICLE 11 */}
-        <div ref={article10Ref} className="mt-6">
+        <div id="article11" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Vistas rápidas de Todas los Proyectos
           </span>
@@ -677,131 +690,28 @@ function WorkSpace() {
             <br />
           </article>
         </div>
-      </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex max-w-[155px] flex-col space-y-5">
-          <button
-            onClick={() => scrollToArticle(article11Ref, 10)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 10
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Espacios de Trabajo
-          </button>
-          <button
-            onClick={() => scrollToArticle(article1Ref, 0)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 0
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Canales
-          </button>
-          <button
-            onClick={() => scrollToArticle(article2Ref, 1)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 1
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Agregar Objetivo Estratégico
-          </button>
-          <button
-            onClick={() => scrollToArticle(article3Ref, 2)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 2
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Compartir
-          </button>
-          <button
-            onClick={() => scrollToArticle(article4Ref, 3)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 3
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Agregar una Tarea o un Proyecto
-          </button>
-          <button
-            onClick={() => scrollToArticle(article5Ref, 4)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 4
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Compartir{" "}
-          </button>
-          <button
-            onClick={() => scrollToArticle(article6Ref, 5)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 5
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Visualizar las repeticiones de una Tarea
-          </button>
-          <button
-            onClick={() => scrollToArticle(article7Ref, 6)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 6
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Configuración de un Proyecto
-          </button>
-          <button
-            onClick={() => scrollToArticle(article8Ref, 7)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton == 7
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Completar, editar y eliminar una actividad
-          </button>
-          <button
-            onClick={() => scrollToArticle(article9Ref, 8)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton == 8
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Vistas rápidas de Todas la Actividades
-          </button>
-          <button
-            onClick={() => scrollToArticle(article10Ref, 9)}
-            className={`px-3 py-2 flex justify-start items-center whitespace-nowrap gap-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton == 9
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            Vistas rápidas de Todas los Proyectos
-          </button>
-        </div>
+      </ScrollArea>
+      <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+        <ScrollArea className="h-full">
+          <div className="flex flex-col space-y-4">
+            {section.map((section) => {
+              return (
+                <button
+                  key={section.index}
+                  onClick={() => scrollToArticle(section.ref, section.index)}
+                  className={`px-3 py-2 font-roboto font-normal text-[14px] text-left
+      ${
+        activeButton === section.index
+          ? "border-l border-[#000000] text-grisHeading font-semibold"
+          : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+      }`}
+                >
+                  {section.title}
+                </button>
+              );
+            })}
+          </div>
+        </ScrollArea>
       </section>
     </div>
   );

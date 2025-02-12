@@ -1,34 +1,38 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
-
+const section = [{ title: "Alta nuevo Prospecto", ref: "article1", index: 1 }];
 function CrmGeneral() {
-  const article1Ref = useRef(null);
-  const containerRef = useRef(null);
-
   const [activeButton, setActiveButton] = useState(0);
+  const scrollAreaRef = useRef(null);
 
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
+  const scrollToArticle = (articleId, buttonIndex) => {
+    const article = document.getElementById(articleId);
 
-    if (container && article) {
+    if (scrollAreaRef.current && article) {
+      // Get the viewport element from the ScrollArea component
+      const viewport = scrollAreaRef.current.querySelector(
+        "[data-radix-scroll-area-viewport]"
+      );
 
-      // Calcular la posición de scroll
-      const scrollPosition = article.offsetTop - container.offsetTop;
+      if (viewport) {
+        const scrollPosition = article.offsetTop;
 
-      // Hacer el scroll
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
+        viewport.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
 
-      setActiveButton(buttonIndex);
+        setActiveButton(buttonIndex);
+      }
     }
   };
 
-
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div ref={containerRef} className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10">
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+      <ScrollArea
+        ref={scrollAreaRef}
+        className="w-full h-full col-span-8 px-6 py-2"
+      >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           CRM
@@ -52,7 +56,7 @@ function CrmGeneral() {
           </article>
         </div>
         {/*ARTICLE 2 */}
-        <div ref={article1Ref} className="mt-6">
+        <div id="article1" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Alta nuevo Prospecto
           </span>
@@ -108,22 +112,28 @@ function CrmGeneral() {
             <br />
           </article>
         </div>
-      </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          <button
-            onClick={() => scrollToArticle(article1Ref, 0)}
-            className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                ${
-                  activeButton === 0
-                    ? "border-l border-[#000000] text-grisHeading font-semibold"
-                    : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                }`}
-          >
-            {" "}
-            Alta nueva Prospecto
-          </button>
-        </div>
+      </ScrollArea>
+      <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+        <ScrollArea className="h-full">
+          <div className="flex flex-col space-y-4">
+            {section.map((section) => {
+              return (
+                <button
+                  key={section.index}
+                  onClick={() => scrollToArticle(section.ref, section.index)}
+                  className={`px-3 py-2 font-roboto font-normal text-[14px] text-left
+           ${
+             activeButton === section.index
+               ? "border-l border-[#000000] text-grisHeading font-semibold"
+               : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+           }`}
+                >
+                  {section.title}
+                </button>
+              );
+            })}
+          </div>
+        </ScrollArea>
       </section>
     </div>
   );
