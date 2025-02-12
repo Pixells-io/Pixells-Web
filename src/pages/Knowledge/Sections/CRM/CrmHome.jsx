@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 const section = [{ title: "Leads", ref: "article1", index: 1 }];
 
 function CrmHome() {
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {

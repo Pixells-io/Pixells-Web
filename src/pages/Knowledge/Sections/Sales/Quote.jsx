@@ -7,7 +7,7 @@ function QuoteGeneral() {
     { title: "Funcion Convertir en Pedido", ref: "article2", index: 2 },
     { title: "Funcion Convertir en Venta", ref: "article2", index: 3 },
   ];
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {

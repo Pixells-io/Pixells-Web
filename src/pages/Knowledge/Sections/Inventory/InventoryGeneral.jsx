@@ -3,7 +3,7 @@ import { IonIcon } from "@ionic/react";
 import { chevronForward, informationCircleOutline } from "ionicons/icons";
 import React, { useRef, useState } from "react";
 function InventoryGeneral() {
-  const sections = [
+  const section = [
     {
       id: 1,
       title: "Articulos General",
@@ -26,7 +26,7 @@ function InventoryGeneral() {
   ];
 
   const [showMenu, setShowMenu] = useState(1);
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {
@@ -446,54 +446,42 @@ function InventoryGeneral() {
           </article>
         </div>
       </ScrollArea>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          {sections.map((section) => (
-            <div key={section.id}>
-              <button
-                onClick={() => setShowMenu(section.id)}
-                className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    showMenu === section.id
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-              >
-                {section.title}
-              </button>
-
-              {showMenu === section.id && (
-                <div className="flex flex-col px-8 items-start space-y-5">
-                  {section.subsections.map((subsection, index) => {
-                    const buttonIndex =
-                      sections
-                        .slice(0, section.id - 1)
-                        .reduce((acc, s) => acc + s.subsections.length, 0) +
-                      index;
-
-                    return (
-                      <button
-                        key={index}
-                        onClick={() =>
-                          scrollToArticle(subsection.ref, buttonIndex)
-                        }
-                        className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                          ${
-                            activeButton === buttonIndex
-                              ? "font-medium text-grisHeading"
-                              : "text-[#8F8F8F]"
-                          }`}
-                      >
-                        {subsection.title}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+       <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+             <ScrollArea className="h-full">
+               <div className="flex flex-col space-y-4">
+                 {section.map((item) => (
+                   <div key={item.index} className="flex flex-col">
+                     <button
+                       onClick={() => setShowMenu(item.index)}
+                       className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
+                                 ${
+                                   showMenu === item.index
+                                     ? "border-l border-[#000000] text-grisHeading font-semibold"
+                                     : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                                 }`}
+                     >
+                       {item.title}
+                     </button>
+     
+                     {showMenu === item.index && (
+                       <div className="flex flex-col px-8 items-start space-y-5">
+                         {item.subsections.map((subsection, idx) => (
+                           <button
+                             key={subsection.ref}
+                             onClick={() => scrollToArticle(subsection.ref, idx)}
+                             className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                                       ${activeButton === idx ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+                           >
+                             {subsection.title}
+                           </button>
+                         ))}
+                       </div>
+                     )}
+                   </div>
+                 ))}
+               </div>
+             </ScrollArea>
+           </section>
     </div>
   );
 }

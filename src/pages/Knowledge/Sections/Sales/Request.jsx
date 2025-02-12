@@ -6,7 +6,7 @@ function RequestGeneral() {
     { title: "Alta nueva Oportunidad", ref: "article1", index: 1 },
     { title: " Funcion Convertir en venta", ref: "article2", index: 2 },
   ];
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {

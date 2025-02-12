@@ -6,7 +6,7 @@ function ConfigurationGeneral() {
   const article1Ref = useRef(null);
   const containerRef = useRef(null);
   const [showMenu, setShowMenu] = useState(1);
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
 
   const scrollToArticle = (articleRef, buttonIndex) => {
     const container = containerRef.current;

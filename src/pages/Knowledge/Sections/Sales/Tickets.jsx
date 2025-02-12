@@ -40,7 +40,7 @@ function TicketsGeneral() {
   ];
 
    const [showMenu, setShowMenu] = useState(1);
-   const [activeButton, setActiveButton] = useState(0);
+   const [activeButton, setActiveButton] = useState(1);
    const scrollAreaRef = useRef(null);
  
    const scrollToArticle = (articleId, buttonIndex) => {

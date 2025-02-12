@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
 const section = [{ title: "Alta nuevo Prospecto", ref: "article1", index: 1 }];
 function CrmGeneral() {
-  const [activeButton, setActiveButton] = useState(0);
+  const [activeButton, setActiveButton] = useState(1);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {
