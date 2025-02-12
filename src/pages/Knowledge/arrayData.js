@@ -98,4 +98,22 @@ export const arrayData = [
       },
     ],
   },
+  {
+    name: "Compras",
+    sub_modules: [
+      {
+        name: "Proveedores",
+        url: "/ayuda/proveedor",
+      },
+    ],
+  },
+  {
+    name: "Inventarios",
+    sub_modules: [
+      {
+        name: "Artículos General",
+        url: "/ayuda/inventario",
+      },
+    ],
+  },
 ];

@@ -1,29 +1,41 @@
-import { ellipsisHorizontal, settingsOutline } from "ionicons/icons";
-import { IonIcon } from "@ionic/react";
 import React, { useRef, useState } from "react";
-
 function Supplier() {
-  const containerRef = useRef(null);
-  const article1Ref = useRef(null);
-  const article2Ref = useRef(null);
-  const article3Ref = useRef(null);
-  const article4Ref = useRef(null);
-
-  const [activeButton, setActiveButton] = useState(0);
-
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
-
-    if (container && article) {
-      const scrollPosition = article.offsetTop - container.offsetTop;
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
-      setActiveButton(buttonIndex);
-    }
-  };
+   const sections = [
+     {
+       id: 1,
+       title: "Proveedores",
+       subsections: [{ title: "¿Cómo crear un proveedor?", ref: useRef(null) }],
+     },
+     {
+       id: 2,
+       title: "Sección Información",
+       subsections: [
+         { title: "Principal", ref: useRef(null) },
+         { title: "Información de Facturación", ref: useRef(null) },
+         { title: "Condiciones de Pago", ref: useRef(null) },
+       ],
+     },
+     
+   ];
+ 
+   const containerRef = useRef(null);
+   const [showMenu, setShowMenu] = useState(1);
+   const [activeButton, setActiveButton] = useState(0);
+ 
+   const scrollToArticle = (articleRef, buttonIndex) => {
+     const container = containerRef.current;
+     const article = articleRef.current;
+ 
+     if (container && article) {
+       const scrollPosition = article.offsetTop - container.offsetTop;
+       container.scrollTo({
+         top: scrollPosition,
+         behavior: "smooth",
+       });
+       setActiveButton(buttonIndex);
+     }
+   };
+ 
 
   return (
     <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
@@ -36,7 +48,7 @@ function Supplier() {
           COMPRAS
         </span>
         {/*ARTICLE 1 */}
-        <div  ref={article1Ref} className="mt-6">
+        <div  className="mt-6">
           <article className="font-roboto font-light text-[14px] text-grisHeading">
             <p>
               El módulo de compras te permitirá gestionar proveedores y
@@ -46,158 +58,230 @@ function Supplier() {
               clientes y más funciones.
             </p>
             <br />
-
           </article>
         </div>
         {/*ARTICLE 2 */}
         <div className="mt-6">
           <span
-            ref={article2Ref}
+                          ref={sections[0].subsections[0].ref}
+
             className="font-poppins font-semibold text-[18px] text-grisHeading"
           >
-            ¿Cómo puedo usar el dashboard de seguimiento de servicios?
+            Proveedores
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+            <p className="font-semibold">¿Como crear un proveedor?</p>
+            <br />
             <p>
-              En el dashboard podemos mover al cliente hacia las etapas de
-              adelante o las de atrás, dependiendo en qué parte del proceso se
-              encuentra, solo es necesario arrastrar la caja y colocarla sobre
-              el nombre de la etapa a la que deseamos moverlo.
+              Un proveedor, es un socio de negocios al cual le podremos ejecutar
+              compras de productos, gastos y servicios, tener comunicación a
+              traves de Whatsapp API y correos electrónicos y demás actividades.
             </p>
             <br />
             <p>
-              Cuando lo coloco en alguna etapa, nos indica que estamos en cierta
-              etapa del proceso, pero podemos hacer algunas acciones, sin
-              importar en qué etapa se encuentra colocado el cliente.
+              Para agregar un proveedor, da click en el botón “nuevo” en la
+              parte superior derecha.
             </p>
             <br />
             <p>
-              Un cliente dentro del dashboard se visualiza de la siguiente
-              forma:
+              A continuación selecciona, algunas de las dos formas de dar de
+              alta un proveedor:
             </p>
             <br />
-            {/*INSERT IMAGE */}
-            <p>
-              siguiente botón{" "}
-              <IonIcon icon={settingsOutline} className="text-center" /> al
-              presionar el engrane, podremos asignar el lead a otro usuario y
-              editar el cliente. Al presionar los tres puntos, las acciones que
-              podemos realizar son:
-            </p>
-            <br />
-            <ul class="list-disc pl-4 px-8">
-              <li>Agenda de actividades</li>
-              <li>Envío de correo</li>
-              <li>Programar un correo</li>
-              <li>Iniciar una conversación</li>
-              <li>Solicitud de documento</li>
-              <li>Envío de documento</li>
+            <ul class="list-disc px-8">
+              <li>Nuevo Proveedor</li>
+              <li>Cliente Existente</li>
             </ul>
-            <p>
-              Al momento de posicionar el cursor sobre una etapa, encontraremos
-              el botón{" "}
-              <IonIcon icon={ellipsisHorizontal} className="text-center px-2" />{" "}
-              el cual nos dará la opción de editar la etapa o eliminar la etapa.
-            </p>
             <br />
             <p>
-              En caso de que se quiera eliminar una etapa, pero haya clientes
-              dentro de la misma, los clientes irán a la primera etapa de inicio
-              de forma automática.
+              Al seleccionar un nuevo proveedor, entrarás a la vista del perfil
+              de un proveedor.
+            </p>
+            <br />
+
+            <p>
+              Al seleccionar cliente existente, en caso de que un socio de
+              negocios se haya dado de alta primero como proveedor, será
+              necesario seleccionar el nombre, dar clic en guardar y ahora
+              estará guardado con la información que previamente tenía en
+              existencia, dentro de la lista de proveedores.
             </p>
             <br />
           </article>
         </div>
         {/*ARTICLE 3 */}
         <div className="mt-6">
-          <span
-            ref={article3Ref}
-            className="font-poppins font-semibold text-[18px] text-grisHeading"
-          >
-            Agregar comentarios, anotaciones e imágenes
+          <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+            Sección Información
           </span>
-          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article ref={sections[1].subsections[0].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
-              Presiona el boton de comentario y agrega cualauier comentario de
-              interés. Puedes agregar también hasta 5 imagenes o documentos por
-              cada comentario.
+              Para guardar un proveedor nuevo, será necesario llenar la
+              siguiente información:
+            </p>
+            <br />
+            <span className="font-semibold">Principal</span>
+            <br />
+            <br />
+            <ul class="list-disc px-8">
+              <li>Código se genera de forma automática *</li>
+              <li>Nombre del cliente *</li>
+              <li>No de identificación (RFC) *</li>
+              <li>Tipo de Cliente</li>
+              <li>Moneda (preferencia de moneda para generar transacciones)</li>
+              <li>
+                Grupo de Proveedor (en caso de haber creado grupos de
+                proveedores)
+              </li>
+            </ul>
+            <br />
+
+            <span className="font-semibold">General</span>
+            <br />
+            <br />
+            <ul class="list-disc px-8">
+              <li>Calle *</li>
+              <li>Número Interior *</li>
+              <li>Número Exterior *</li>
+              <li>Colonia *</li>
+              <li>Estado *</li>
+              <li>Código Postal *</li>
+              <li>País *</li>
+              <li>Encargado de Compras *</li>
+              <li>Comentarios</li>
+            </ul>
+            <br />
+            <span className="font-semibold">Contactos</span>
+            <br />
+            <p>
+              Puedes agregar los contactos necesarios relacionados al mismo
+              cliente presionando el botón “Agregar”.
+            </p>
+            <br />
+            <p>Llena los siguientes campos:</p>
+            <br />
+            <ul class="list-disc px-8">
+              <li>Nombre</li>
+              <li>Apellido Paterno</li>
+              <li>Apellido Materno</li>
+              <li>Correo Electrónico</li>
+              <li>Teléfono</li>
+              <li>Posición</li>
+            </ul>
+            <br />
+            <p>
+              Cuando hayas agregado más de un contacto, selecciona cuál será el
+              contacto principal de preferencia.
             </p>
             <br />
             <p>
-              Para editar o eliminar cada comentario o sus archivos agregados,
-              presiona el botón{" "}
-              <IonIcon icon={ellipsisHorizontal} className="text-center px-2" />
-              dentro de cada comentario y escoge la opción deseada.
+              Si desea eliminar un contacto, presione el botón eliminar al
+              costado inferior derecho del contacto y confirme.
+            </p>
+            <br />
+
+            <span ref={sections[1].subsections[1].ref} className="font-semibold">Información de Facturación</span>
+            <br />
+            <p>
+              Puedes agregar los contactos necesarios relacionados al mismo
+              cliente presionando el botón “Agregar”.
+            </p>
+            <br />
+            <p>Llena los siguientes campos:</p>
+            <br />
+            <ul class="list-disc px-8">
+              <li>Nombre</li>
+              <li>Apellido Paterno</li>
+              <li>Apellido Materno</li>
+              <li>Correo Electrónico</li>
+              <li>Teléfono</li>
+              <li>Posición</li>
+            </ul>
+            <br />
+            <p>
+              Cuando hayas agregado más de un contacto, selecciona cuál será el
+              contacto principal de preferencia.
+            </p>
+            <br />
+            <p>
+              Si desea eliminar un contacto, presione el botón eliminar al
+              costado inferior derecho del contacto y confirme.
             </p>
             <br />
           </article>
         </div>
         {/*ARTICLE 4 */}
         <div className="mt-6">
-          <span
-            ref={article4Ref}
-            className="font-poppins font-semibold text-[18px] text-grisHeading"
-          >
-            Ver información del cliente
-          </span>
-          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article ref={sections[1].subsections[2].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+            <p className="font-semibold">Condiciones de Pago</p>
             <p>
-              Puedes dar clic sobre el nombre del cliente y te redireccionará a
-              la secciones de información del cliente, mencionadas
-              anteriormente.
+              <br />
+              <ul class="list-disc px-8">
+                <li>
+                  Condiciones: Crédito o Contado (Esto aparecerá por default en
+                  las ventas, pedidos y cotizaciones) *
+                </li>
+                <li>
+                  Porcentaje de intereses por retraso: Colocar porcentaje *
+                </li>
+              </ul>
+              <br />
+              En caso de seleccionar Crédito en las condiciones:
             </p>
             <br />
+            <ul class="list-disc px-8">
+              <li>Días de crédito *</li>
+              <li>Límite de crédito *</li>
+            </ul>
           </article>
         </div>
       </div>
       <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
         <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          <div className="flex flex-col space-y-5">
-            <button
-              onClick={() => scrollToArticle(article1Ref, 0)}
-              className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
+          {sections.map((section) => (
+            <div key={section.id}>
+              <button
+                onClick={() => setShowMenu(section.id)}
+                className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
                   ${
-                    activeButton === 0
+                    showMenu === section.id
                       ? "border-l border-[#000000] text-grisHeading font-semibold"
                       : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
                   }`}
-            >
-              Seguimientos de Servicios
-            </button>
-            <button
-              onClick={() => scrollToArticle(article2Ref, 1)}
-              className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    activeButton === 1
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-            >
-              ¿Cómo puedo usar el dashboard de seguimiento de servicios?
-            </button>
-            <button
-              onClick={() => scrollToArticle(article3Ref, 2)}
-              className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    activeButton === 2
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-            >
-              Agregar comentarios, anotaciones e imágenes
-            </button>
-            <button
-              onClick={() => scrollToArticle(article3Ref, 3)}
-              className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    activeButton === 3
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-            >
-              Ver información del cliente
-            </button>
-          </div>
+              >
+                {section.title}
+              </button>
+
+              {showMenu === section.id && (
+                <div className="flex flex-col px-8 items-start space-y-5">
+                  {section.subsections.map((subsection, index) => {
+                    const buttonIndex =
+                      sections
+                        .slice(0, section.id - 1)
+                        .reduce((acc, s) => acc + s.subsections.length, 0) +
+                      index;
+
+                    return (
+                      <button
+                        key={index}
+                        onClick={() =>
+                          scrollToArticle(subsection.ref, buttonIndex)
+                        }
+                        className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                          ${
+                            activeButton === buttonIndex
+                              ? "font-medium text-grisHeading"
+                              : "text-[#8F8F8F]"
+                          }`}
+                      >
+                        {subsection.title}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </div>
