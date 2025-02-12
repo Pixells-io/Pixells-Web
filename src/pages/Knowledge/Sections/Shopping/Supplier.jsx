@@ -2,7 +2,7 @@ import { ellipsisHorizontal, settingsOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import React, { useRef, useState } from "react";
 
-function FollowServices() {
+function Supplier() {
   const containerRef = useRef(null);
   const article1Ref = useRef(null);
   const article2Ref = useRef(null);
@@ -33,71 +33,20 @@ function FollowServices() {
       >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
-          VENTAS
+          COMPRAS
         </span>
         {/*ARTICLE 1 */}
-        <div className="mt-6">
-          <span
-            ref={article1Ref}
-            className="font-poppins font-semibold text-[18px] text-grisHeading"
-          >
-            SEGUIMIENTO DE SERVICIOS
-          </span>
-          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+        <div  ref={article1Ref} className="mt-6">
+          <article className="font-roboto font-light text-[14px] text-grisHeading">
             <p>
-              Este submódulo te ayudará a darle seguimiento al proceso de los
-              servicios vendidos que están activos.
+              El módulo de compras te permitirá gestionar proveedores y
+              aplicarles compras, pedidos de compra y cotizaciones de compra
+              para poder crecer los ingresos de tu empresa. También podrán
+              crearse contratos, dar seguimiento a los servicios activos en
+              clientes y más funciones.
             </p>
             <br />
 
-            <p>Para dar seguimiento, sigue los siguientes pasos:</p>
-            <br />
-            <ol>
-              <li className="before:content-['1.'] before:mr-2">
-                En la parte superior de la pantalla, encontrarás un botón de “+”
-                donde puedes agregar a tu perfil los servicios que tengas
-                registrados en el sistema para darles seguimiento.
-              </li>
-              <br />
-              <li className="before:content-['2.'] before:mr-2">
-                Una vez ingresando a uno de los servicios que aparecen en la
-                pantalla, puedes empezar a crear pasos o etapas en el proceso
-                del servicio, dando click en el botón de “+” que aparece al
-                costado derecho de la etapa inicio.
-              </li>
-              <br />
-              <li className="before:content-['3.'] before:mr-2">
-                Para agregar la etapa, solo debes llenar la información
-                solicitada.
-              </li>
-              <ol className="px-8">
-                <li className="before:content-['a.'] before:mr-2">
-                  Nombre de la etapa
-                </li>
-                <li className="before:content-['b.'] before:mr-2">
-                  Descripción de la etapa
-                </li>
-                <li className="before:content-['c.'] before:mr-2">
-                  Color de la etapa
-                </li>
-              </ol>
-            </ol>
-            <br />
-
-            <p>Listo, puedes repetir esto las veces que sea necesario</p>
-            <br />
-            <p>
-              Cuando creas etapas de un servicio, se colocarán de forma
-              automática en la información del servicio en el módulo de
-              inventarios.
-            </p>
-            <br />
-            <p>
-              Así mismo, si creas las etapas del servicio en el módulo de
-              inventarios, aparecerán de forma automática en el dashboard de
-              seguimiento de servicios.
-            </p>
-            <br />
           </article>
         </div>
         {/*ARTICLE 2 */}
@@ -255,4 +204,4 @@ function FollowServices() {
   );
 }
 
-export default FollowServices;
+export default Supplier;

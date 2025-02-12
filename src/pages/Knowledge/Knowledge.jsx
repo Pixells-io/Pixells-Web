@@ -11,7 +11,7 @@ function HomePage() {
     <div className="flex flex-col min-h-screen">
       <MenuDesktop />
       {/* Wrapper div with bottom padding */}
-      <div className="flex flex-1 pb-8">
+      <div className="flex flex-1 pb-1">
         {/* SideBar */}
         <div className="max-w-[320px] shrink-0 bg-transparent px-8">
           <div className="mt-10 px-6 max-h-[calc(90vh-2rem)] overflow-auto">
