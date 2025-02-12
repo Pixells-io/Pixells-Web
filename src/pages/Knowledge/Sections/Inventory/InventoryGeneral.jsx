@@ -1,3 +1,4 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { IonIcon } from "@ionic/react";
 import { chevronForward, informationCircleOutline } from "ionicons/icons";
 import React, { useRef, useState } from "react";
@@ -7,46 +8,54 @@ function InventoryGeneral() {
       id: 1,
       title: "Articulos General",
       subsections: [
-        { title: "Crear un articulo", ref: useRef(null) },
-        { title: "Artículo simple o variable", ref: useRef(null) },
-    ],
+        { title: "Crear un articulo", ref: "article1" },
+        { title: "Artículo simple o variable", ref: "article2" },
+      ],
     },
     {
       id: 2,
       title: "Secciones del Formulario",
       subsections: [
-        { title: "Sección Principal", ref: useRef(null) },
-        { title: "Sección General", ref: useRef(null) },
-        { title: "Sección Inventario", ref: useRef(null) },
-        { title: "Sección Inventario por almacén", ref: useRef(null) },
-        { title: "Sección Compras", ref: useRef(null) },
+        { title: "Sección Principal", ref: "article3" },
+        { title: "Sección General", ref: "article4" },
+        { title: "Sección Inventario", ref: "article5" },
+        { title: "Sección Inventario por almacén", ref: "article6" },
+        { title: "Sección Compras", ref: "article7" },
       ],
     },
   ];
 
-  const containerRef = useRef(null);
   const [showMenu, setShowMenu] = useState(1);
   const [activeButton, setActiveButton] = useState(0);
+  const scrollAreaRef = useRef(null);
 
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
+  const scrollToArticle = (articleId, buttonIndex) => {
+    const article = document.getElementById(articleId);
 
-    if (container && article) {
-      const scrollPosition = article.offsetTop - container.offsetTop;
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
-      setActiveButton(buttonIndex);
+    if (scrollAreaRef.current && article) {
+      // Get the viewport element from the ScrollArea component
+      const viewport = scrollAreaRef.current.querySelector(
+        "[data-radix-scroll-area-viewport]"
+      );
+
+      if (viewport) {
+        const scrollPosition = article.offsetTop;
+
+        viewport.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
+
+        setActiveButton(buttonIndex);
+      }
     }
   };
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div
-        ref={containerRef}
-        className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10"
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+      <ScrollArea
+        ref={scrollAreaRef}
+        className="w-full h-full col-span-8 px-6 py-2"
       >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
@@ -68,7 +77,10 @@ function InventoryGeneral() {
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Artículos General
           </span>
-          <article ref={sections[0].subsections[0].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article
+            id="article1"
+            className="pt-5 font-roboto font-light text-[14px] text-grisHeading"
+          >
             <p>Dentro de este submódulo podemos crear lo siguiente:</p>
             <br />
             <ul class="list-disc px-8">
@@ -120,7 +132,10 @@ function InventoryGeneral() {
         </div>
         {/*ARTICLE 3 */}
         <div className="mt-6">
-          <article ref={sections[0].subsections[1].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article
+            id="article2"
+            className="pt-5 font-roboto font-light text-[14px] text-grisHeading"
+          >
             <span className="font-semibold">Artículo simple o variable</span>
             <br />
             <br />
@@ -160,7 +175,10 @@ function InventoryGeneral() {
             Secciones del Formulario
           </span>
 
-          <article  ref={sections[1].subsections[0].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article
+            id="article3"
+            className="pt-5 font-roboto font-light text-[14px] text-grisHeading"
+          >
             <span className="font-semibold">Sección Principal:</span>
             <br />
             <ol className="mb-4">
@@ -224,14 +242,14 @@ function InventoryGeneral() {
                 Clave del SAT
               </li>
             </ol>
-          
-           
           </article>
         </div>
-         {/*ARTICLE 5 */}
-         <div className="mt-6">
-          <span  ref={sections[1
-          ].subsections[1].ref} className="font-roboto font-semibold text-[14px] text-grisHeading">
+        {/*ARTICLE 5 */}
+        <div className="mt-6">
+          <span
+            id="article4"
+            className="font-roboto font-semibold text-[14px] text-grisHeading"
+          >
             Seccion General
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -303,11 +321,14 @@ function InventoryGeneral() {
         </div>
         {/*ARTICLE 6 */}
         <div className="mt-6">
-          <span  ref={sections[1].subsections[2].ref} className="font-roboto font-semibold text-[14px] text-grisHeading">
-          Sección Inventario:
+          <span
+            id="article5"
+            className="font-roboto font-semibold text-[14px] text-grisHeading"
+          >
+            Sección Inventario:
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
-          <p>Método de Valoración de Inventario</p>
+            <p>Método de Valoración de Inventario</p>
             <br />
             <p>
               Seleccionar el método en cómo será valorado el inventario tomando
@@ -357,62 +378,74 @@ function InventoryGeneral() {
             <br />
           </article>
         </div>
-         {/*ARTICLE 7 */}
-         <div className="mt-6">
-          <span  ref={sections[1].subsections[3].ref} className="font-roboto font-semibold text-[14px] text-grisHeading">
-          Sección Inventario por almacén:
-
+        {/*ARTICLE 7 */}
+        <div className="mt-6">
+          <span
+            id="article6"
+            className="font-roboto font-semibold text-[14px] text-grisHeading"
+          >
+            Sección Inventario por almacén:
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
-        <p>
-        Dentro de esta sección podrás consultar el inventario de un artículo específico. Muestra todos los almacenes de la empresa y el stock que se en encuentra en cada uno de los almacenes.
-        </p>
+            <p>
+              Dentro de esta sección podrás consultar el inventario de un
+              artículo específico. Muestra todos los almacenes de la empresa y
+              el stock que se en encuentra en cada uno de los almacenes.
+            </p>
 
             <br />
-            <p>
-            En la tabla puedes visualizar:
-
-            </p><br />
+            <p>En la tabla puedes visualizar:</p>
+            <br />
             <ol className="mb-4">
-  <li className="before:content-['1.'] before:mr-2">
-    Código del almacén.
-  </li>
-  <li className="before:content-['2.'] before:mr-2">
-    Nombre del almacén.
-  </li>
-  <li className="before:content-['3.'] before:mr-2">
-    En stock: la cantidad total que hay del artículo.
-  </li>
-  <li className="before:content-['4.'] before:mr-2">
-    Comprometido: lo que otros almacenes han pedido o producto que se encuentra en proceso de venta.
-  </li>
-  <li className="before:content-['5.'] before:mr-2">
-    Pedido: producto que se encuentra en camino al almacén.
-  </li>
-  <li className="before:content-['6.'] before:mr-2">
-    Disponible: cantidad disponible real que se puede tomar del artículo.
-  </li>
-  <li className="before:content-['7.'] before:mr-2">
-    Costo del Artículo.
-  </li>
-</ol>
-
+              <li className="before:content-['1.'] before:mr-2">
+                Código del almacén.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">
+                Nombre del almacén.
+              </li>
+              <li className="before:content-['3.'] before:mr-2">
+                En stock: la cantidad total que hay del artículo.
+              </li>
+              <li className="before:content-['4.'] before:mr-2">
+                Comprometido: lo que otros almacenes han pedido o producto que
+                se encuentra en proceso de venta.
+              </li>
+              <li className="before:content-['5.'] before:mr-2">
+                Pedido: producto que se encuentra en camino al almacén.
+              </li>
+              <li className="before:content-['6.'] before:mr-2">
+                Disponible: cantidad disponible real que se puede tomar del
+                artículo.
+              </li>
+              <li className="before:content-['7.'] before:mr-2">
+                Costo del Artículo.
+              </li>
+            </ol>
           </article>
         </div>
-         {/*ARTICLE 8 */}
-         <div className="mt-6">
-          <span  ref={sections[1].subsections[4].ref} className="font-roboto font-semibold text-[14px] text-grisHeading">
-          Sección Compras:
-
+        {/*ARTICLE 8 */}
+        <div className="mt-6">
+          <span
+            id="article7"
+            className="font-roboto font-semibold text-[14px] text-grisHeading"
+          >
+            Sección Compras:
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
-          <p>Selecciona el proveedor predeterminado que se desea tener para automatizar y reducir el rango de error en la creación de compras.</p><br />
+            <p>
+              Selecciona el proveedor predeterminado que se desea tener para
+              automatizar y reducir el rango de error en la creación de compras.
+            </p>
+            <br />
 
-          <p>Un vez que la se haya colocado la información deseada, es necesario presionar el botón “Guardar”.
-          </p><br />
+            <p>
+              Un vez que la se haya colocado la información deseada, es
+              necesario presionar el botón “Guardar”.
+            </p>
+            <br />
           </article>
         </div>
-      </div>
+      </ScrollArea>
       <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
         <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
           {sections.map((section) => (

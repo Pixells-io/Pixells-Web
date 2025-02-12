@@ -1,67 +1,76 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
 
 function Sales() {
-  const sections = [
+  const section = [
     {
-      id: 1,
+      index: 1,
       title: "¿Cómo crear un cliente?",
-      subsections: [{ title: "Descripción", ref: useRef(null) }],
+      subsections: [{ title: "Descripción", ref: "article1" }],
     },
     {
-      id: 2,
+      index: 2,
       title: "Sección Información",
       subsections: [
-        { title: "Principal", ref: useRef(null) },
-        { title: "Información de Facturación", ref: useRef(null) },
-        { title: "Condiciones de Pago", ref: useRef(null) },
+        { title: "Principal", ref: "article2" },
+        { title: "Información de Facturación", ref: "article3" },
+        { title: "Condiciones de Pago", ref: "article4" },
       ],
     },
     {
-      id: 3,
+      index: 3,
       title: "Sección Resumen",
       subsections: [
-        { title: "Ventas Realizadas", ref: useRef(null) },
-        { title: "Cobros Realizados", ref: useRef(null) },
-        { title: "Devoluciones", ref: useRef(null) },
-        { title: "Saldos Generales", ref: useRef(null) },
-        { title: "Rewards", ref: useRef(null) },
+        { title: "Ventas Realizadas", ref: "article5" },
+        { title: "Cobros Realizados", ref: "article6" },
+        { title: "Devoluciones", ref: "article7" },
+        { title: "Saldos Generales", ref: "article8" },
+        { title: "Rewards", ref: "article9" },
       ],
     },
     {
-      id: 4,
+      index: 4,
       title: "Sección Actividad",
       subsections: [
-        { title: "Servicios Activos", ref: useRef(null) },
-        { title: "Documentos", ref: useRef(null) },
-        { title: "Seguimientos", ref: useRef(null) },
-        { title: "Comentarios", ref: useRef(null) },
+        { title: "Servicios Activos", ref: "article10" },
+        { title: "Documentos", ref: "article11" },
+        { title: "Seguimientos", ref: "article12" },
+        { title: "Comentarios", ref: "article13" },
       ],
     },
   ];
 
-  const containerRef = useRef(null);
   const [showMenu, setShowMenu] = useState(1);
   const [activeButton, setActiveButton] = useState(0);
+  const scrollAreaRef = useRef(null);
 
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
+  const scrollToArticle = (articleId, buttonIndex) => {
+    const article = document.getElementById(articleId);
 
-    if (container && article) {
-      const scrollPosition = article.offsetTop - container.offsetTop;
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
-      setActiveButton(buttonIndex);
+    if (scrollAreaRef.current && article) {
+      // Get the viewport element from the ScrollArea component
+      const viewport = scrollAreaRef.current.querySelector(
+        "[data-radix-scroll-area-viewport]"
+      );
+
+      if (viewport) {
+        const scrollPosition = article.offsetTop;
+
+        viewport.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
+
+        setActiveButton(buttonIndex);
+      }
     }
   };
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div
-        ref={containerRef}
-        className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10"
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+      <ScrollArea
+        ref={scrollAreaRef}
+        className="w-full h-full col-span-8 px-6 py-2"
       >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
@@ -85,10 +94,7 @@ function Sales() {
             </p>
             <br />
 
-            <span
-              ref={sections[0].subsections[0].ref}
-              className="font-semibold"
-            >
+            <span id="article1" className="font-semibold">
               ¿Como crear un cliente?
             </span>
             <br />
@@ -133,8 +139,8 @@ function Sales() {
         {/*ARTICLE 2 */}
         <div className="mt-6">
           <span
-            ref={sections[1].subsections[0].ref}
-           className="font-poppins font-semibold text-[18px] text-grisHeading"
+            id="article2"
+            className="font-poppins font-semibold text-[18px] text-grisHeading"
           >
             Sección Información
           </span>
@@ -203,7 +209,7 @@ function Sales() {
         {/*ARTICLE 3 */}
         <div className="mt-6">
           <span
-            ref={sections[1].subsections[1].ref}
+            id="article3"
             className="font-roboto font-semibold text-[14px] text-grisHeading"
           >
             Información de Facturación
@@ -239,7 +245,7 @@ function Sales() {
         {/*ARTICLE 4 */}
         <div className="mt-6">
           <span
-            ref={sections[1].subsections[2].ref}
+            id="article4"
             className="font-roboto font-semibold text-[14px] text-grisHeading"
           >
             Condiciones de Pago
@@ -262,7 +268,10 @@ function Sales() {
         </div>
         {/*ARTICLE 5 */}
         <div className="mt-6">
-        <span ref={sections[2].subsections[0].ref} className="font-poppins font-semibold text-[18px] text-grisHeading">
+          <span
+            id="article5"
+            className="font-poppins font-semibold text-[18px] text-grisHeading"
+          >
             Sección Resumen
           </span>
           <article className="font-roboto font-light text-[14px] text-grisHeading">
@@ -271,12 +280,7 @@ function Sales() {
               información de los movimientos generados con un cliente:
             </p>
             <br />
-            <span
-              
-              className="font-semibold"
-            >
-              Ventas Realizadas
-            </span>
+            <span className="font-semibold">Ventas Realizadas</span>
             <p>
               Encontramos todo el resumen de ventas que hemos hecho a un
               cliente. La tabla nos proporciona información como:
@@ -296,7 +300,7 @@ function Sales() {
         {/*ARTICLE 6 */}
         <div className="mt-6">
           <span
-            ref={sections[2].subsections[1].ref}
+            id="article6"
             className="font-roboto font-semibold text-[14px] text-grisHeading"
           >
             Cobros Realizados
@@ -323,7 +327,7 @@ function Sales() {
         {/*ARTICLE 7 */}
         <div className="mt-6">
           <span
-            ref={sections[2].subsections[2].ref}
+            id="article7"
             className="font-roboto font-semibold text-[14px] text-grisHeading"
           >
             Devoluciones
@@ -349,7 +353,7 @@ function Sales() {
         {/*ARTICLE 8 */}
         <div className="mt-6">
           <span
-            ref={sections[2].subsections[3].ref}
+            id="article8"
             className="font-roboto font-semibold text-[14px] text-grisHeading"
           >
             Saldos Generales
@@ -470,7 +474,7 @@ function Sales() {
             {/*ARTICLE 9 */}
             <div className="mt-6">
               <span
-                ref={sections[2].subsections[4].ref}
+                id="article9"
                 className="font-roboto font-semibold text-[14px] text-grisHeading"
               >
                 Rewards
@@ -493,7 +497,7 @@ function Sales() {
         </div>
 
         <div className="mt-6">
-        <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+          <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             Sección Actividad
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -502,7 +506,7 @@ function Sales() {
               información entre el sistema y el cliente, en 4 áreas diferentes:
             </p>
             <br />
-            <p ref={sections[3].subsections[0].ref} className="font-semibold">
+            <p id="article10" className="font-semibold">
               Servicios Activos
             </p>
             <br />
@@ -511,7 +515,9 @@ function Sales() {
               vendieron al cliente y se está haciendo un seguimiento de avances.
             </p>
             <br />
-            <p ref={sections[3].subsections[1].ref} className="font-semibold">Documentos</p>
+            <p id="article11" className="font-semibold">
+              Documentos
+            </p>
             <br />
             <p>
               Son los documentos que se han solicitado y enviado a través de la
@@ -530,7 +536,9 @@ function Sales() {
               plataforma de cliente. Nosotros los recibimos en el sistema.
             </p>
             <br />
-            <p ref={sections[3].subsections[2].ref} className="font-semibold">Seguimiento</p>
+            <p id="article12" className="font-semibold">
+              Seguimiento
+            </p>
             <br />
             <p>
               Aquí se verá reflejado todo el historial de acciones que se han
@@ -539,7 +547,9 @@ function Sales() {
               solicitud de documento y envío de documento.
             </p>
             <br />
-            <p ref={sections[3].subsections[3].ref} className="font-semibold">Comentarios</p>
+            <p id="article13" className="font-semibold">
+              Comentarios
+            </p>
             <br />
             <p>
               En este apartado, se pueden hacer anotaciones de comentarios,
@@ -548,54 +558,42 @@ function Sales() {
             </p>
           </article>
         </div>
-      </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          {sections.map((section) => (
-            <div key={section.id}>
-              <button
-                onClick={() => setShowMenu(section.id)}
-                className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    showMenu === section.id
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-              >
-                {section.title}
-              </button>
+      </ScrollArea>
+      <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+        <ScrollArea className="h-full">
+          <div className="flex flex-col space-y-4">
+            {section.map((item) => (
+              <div key={item.index} className="flex flex-col">
+                <button
+                  onClick={() => setShowMenu(item.index)}
+                  className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
+                                   ${
+                                     showMenu === item.index
+                                       ? "border-l border-[#000000] text-grisHeading font-semibold"
+                                       : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                                   }`}
+                >
+                  {item.title}
+                </button>
 
-              {showMenu === section.id && (
-                <div className="flex flex-col px-8 items-start space-y-5">
-                  {section.subsections.map((subsection, index) => {
-                    const buttonIndex =
-                      sections
-                        .slice(0, section.id - 1)
-                        .reduce((acc, s) => acc + s.subsections.length, 0) +
-                      index;
-
-                    return (
+                {showMenu === item.index && (
+                  <div className="flex flex-col px-8 items-start space-y-5">
+                    {item.subsections.map((subsection, idx) => (
                       <button
-                        key={index}
-                        onClick={() =>
-                          scrollToArticle(subsection.ref, buttonIndex)
-                        }
+                        key={subsection.ref}
+                        onClick={() => scrollToArticle(subsection.ref, idx)}
                         className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                          ${
-                            activeButton === buttonIndex
-                              ? "font-medium text-grisHeading"
-                              : "text-[#8F8F8F]"
-                          }`}
+                                         ${activeButton === idx ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
                       >
                         {subsection.title}
                       </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </ScrollArea>
       </section>
     </div>
   );

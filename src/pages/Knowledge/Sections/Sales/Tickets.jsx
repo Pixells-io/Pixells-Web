@@ -1,67 +1,76 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { IonIcon } from "@ionic/react";
 import { informationCircleOutline } from "ionicons/icons";
 import React, { useRef, useState } from "react";
 
 function TicketsGeneral() {
-  const sections = [
+  const section = [
     {
-      id: 1,
+      index: 1,
       title: "¿Cómo puedo crear una nueva venta?",
       subsections: [
-        { title: "Información general", ref: useRef(null) },
-        { title: "Seleccionar Producto, Servicio o Combo.", ref: useRef(null) }
+        { title: "Información general", ref: "article1" },
+        { title: "Seleccionar Producto, Servicio o Combo.", ref: "article2" }
     ],
     },
     {
-      id: 2,
+      index: 2,
       title: "Agregar Items al documento de venta",
       subsections: [
-        { title: "Descripcion", ref: useRef(null) },
+        { title: "Descripcion", ref: "article3" },
         
       ],
     },
     {
-      id: 3,
+      index: 3,
       title: "¿Como ver las ventas creadas?",
       subsections: [
-        { title: "Descripcion", ref: useRef(null) },
+        { title: "Descripcion", ref: "article4" },
         
       ],
     },
     {
-        id: 4,
+        index: 4,
         title: "¿Puedo eliminar o cancelar una venta?",
         subsections: [
-          { title: "Descripcion", ref: useRef(null) },
+          { title: "Descripcion", ref: "article5" },
           
         ],
       },
   ];
 
-  const containerRef = useRef(null);
-  const [showMenu, setShowMenu] = useState(1);
-  const [activeButton, setActiveButton] = useState(0);
-
-  const scrollToArticle = (articleRef, buttonIndex) => {
-    const container = containerRef.current;
-    const article = articleRef.current;
-
-    if (container && article) {
-      const scrollPosition = article.offsetTop - container.offsetTop;
-      container.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
-      setActiveButton(buttonIndex);
-    }
-  };
+   const [showMenu, setShowMenu] = useState(1);
+   const [activeButton, setActiveButton] = useState(0);
+   const scrollAreaRef = useRef(null);
+ 
+   const scrollToArticle = (articleId, buttonIndex) => {
+     const article = document.getElementById(articleId);
+ 
+     if (scrollAreaRef.current && article) {
+       // Get the viewport element from the ScrollArea component
+       const viewport = scrollAreaRef.current.querySelector(
+         "[data-radix-scroll-area-viewport]"
+       );
+ 
+       if (viewport) {
+         const scrollPosition = article.offsetTop;
+ 
+         viewport.scrollTo({
+           top: scrollPosition,
+           behavior: "smooth",
+         });
+ 
+         setActiveButton(buttonIndex);
+       }
+     }
+   };
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-      <div
-        ref={containerRef}
-        className="w-full max-h-[90vh] overflow-auto col-span-8 px-6 py-10"
-      >
+   <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+         <ScrollArea
+           ref={scrollAreaRef}
+           className="w-full h-full col-span-8 px-6 py-2"
+         >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           VENTAS
@@ -101,7 +110,7 @@ function TicketsGeneral() {
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
             ¿Cómo puedo crear una nueva venta?
           </span>
-          <article ref={sections[0].subsections[0].ref} className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <article id="article1" className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
             <p>
               Para crear una nueva venta, da click en el botón “nuevo” en la
               parte superior derecha.
@@ -146,7 +155,7 @@ function TicketsGeneral() {
                 forma individual
               </li>
             </ol>
-            <span ref={sections[0].subsections[1].ref}>2. Seleccionar Producto, Servicio o Combo.</span>
+            <span id="article2">2. Seleccionar Producto, Servicio o Combo.</span>
             <p>
               Al seleccionar producto o servicio, será lo que el sistema va a
               mostrar cada vez que se quiera agregar un item.
@@ -174,7 +183,7 @@ function TicketsGeneral() {
 
         {/*ARTICLE 3 */}
         <div className="mt-6">
-          <span ref={sections[1].subsections[0].ref} className="font-poppins font-semibold text-[18px] text-grisHeading">
+          <span id="article3" className="font-poppins font-semibold text-[18px] text-grisHeading">
             Agregar Items al documento de venta
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -221,7 +230,7 @@ function TicketsGeneral() {
         </div>
         {/*ARTICLE 4 */}
         <div className="mt-6">
-          <span ref={sections[2].subsections[0].ref} className="font-poppins font-semibold text-[18px] text-grisHeading">
+          <span id="article4" className="font-poppins font-semibold text-[18px] text-grisHeading">
             ¿Como ver las ventas creadas?
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -263,7 +272,7 @@ function TicketsGeneral() {
         </div>
         {/*ARTICLE 5 */}
         <div className="mt-6">
-          <span ref={sections[3].subsections[0].ref} className="font-poppins font-semibold text-[18px] text-grisHeading">
+          <span id="article5" className="font-poppins font-semibold text-[18px] text-grisHeading">
             ¿Puedo eliminar o cancelar una venta?
           </span>
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
@@ -276,55 +285,43 @@ function TicketsGeneral() {
             <br />
           </article>
         </div>
-      </div>
-      <section className="col-span-4 max-h-[90vh] overflow-auto px-8 py-6">
-        <div className="flex justify-start items-start max-w-[155px] whitespace-nowrap flex-col space-y-5">
-          {sections.map((section) => (
-            <div key={section.id}>
-              <button
-                onClick={() => setShowMenu(section.id)}
-                className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
-                  ${
-                    showMenu === section.id
-                      ? "border-l border-[#000000] text-grisHeading font-semibold"
-                      : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                  }`}
-              >
-                {section.title}
-              </button>
-
-              {showMenu === section.id && (
-                <div className="flex flex-col px-8 items-start space-y-5">
-                  {section.subsections.map((subsection, index) => {
-                    const buttonIndex =
-                      sections
-                        .slice(0, section.id - 1)
-                        .reduce((acc, s) => acc + s.subsections.length, 0) +
-                      index;
-
-                    return (
-                      <button
-                        key={index}
-                        onClick={() =>
-                          scrollToArticle(subsection.ref, buttonIndex)
-                        }
-                        className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                          ${
-                            activeButton === buttonIndex
-                              ? "font-medium text-grisHeading"
-                              : "text-[#8F8F8F]"
-                          }`}
-                      >
-                        {subsection.title}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      </ScrollArea>
+       <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+            <ScrollArea className="h-full">
+              <div className="flex flex-col space-y-4">
+                {section.map((item) => (
+                  <div key={item.index} className="flex flex-col">
+                    <button
+                      onClick={() => setShowMenu(item.index)}
+                      className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
+                                       ${
+                                         showMenu === item.index
+                                           ? "border-l border-[#000000] text-grisHeading font-semibold"
+                                           : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
+                                       }`}
+                    >
+                      {item.title}
+                    </button>
+    
+                    {showMenu === item.index && (
+                      <div className="flex flex-col px-8 items-start space-y-5">
+                        {item.subsections.map((subsection, idx) => (
+                          <button
+                            key={subsection.ref}
+                            onClick={() => scrollToArticle(subsection.ref, idx)}
+                            className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                                             ${activeButton === idx ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}`}
+                          >
+                            {subsection.title}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
+          </section>
     </div>
   );
 }
