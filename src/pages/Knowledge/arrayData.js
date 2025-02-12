@@ -92,6 +92,10 @@ export const arrayData = [
         name: "Cotización de Venta",
         url: "/ayuda/cotizacion",
       },
+      {
+        name: "Seguimientos de Servicios",
+        url: "/ayuda/seguimiento",
+      },
     ],
   },
 ];

@@ -275,6 +275,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/seguimiento",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Sales/FollowServices"
+          );
+          return {
+            Component,
+          };
+        },
+      },
      
     ]
 
