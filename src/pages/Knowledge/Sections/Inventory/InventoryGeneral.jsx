@@ -19,6 +19,7 @@ function InventoryGeneral() {
         { title: "Sección General", ref: useRef(null) },
         { title: "Sección Inventario", ref: useRef(null) },
         { title: "Sección Inventario por almacén", ref: useRef(null) },
+        { title: "Sección Compras", ref: useRef(null) },
       ],
     },
   ];
@@ -396,6 +397,19 @@ function InventoryGeneral() {
   </li>
 </ol>
 
+          </article>
+        </div>
+         {/*ARTICLE 8 */}
+         <div className="mt-6">
+          <span  ref={sections[1].subsections[4].ref} className="font-roboto font-semibold text-[14px] text-grisHeading">
+          Sección Compras:
+
+          </span>
+          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+          <p>Selecciona el proveedor predeterminado que se desea tener para automatizar y reducir el rango de error en la creación de compras.</p><br />
+
+          <p>Un vez que la se haya colocado la información deseada, es necesario presionar el botón “Guardar”.
+          </p><br />
           </article>
         </div>
       </div>
