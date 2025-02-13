@@ -25,7 +25,7 @@ function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderHelp />
-      <div className="px-7 py-2 flex justify-start items-center">
+      <div className="md:hidden px-7 py-2 flex justify-start items-center">
         <span className="font-roboto text-[14px] text-grisHeading">{module}</span><IonIcon icon={chevronForward} className="text-center text-grisHeading"/>
         <span className="font-roboto text-[14px] text-[#008EF9]">{subModule}</span>
       </div>
