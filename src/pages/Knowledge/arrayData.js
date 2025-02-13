@@ -122,6 +122,10 @@ export const arrayData = [
         name: "Almacenes General",
         url: "/ayuda/almacenes",
       },
+      {
+        name: "Movimientos de mercancias",
+        url: "/ayuda/movimientos",
+      },
     ],
   },
 ];

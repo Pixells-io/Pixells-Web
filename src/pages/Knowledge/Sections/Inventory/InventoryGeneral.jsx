@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
 function InventoryGeneral() {
   const section = [
     {
-      id: 1,
+      index: 1,
       title: "Articulos General",
       subsections: [
         { title: "Crear un articulo", ref: "article1" },
@@ -13,7 +13,7 @@ function InventoryGeneral() {
       ],
     },
     {
-      id: 2,
+      index: 2,
       title: "Secciones del Formulario",
       subsections: [
         { title: "Sección Principal", ref: "article3" },

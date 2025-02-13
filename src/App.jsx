@@ -330,6 +330,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/movimientos",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/Movements"
+          );
+          return {
+            Component,
+          };
+        },
+      },
      
     ]
 

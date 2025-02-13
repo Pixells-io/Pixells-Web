@@ -3,7 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 function WarehouseGeneral() {
   const section = [
     {
-      id: 1,
+      index: 1,
       title: "Almacenes General",
       subsections: [{ title: "Principal", ref: "article1" }],
     },

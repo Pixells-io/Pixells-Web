@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
 function ServicesGeneral() {
   const section = [
     {
-      id: 1,
+      index: 1,
       title: "Servicios General",
       subsections: [
         { title: "Crear un servicio", ref: "article1" },
@@ -13,7 +13,7 @@ function ServicesGeneral() {
       ],
     },
     {
-      id: 2,
+      index: 2,
       title: "Secciones del Formulario",
       subsections: [
         { title: "Sección Principal", ref: "article2" },
