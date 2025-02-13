@@ -9,12 +9,27 @@ const section = [
   { title: "Compartir", ref: "article4", index: 4 },
   { title: "Agregar una Tarea o un Proyecto", ref: "article5", index: 5 },
   { title: "Compartir", ref: "article6", index: 6 },
-  { title: "Visualizar las repeticiones de una Tarea", ref: "article7", index: 7 },
+  {
+    title: "Visualizar las repeticiones de una Tarea",
+    ref: "article7",
+    index: 7,
+  },
   { title: "Configuración de un Proyecto", ref: "article8", index: 8 },
-  { title: "Completar, editar y eliminar una actividad", ref: "article9", index: 9 },
-  { title: "Vistas rápidas de Todas la Actividades", ref: "article10", index: 10 },
-  { title: "Vistas rápidas de Todas los Proyectos", ref: "article11", index: 11 },
-
+  {
+    title: "Completar, editar y eliminar una actividad",
+    ref: "article9",
+    index: 9,
+  },
+  {
+    title: "Vistas rápidas de Todas la Actividades",
+    ref: "article10",
+    index: 10,
+  },
+  {
+    title: "Vistas rápidas de Todas los Proyectos",
+    ref: "article11",
+    index: 11,
+  },
 ];
 function WorkSpace() {
   const [activeButton, setActiveButton] = useState(1);
@@ -43,10 +58,10 @@ function WorkSpace() {
   };
 
   return (
-    <div className="w-full h-full max-h-[90vh] grid grid-cols-12 gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-8 md:grid-cols-12 md:gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
       <ScrollArea
         ref={scrollAreaRef}
-        className="w-full h-full col-span-8 px-6 py-2"
+        className="w-full h-full col-span-8 px-2 md:px-6 py-2"
       >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
@@ -691,7 +706,7 @@ function WorkSpace() {
           </article>
         </div>
       </ScrollArea>
-      <section className="col-span-4 w-full max-h-[90vh] px-8 py-6">
+      <section className="hidden md:block col-span-4 w-full max-h-[90vh] px-8 py-6">
         <ScrollArea className="h-full">
           <div className="flex flex-col space-y-4">
             {section.map((section) => {

@@ -52,12 +52,12 @@ function MenuDesktop() {
         >
           MÓDULOS
         </Link>
-        <Link
+        {/* <Link
           to={"/soporte"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
         >
           SOPORTE
-        </Link>
+        </Link> */}
         <Link
           to={"/contacto"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
