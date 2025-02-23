@@ -173,6 +173,7 @@ const CheckoutForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
+  const [cuponData, setCuponData] = useState(null);
 
   //Cupons
   const [cupon, setCupon] = useState("");
@@ -190,7 +191,7 @@ const CheckoutForm = () => {
   const [useCard, setUseCard] = useState(true);
 
   //Step State
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   //Name of the card
   const [cardName, setCardName] = useState("");
@@ -336,11 +337,14 @@ const CheckoutForm = () => {
       );
 
       const info = await response.json();
+
       if (info.data == null) {
         setCuponError(true);
       } else {
         setCuponError(false);
         const cuponInfo = info.data;
+
+        setCuponData(cuponInfo);
 
         switch (cuponInfo.type) {
           case "1":
@@ -359,10 +363,21 @@ const CheckoutForm = () => {
           case "3":
             //Temporal Free
             setAmmount(0);
-            setUseCard(true);
+            setUseCard(false);
             break;
         }
       }
+    }
+  }
+
+  async function setFreeMonth(plan) {
+    setCupon("PRUEBAGRATIS");
+
+    if (cupon.length > 0) {
+      await setDiscountCheckout();
+
+      setSelectedPlan(plan);
+      setStep(3);
     }
   }
 
@@ -637,13 +652,20 @@ const CheckoutForm = () => {
                     <span className="font-roboto text-sm text-[#ABABAB]">
                       $3,000/mensual MXN
                     </span>
-                    <div className="w-full py-8 text-center">
+                    <div className="flex w-full gap-8 py-8 text-center">
                       <button
                         type="button"
                         onClick={() => selectPlanFunction(1)}
                         className="w-3/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#43b9c0]"
                       >
                         Escoger Plan
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setFreeMonth(1)}
+                        className="w-3/5 rounded-3xl border border-black bg-white px-4 py-3 font-roboto text-base tracking-wider text-black hover:bg-black hover:text-white"
+                      >
+                        Probar Gratis
                       </button>
                     </div>
                     <div className="space-y-2 py-2">
@@ -911,49 +933,52 @@ const CheckoutForm = () => {
                   </span>
                 </div>
               </div>
-
-              <div>
-                <span
-                  className="font-poppins text-xs text-[#ABABAB]"
-                  onClick={() => setUseCupon(!useCupon)}
-                >
-                  ¿Tienes un codigo de descuento?
-                </span>
-                {useCupon == true ? (
-                  <div>
-                    {cuponError == true ? (
-                      <h2 className="mt-2 font-roboto text-base text-red-400">
-                        El cupon esta vencio o no existe
-                      </h2>
-                    ) : (
-                      false
-                    )}
-                    <div className="flex">
-                      <input
-                        type="text"
-                        name="cupon"
-                        placeholder="Ingresa el cupon"
-                        value={cupon}
-                        onChange={(e) => setCupon(e.target.value)}
-                        className={
-                          cuponError == true
-                            ? "w-full border-b border-red-500 py-2 font-roboto text-base text-red-500 focus:outline-none"
-                            : "w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
-                        }
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setDiscountCheckout()}
-                        className="rounded-xl bg-primario px-4 font-poppins text-sm text-white hover:bg-primarioBotones"
-                      >
-                        Aplicar
-                      </button>
+              {useCard == true ? (
+                <div>
+                  <span
+                    className="font-poppins text-xs text-[#ABABAB]"
+                    onClick={() => setUseCupon(!useCupon)}
+                  >
+                    ¿Tienes un codigo de descuento?
+                  </span>
+                  {useCupon == true ? (
+                    <div>
+                      {cuponError == true ? (
+                        <h2 className="mt-2 font-roboto text-base text-red-400">
+                          El cupon esta vencio o no existe
+                        </h2>
+                      ) : (
+                        false
+                      )}
+                      <div className="flex">
+                        <input
+                          type="text"
+                          name="cupon"
+                          placeholder="Ingresa el cupon"
+                          value={cupon}
+                          onChange={(e) => setCupon(e.target.value)}
+                          className={
+                            cuponError == true
+                              ? "w-full border-b border-red-500 py-2 font-roboto text-base text-red-500 focus:outline-none"
+                              : "w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
+                          }
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setDiscountCheckout()}
+                          className="rounded-xl bg-primario px-4 font-poppins text-sm text-white hover:bg-primarioBotones"
+                        >
+                          Aplicar
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  false
-                )}
-              </div>
+                  ) : (
+                    false
+                  )}
+                </div>
+              ) : (
+                false
+              )}
               <div>
                 <span
                   className="font-poppins text-xs text-[#ABABAB]"
@@ -998,8 +1023,10 @@ const CheckoutForm = () => {
                 </>
               ) : (
                 <h2 className="rounded-xl bg-white px-12 py-3 font-poppins text-xs text-primario">
-                  Tienes acceso a una cuenta gratuita, por lo cual no necesitas
-                  ingresar un metodo de pago.
+                  {cuponData?.type == 3
+                    ? `Tienes acceso a una prueba gratuita de ${cuponData?.discount} mes.`
+                    : `Tienes acceso a una cuenta gratuita, por lo cual no necesitas
+                  ingresar un metodo de pago.`}
                 </h2>
               )}
               <div className="mt-24 text-center">
