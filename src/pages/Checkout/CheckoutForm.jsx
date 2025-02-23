@@ -1024,7 +1024,7 @@ const CheckoutForm = () => {
               ) : (
                 <h2 className="rounded-xl bg-white px-12 py-3 font-poppins text-xs text-primario">
                   {cuponData?.type == 3
-                    ? `Tienes acceso a una prueba gratuita de ${cuponData?.discount} mes.`
+                    ? `Tienes acceso a una prueba gratuita de ${cuponData?.discount} ${cuponData?.discount > 1 ? "Meses." : "Mes"}.`
                     : `Tienes acceso a una cuenta gratuita, por lo cual no necesitas
                   ingresar un metodo de pago.`}
                 </h2>
