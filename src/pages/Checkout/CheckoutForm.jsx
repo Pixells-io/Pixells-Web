@@ -280,7 +280,7 @@ const CheckoutForm = () => {
       return;
     }
 
-    setStep(2);
+    setStep(3);
   }
 
   function changeStateInputs(value, type) {
@@ -318,7 +318,7 @@ const CheckoutForm = () => {
 
   function selectPlanFunction(plan) {
     setSelectedPlan(plan);
-    setStep(3);
+    setStep(2);
   }
 
   async function setDiscountCheckout() {
@@ -377,7 +377,7 @@ const CheckoutForm = () => {
       await setDiscountCheckout();
 
       setSelectedPlan(plan);
-      setStep(3);
+      setStep(2);
     }
   }
 
@@ -389,7 +389,7 @@ const CheckoutForm = () => {
       {/* STEP 1 */}
       <div
         className="items-center justify-center sm:w-1/4"
-        hidden={step != 1 ? true : false}
+        hidden={step != 2 ? true : false}
       >
         <div>
           <div className="flex items-center justify-center py-4 text-center">
@@ -545,7 +545,7 @@ const CheckoutForm = () => {
         </div>
       </div>
       {/* STEP 2 */}
-      <div className="w-full" hidden={step != 2 ? true : false}>
+      <div className="w-full" hidden={step != 1 ? true : false}>
         <div className="mt-8 flex justify-center text-center align-middle">
           <div className="sm:w-2/7 items-center justify-center">
             <span className="font-poppins text-3xl font-semibold tracking-wide">
@@ -650,28 +650,28 @@ const CheckoutForm = () => {
                       </span>
                     </div>
                     <span className="font-roboto text-sm text-[#ABABAB]">
-                      $3,000/mensual MXN
+                      $3,000/mensual MXN + IVA
                     </span>
-                    <div className="flex w-full gap-8 py-8 text-center">
-                      <button
-                        type="button"
-                        onClick={() => selectPlanFunction(1)}
-                        className="w-3/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#43b9c0]"
-                      >
-                        Escoger Plan
-                      </button>
+                    <div className="w-full gap-8 py-8 text-center">
                       <button
                         type="button"
                         onClick={() => setFreeMonth(1)}
-                        className="w-3/5 rounded-3xl border border-black bg-white px-4 py-3 font-roboto text-base tracking-wider text-black hover:bg-black hover:text-white"
+                        className="w-4/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#43b9c0]"
                       >
-                        Probar Gratis
+                        Probar Gratis 15 dias
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => selectPlanFunction(1)}
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#00A9B3] hover:text-[##43b9c0]"
+                      >
+                        Contratar ahora
                       </button>
                     </div>
                     <div className="space-y-2 py-2">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Acceso a todos los módulos del sistema</h2>
+                        <h2>Acceso a todos 15 módulos del sistema</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -706,12 +706,12 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Soporte personal limitado</h2>
+                        <h2>Soporte con ejecutivo limitado</h2>
                       </div>
                     </div>
                     <div className="pt-6">
                       <span className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                        * Cancelación en cualquier momento
+                        * Cancela en cualquier momento
                       </span>
                     </div>
                   </div>
