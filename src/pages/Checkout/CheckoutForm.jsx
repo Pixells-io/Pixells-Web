@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import InputForm from "@/components/Inputs/InputForm";
 import { Link, useNavigate } from "react-router-dom";
@@ -417,6 +417,19 @@ const CheckoutForm = () => {
     setSelectedPlan(plan);
     setStep(2);
   }
+
+  //Select Coupon Function
+  const searchParams = new URLSearchParams(window.location.search);
+
+  const codeFromURL = searchParams.get("code");
+
+  useEffect(() => {
+    if (codeFromURL != null) {
+      setUseClientCode(true);
+      setClientCode(codeFromURL);
+    } else {
+    }
+  }, []);
 
   return (
     <form
