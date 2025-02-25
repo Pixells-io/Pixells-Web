@@ -4,7 +4,12 @@ import InputForm from "@/components/Inputs/InputForm";
 import { Link, useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IonIcon } from "@ionic/react";
-import { checkmarkOutline, people, sparklesSharp } from "ionicons/icons";
+import {
+  arrowBackOutline,
+  checkmarkOutline,
+  people,
+  sparklesSharp,
+} from "ionicons/icons";
 import Cookies from "js-cookie";
 import { use } from "react";
 
@@ -371,14 +376,46 @@ const CheckoutForm = () => {
   }
 
   async function setFreeMonth(plan) {
-    setCupon("PRUEBAGRATIS");
+    const promoCode = "PRUEBAGRATIS";
+    setCupon(promoCode);
 
-    if (cupon.length > 0) {
-      await setDiscountCheckout();
+    const response = await fetch(
+      `https://brainbackend.yacamba.com/api/discount/consult-discount`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          code: promoCode,
+        }),
+      },
+    );
 
-      setSelectedPlan(plan);
-      setStep(2);
+    const info = await response.json();
+
+    if (info.data) {
+      setCuponError(false);
+      setCuponData(info.data);
+
+      switch (info.data.type) {
+        case "1":
+          setAmmount(3000 - (3000 * info.data.discount) / 100);
+          setUseCard(true);
+          break;
+        case "2":
+          setUseCard(false);
+          setAmmount(0);
+          break;
+        case "3":
+          setAmmount(0);
+          setUseCard(false);
+          break;
+      }
     }
+
+    setSelectedPlan(plan);
+    setStep(2);
   }
 
   return (
@@ -516,7 +553,14 @@ const CheckoutForm = () => {
               para el uso de Yacamba.
             </span>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setStep(1)}
+              className="rounded-xl border border-primario px-4 py-3 font-poppins text-sm text-primarioBotones hover:bg-primarioBotones hover:text-white"
+            >
+              <IonIcon icon={arrowBackOutline} className="text-lg" />
+            </button>
             <button
               disabled={buttonState}
               type="button"
@@ -646,7 +690,7 @@ const CheckoutForm = () => {
                         className="text-xl text-[#00A9B3]"
                       ></IonIcon>
                       <span className="font-poppins text-xl font-medium text-black">
-                        Plan Mensual
+                        Plan Profesional
                       </span>
                     </div>
                     <span className="font-roboto text-sm text-[#ABABAB]">
@@ -913,7 +957,7 @@ const CheckoutForm = () => {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h2 className="font-poppins text-lg font-semibold text-grisHeading">
-                    Plan Mensual
+                    Plan Profesional
                   </h2>
                   <span className="font-roboto text-xs text-[#ABABAB]">
                     Cancela cuando quieras
@@ -1029,14 +1073,25 @@ const CheckoutForm = () => {
                   ingresar un metodo de pago.`}
                 </h2>
               )}
-              <div className="mt-24 text-center">
+              <div className="mt-24 flex justify-center gap-4">
                 <button
-                  //disabled={loading || !stripe}
+                  type="button"
+                  onClick={() => setStep(2)}
+                  className="rounded-xl border border-primario px-4 py-3 font-poppins text-sm text-primarioBotones hover:bg-primarioBotones hover:text-white"
+                >
+                  <IonIcon icon={arrowBackOutline} className="text-lg" />
+                </button>
+                <button
+                  disabled={loading || !stripe}
                   type="button"
                   onClick={(e) => handleSubmit(e)}
                   className="rounded-xl bg-primario px-12 py-3 font-poppins text-sm text-white hover:bg-primarioBotones"
                 >
-                  {loading ? "Cargando..." : "Pagar"}
+                  {useCard == false
+                    ? "Continuar"
+                    : loading
+                      ? "Cargando..."
+                      : "Pagar"}
                 </button>
               </div>
               <div className="pt-4 text-center">
