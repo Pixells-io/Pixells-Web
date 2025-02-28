@@ -110,7 +110,6 @@ function MainModules() {
               <AccordionItem 
                 key={module.id} 
                 value={itemValue}
-                // Add data attributes for SEO and indexing
                 data-name={module.name}
                 data-description={module.shortDescription}
               >
