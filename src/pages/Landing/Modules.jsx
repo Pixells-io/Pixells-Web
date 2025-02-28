@@ -122,17 +122,17 @@ function MainModules() {
                     }`}
                   />
                   <div className="flex flex-col sm:flex-row w-full sm:items-center gap-1 sm:gap-3">
-                    <span className="font-poppins font-semibold text-lg sm:text-xl md:text-2xl text-grisHeading">
+                    <span className="font-poppins font-semibold text-[20px] text-grisHeading">
                       {module.name}
                     </span>
-                    <span className="font-poppins font-light text-base sm:text-lg md:text-xl lg:text-2xl text-grisHeading">
+                    <span className="font-poppins font-light text-[20px] text-grisHeading">
                       {module.shortDescription}
                     </span>
                   </div>
                 </AccordionTrigger>
                 
                 <AccordionContent className="flex pt-4 md:pt-6 flex-col items-start pb-4 md:pb-6 border-b">
-                  <span className="font-poppins font-semibold text-lg md:text-2xl text-grisHeading">
+                  <span className="font-poppins font-semibold text-[18px] text-grisHeading">
                     {module.name}
                   </span>
                   
@@ -140,7 +140,7 @@ function MainModules() {
                     <div className="h-40 sm:h-48 md:h-[274px] w-full md:w-[513px] md:col-span-4 bg-[#D9D9D9] rounded-[10px]" />
                     
                     <div className="md:col-span-8">
-                      <p className="font-poppins font-light text-grisHeading text-base md:text-lg">
+                      <p className="font-poppins font-light text-grisHeading text-[18px] md:text-lg">
                         {module.fullDescription.split('\n\n').map((paragraph, i) => (
                           <React.Fragment key={i}>
                             {paragraph}
