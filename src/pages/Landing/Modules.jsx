@@ -89,14 +89,15 @@ function MainModules() {
   ];
 
   return (
-    <div className="w-full h-full px-[100px] pt-[50px]">
-      <h2 className="flex justify-start items-start font-poppins font-bold text-[40px] text-grisHeading">
+    <div className="w-full h-full px-4 md:px-8 lg:px-16 xl:px-24 pt-6 md:pt-12">
+      <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-grisHeading">
         Módulos para potenciar tu empresa
       </h2>
-      <div className="flex justify-start items-start pt-10">
-        <Accordion 
-          type="single" 
-          collapsible 
+      
+      <div className="flex justify-start items-start pt-6 md:pt-10">
+        <Accordion
+          type="single"
+          collapsible
           className="w-full"
           value={openItem}
           onValueChange={handleAccordionChange}
@@ -106,41 +107,54 @@ function MainModules() {
             const isOpen = openItem === itemValue;
             
             return (
-              <AccordionItem key={module.id} value={itemValue}>
-                <AccordionTrigger className="flex justify-start border-b items-center gap-3">
-                  <div 
+              <AccordionItem 
+                key={module.id} 
+                value={itemValue}
+                // Add data attributes for SEO and indexing
+                data-name={module.name}
+                data-description={module.shortDescription}
+              >
+                <AccordionTrigger className="flex flex-col sm:flex-row justify-start border-b items-center gap-2 sm:gap-3">
+                  <div
                     className={`bg-[#D9D9D9] rounded-[10px] transition-all duration-300 ${
-                      isOpen 
-                        ? "h-0 w-0 opacity-0" 
-                        : "h-[68px] w-[120px] opacity-100"
-                    }`} 
+                      isOpen
+                        ? "h-0 w-0 opacity-0"
+                        : "h-12 w-20 sm:h-16 md:h-[68px] sm:w-24 md:w-[120px] opacity-100"
+                    }`}
                   />
-                  <span className="font-poppins font-semibold text-[22px] text-grisHeading">
-                    {module.name}
-                  </span>
-                  <span className="font-poppins font-light text-[22px] text-grisHeading">
-                    {module.shortDescription}
-                  </span>
+                  <div className="flex flex-col sm:flex-row w-full sm:items-center gap-1 sm:gap-3">
+                    <span className="font-poppins font-semibold text-lg sm:text-xl md:text-2xl text-grisHeading">
+                      {module.name}
+                    </span>
+                    <span className="font-poppins font-light text-base sm:text-lg md:text-xl lg:text-2xl text-grisHeading">
+                      {module.shortDescription}
+                    </span>
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent className="flex pt-6 flex-col items-start pb-6 border-b">
-                  <span className="font-poppins font-semibold text-[22px] text-grisHeading">
+                
+                <AccordionContent className="flex pt-4 md:pt-6 flex-col items-start pb-4 md:pb-6 border-b">
+                  <span className="font-poppins font-semibold text-lg md:text-2xl text-grisHeading">
                     {module.name}
                   </span>
-                  <div className="grid grid-cols-12 pt-6 gap-2">
-                    <div className="h-[274px] w-[513px] col-span-4 bg-[#D9D9D9] rounded-[10px]" />
-                    <p className="font-poppins font-light col-span-8 text-grisHeading text-[18px]">
-                      {module.fullDescription.split('\n\n').map((paragraph, i) => (
-                        <React.Fragment key={i}>
-                          {paragraph}
-                          {i < module.fullDescription.split('\n\n').length - 1 && (
-                            <>
-                              <br />
-                              <br />
-                            </>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-12 pt-4 md:pt-6 gap-4 md:gap-2">
+                    <div className="h-40 sm:h-48 md:h-[274px] w-full md:w-[513px] md:col-span-4 bg-[#D9D9D9] rounded-[10px]" />
+                    
+                    <div className="md:col-span-8">
+                      <p className="font-poppins font-light text-grisHeading text-base md:text-lg">
+                        {module.fullDescription.split('\n\n').map((paragraph, i) => (
+                          <React.Fragment key={i}>
+                            {paragraph}
+                            {i < module.fullDescription.split('\n\n').length - 1 && (
+                              <>
+                                <br />
+                                <br />
+                              </>
+                            )}
+                          </React.Fragment>
+                        ))}
+                      </p>
+                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
