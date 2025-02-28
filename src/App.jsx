@@ -20,6 +20,17 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "/modulos",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Landing/Modules"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
         path: "/contacto",
         lazy: async () => {
           const { default: Component } = await import(

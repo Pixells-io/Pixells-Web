@@ -47,7 +47,7 @@ function MenuDesktop() {
           INICIO
         </Link>
         <Link
-          to={"/"}
+          to={"/modulos"}
           className="font-poppins text-sm font-medium text-grisHeading hover:text-primarioBotones"
         >
           MÓDULOS
