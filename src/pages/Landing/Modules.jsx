@@ -90,7 +90,7 @@ function MainModules() {
 
   return (
     <div className="w-full h-full px-4 md:px-8 lg:px-16 xl:px-24 pt-6 md:pt-12">
-      <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-grisHeading">
+      <h2 className="font-poppins font-bold text-[28px] text-grisHeading">
         Módulos para potenciar tu empresa
       </h2>
       
@@ -122,10 +122,10 @@ function MainModules() {
                     }`}
                   />
                   <div className="flex flex-col sm:flex-row w-full sm:items-center gap-1 sm:gap-3">
-                    <span className="font-poppins font-semibold text-[20px] text-grisHeading">
+                    <span className="font-poppins font-semibold text-[18px] text-grisHeading">
                       {module.name}
                     </span>
-                    <span className="font-poppins font-light text-[20px] text-grisHeading">
+                    <span className="font-poppins font-light text-[18px] text-grisHeading">
                       {module.shortDescription}
                     </span>
                   </div>
