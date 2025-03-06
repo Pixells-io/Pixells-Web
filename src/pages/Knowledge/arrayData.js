@@ -106,8 +106,16 @@ export const arrayData = [
         url: "/ayuda/proveedor",
       },
       {
-        name: "Compras general",
+        name: "Compras General",
         url:"/ayuda/compras-general",
+      },
+      {
+        name: "Pedidos de Compra",
+        url:"/ayuda/pedidos-de-compra",
+      },
+      {
+        name: "Cotización de Compra",
+        url:"/ayuda/cotizacion-de-compra",
       },
     ],
   },

@@ -320,6 +320,28 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "/ayuda/pedidos-de-compra",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Shopping/PrepurchasedOrder"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/cotizacion-de-compra",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Shopping/QuoteGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
         path: "/ayuda/inventario",
         lazy: async () => {
           const { default: Component } = await import(

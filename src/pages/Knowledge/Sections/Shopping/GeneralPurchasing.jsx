@@ -16,7 +16,7 @@ function GeneralPurchansing() {
   ];
 
   const [showMenu, setShowMenu] = useState(1);
-  const [activeButton, setActiveButton] = useState(1);
+  const [activeButton, setActiveButton] = useState(0);
   const scrollAreaRef = useRef(null);
 
   const scrollToArticle = (articleId, buttonIndex) => {
@@ -51,7 +51,7 @@ function GeneralPurchansing() {
         </span>
         <div id="article1" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
-            COMPRAS GENERALES
+            Compras Generales
           </span>
           <article className="mt-4 font-roboto font-light text-[14px] text-grisHeading">
             <p>
