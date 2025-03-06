@@ -12,13 +12,13 @@ function QuoteGeneral() {
     },
     {
       index: 2,
-      title: "Convertir en Pedido",
+      title: "Función Convertir en Pedido",
       ref: "article2",
       subsections: [],
     },
     {
         index: 3,
-        title: "Convertir en Compra",
+        title: "Función Convertir en Compra",
         ref: "article3",
         subsections: [],
       },
@@ -90,7 +90,7 @@ function QuoteGeneral() {
         </div>
         <div id="article2" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
-          Funcion Convertir en Pedido
+          Función Convertir en Pedido
           </span>
           <article className="mt-4 font-roboto font-light text-[14px] text-grisHeading">
            <p>
@@ -107,7 +107,7 @@ function QuoteGeneral() {
         </div>
         <div id="article3" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
-            Funcion Convertir en compra
+            Función Convertir en compra
           </span>
           <article className="mt-4 font-roboto font-light text-[14px] text-grisHeading">
             <p>

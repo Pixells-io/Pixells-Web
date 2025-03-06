@@ -81,7 +81,7 @@ function PrepurchasedOrder() {
 
         <div id="article2" className="mt-6">
           <span className="font-poppins font-semibold text-[18px] text-grisHeading">
-            Funcion Convertir en compra
+            Función Convertir en compra
           </span>
           <article className="mt-4 font-roboto font-light text-[14px] text-grisHeading">
             <p>
