@@ -309,6 +309,17 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "/ayuda/compras-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Shopping/GeneralPurchasing"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
         path: "/ayuda/inventario",
         lazy: async () => {
           const { default: Component } = await import(

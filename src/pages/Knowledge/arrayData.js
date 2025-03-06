@@ -102,8 +102,12 @@ export const arrayData = [
     name: "Compras",
     sub_modules: [
       {
-        name: "Proveedores",
+        name: "Proveedores General",
         url: "/ayuda/proveedor",
+      },
+      {
+        name: "Compras general",
+        url:"/ayuda/compras-general",
       },
     ],
   },
