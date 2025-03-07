@@ -396,6 +396,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/informes-de-trazabilidad",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/TraceabilityReports"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }

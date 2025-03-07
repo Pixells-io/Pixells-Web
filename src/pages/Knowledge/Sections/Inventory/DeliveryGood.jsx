@@ -1,7 +1,7 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { IonIcon } from "@ionic/react";
 import { ellipsisVertical } from "ionicons/icons";
-import React, { useRef, useState } from "react"
+import React, { useRef, useState } from "react";
 
 function DeliveryGood() {
   const section = [
@@ -13,7 +13,6 @@ function DeliveryGood() {
         { title: "Confirmar una entrega de mercancía", ref: "article1.1" },
       ],
     },
-    
   ];
   const [showMenu, setShowMenu] = useState(1);
   const [activeButton, setActiveButton] = useState(0);
@@ -88,17 +87,24 @@ function DeliveryGood() {
         </div>
 
         <div id="article1.1" className="mt-6">
-          
           <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
-           <p className="semibold">
-           Confirmar una entrega de mercancía
-
-           </p><br />
-           <p>
-            
-En la parte de Pendientes en la tabla principal, en el movimiento deseado, da click en el botón <IonIcon icon={ellipsisVertical} className="text-center px-2"/>, lo siguiente será "Realizar entrega".
-
-           </p>
+            <p className="font-semibold">Confirmar una entrega de mercancía</p>
+            <br />
+            <p>
+              En la parte de Pendientes en la tabla principal, en el movimiento
+              deseado, da click en el botón{" "}
+              <IonIcon icon={ellipsisVertical} className="text-center px-2" />,
+              lo siguiente será "Realizar entrega".
+            </p>
+            <br />
+            <p>
+              En caso de que alguno de los artículos tenga un método de
+              valoración de “Lote/serie” el sistema pedirá que gestiones el lote
+              a entregar, dando click en gestionar y eligiendo el lote
+              correspondiente.
+            </p><br />
+            <p>Para finalizar, presiona el botón “Guardar” y la entrega será confirmada.
+            </p><br />
           </article>
         </div>
       </ScrollArea>

@@ -141,6 +141,10 @@ export const arrayData = [
       {
         name: "Entrega de mercancías",
         url:"/ayuda/entrega-de-mercancias"
+      },
+      {
+        name: "Informes de Trazabilidad",
+        url:"/ayuda/informes-de-trazabilidad"
       }
     ],
   },
