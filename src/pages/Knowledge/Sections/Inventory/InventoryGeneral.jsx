@@ -353,10 +353,13 @@ function InventoryGeneral() {
                 será contemplado a su salida del almacén.
               </li>
               <br />
-              <li className="before:content-['3.'] before:mr-2">PEPS.</li>
+              <li className="before:content-['3.'] before:mr-2">
+PEPS: significa primeras entradas, primeras salidas. Es decir, en el orden que voy ingresando materias primas e insumo al almacén, también voy sacándolas de la misma forma. Si ingresamos primero el lote 1, luego el lote 2 y después el lote 3, las salidas tomarán el mismo orden para salir. Primero tendrá que terminarse el lote 1, después lote 2 y por último el lote 3. El costo se irá recalculando con lo que va quedando disponible.
+</li>
               <br />
               <li className="before:content-['4.'] before:mr-2">
-                Coste Estándar.
+              UEPS: significa entradas entradas, primeras salidas. Es decir, lo primero que voy a sacar de mi almacén es lo último que he metido . Si ingresamos primero el lote 1, luego el lote 2 y después el lote 3, las salidas serán de la siguiente forma:  primero tendrá que terminarse el lote 3, después lote 2 y por último el lote 2. El costo se irá recalculando con lo que va quedando disponible.
+
               </li>
               <br />
             </ol>

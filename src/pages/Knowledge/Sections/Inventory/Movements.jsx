@@ -41,11 +41,11 @@ function MovementsGeneral() {
   };
 
   return (
-     <div className="w-full h-full max-h-[90vh] grid grid-cols-8 md:grid-cols-12 md:gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
-         <ScrollArea
-           ref={scrollAreaRef}
-           className="w-full h-full col-span-8 px-2 md:px-6 py-2"
-         >
+    <div className="w-full h-full max-h-[90vh] grid grid-cols-8 md:grid-cols-12 md:gap-12 rounded-[10px] bg-white border border-[#E8E8E8] px-8 py-4">
+      <ScrollArea
+        ref={scrollAreaRef}
+        className="w-full h-full col-span-8 px-2 md:px-6 py-2"
+      >
         {/*Title */}
         <span className="font-poppins font-semibold text-[12px] text-[#008EF9]">
           INVENTARIOS
@@ -75,6 +75,13 @@ function MovementsGeneral() {
               orden de producción.
             </p>
             <br />
+
+           <p> La tabla de entradas se divide en dos partes:</p><br />
+
+<p>Pendientes: son las entradas pendientes, donde se puede visualizar todos los ingresos de mercancía que faltan por realizar. 
+</p><br />
+<p>Entradas: son las entradas realizadas y se puede consultar el movimiento dando click al icono “ver”.
+</p><br />
             <p>
               Para agregar una nueva entrada de mercancías provenientes de una
               compra, presiona el botón Nuevo{" "}
