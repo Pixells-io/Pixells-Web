@@ -135,9 +135,13 @@ export const arrayData = [
         url: "/ayuda/almacenes",
       },
       {
-        name: "Movimientos de mercancias",
+        name: "Movimientos de mercancías",
         url: "/ayuda/movimientos",
       },
+      {
+        name: "Entrega de mercancías",
+        url:"/ayuda/entrega-de-mercancias"
+      }
     ],
   },
 ];

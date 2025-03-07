@@ -385,7 +385,17 @@ const router = createBrowserRouter([
           };
         },
       },
-     
+      {
+        path: "/ayuda/entrega-de-mercancias",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/DeliveryGood"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
