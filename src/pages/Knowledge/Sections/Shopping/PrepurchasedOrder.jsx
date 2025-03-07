@@ -58,7 +58,7 @@ function PrepurchasedOrder() {
           </span>
           <article className="mt-4 font-roboto font-light text-[14px] text-grisHeading">
             <p>
-              Los pedidos de venta son una forma de generar una pre-compra
+              Los pedidos de compra son una forma de generar una pre-compra
               dentro del sistema sin afectar los inventarios ni las cuentas de
               pago de un proveedor.
             </p>

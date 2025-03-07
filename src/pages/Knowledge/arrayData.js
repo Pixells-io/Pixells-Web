@@ -145,6 +145,10 @@ export const arrayData = [
       {
         name: "Informes de Trazabilidad",
         url:"/ayuda/informes-de-trazabilidad"
+      },
+      {
+        name: "Lista de Precios",
+        url:"/ayuda/lista-de-precios"
       }
     ],
   },

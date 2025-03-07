@@ -1,6 +1,4 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { IonIcon } from "@ionic/react";
-import { ellipsisVertical } from "ionicons/icons";
 import React, { useRef, useState } from "react";
 import SectionNavigation from "../../Components/SectionNavigation";
 

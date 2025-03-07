@@ -407,6 +407,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/lista-de-precios",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/PriceList"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
