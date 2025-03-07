@@ -38,7 +38,10 @@ function SectionNavigation({
             <div key={item.index} className="flex flex-col">
               {/* Botón para la sección principal */}
               <button
-                onClick={() => setShowMenu(item.index)}
+                onClick={() => {
+                  setShowMenu(item.index);
+                  scrollToArticle(item.ref, idx);
+                }}
                 className={`flex justify-start px-6 py-2 font-roboto font-normal text-[14px] 
                   ${
                     showMenu === item.index
@@ -50,35 +53,25 @@ function SectionNavigation({
               </button>
 
               {/* Sub-secciones, si existen */}
-              {showMenu === item.index && item.subsections && (
-                <div className="flex flex-col px-8 items-start space-y-5">
-                  {item.subsections.map((subsection, subIdx) => (
-                    <button
-                      key={subsection.ref}
-                      onClick={() => scrollToArticle(subsection.ref, subIdx)}
-                      className={`px-3 py-2 font-roboto font-normal text-[14px] 
-                        ${activeButton === subIdx ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}
-                      `}
-                    >
-                      {subsection.title}
-                    </button>
-                  ))}
+              {showMenu === item.index && item.subsections && item.subsections.length > 0 && (
+                <div className="flex flex-col px-8 items-start space-y-5 mt-3">
+                  {item.subsections.map((subsection, subIdx) => {
+                    // Calculate a unique index for subsections
+                    const globalSubIdx = idx * 100 + subIdx;
+                    
+                    return (
+                      <button
+                        key={subsection.ref}
+                        onClick={() => scrollToArticle(subsection.ref, globalSubIdx)}
+                        className={`px-3 py-2 font-roboto font-normal text-[14px] 
+                          ${activeButton === globalSubIdx ? "font-medium text-grisHeading" : "text-[#8F8F8F]"}
+                        `}
+                      >
+                        {subsection.title}
+                      </button>
+                    );
+                  })}
                 </div>
-              )}
-
-              {/* Botón único de la sección si no tiene subsecciones */}
-              {!item.subsections && (
-                <button
-                  onClick={() => scrollToArticle(item.ref, idx)}
-                  className={`px-3 py-2 font-roboto font-normal text-[14px] text-left
-                    ${
-                      activeButton === idx
-                        ? "border-l border-[#000000] text-grisHeading font-semibold"
-                        : "text-[#8F8F8F] hover:border-l hover:border-[#000000] hover:text-grisHeading hover:font-semibold"
-                    }`}
-                >
-                  {item.title}
-                </button>
               )}
             </div>
           ))}

@@ -418,6 +418,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/stock-de-articulos",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/Stock"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }

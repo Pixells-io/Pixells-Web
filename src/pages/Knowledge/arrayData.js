@@ -149,6 +149,10 @@ export const arrayData = [
       {
         name: "Lista de Precios",
         url:"/ayuda/lista-de-precios"
+      },
+      {
+        name:"Stock de articulos",
+        url:"/ayuda/stock-de-articulos"
       }
     ],
   },
