@@ -107,15 +107,15 @@ export const arrayData = [
       },
       {
         name: "Compras General",
-        url:"/ayuda/compras-general",
+        url: "/ayuda/compras-general",
       },
       {
         name: "Pedidos de Compra",
-        url:"/ayuda/pedidos-de-compra",
+        url: "/ayuda/pedidos-de-compra",
       },
       {
         name: "Cotización de Compra",
-        url:"/ayuda/cotizacion-de-compra",
+        url: "/ayuda/cotizacion-de-compra",
       },
     ],
   },
@@ -140,20 +140,24 @@ export const arrayData = [
       },
       {
         name: "Entrega de mercancías",
-        url:"/ayuda/entrega-de-mercancias"
+        url: "/ayuda/entrega-de-mercancias",
       },
       {
         name: "Informes de Trazabilidad",
-        url:"/ayuda/informes-de-trazabilidad"
+        url: "/ayuda/informes-de-trazabilidad",
       },
       {
         name: "Lista de Precios",
-        url:"/ayuda/lista-de-precios"
+        url: "/ayuda/lista-de-precios",
       },
       {
-        name:"Stock de articulos",
-        url:"/ayuda/stock-de-articulos"
-      }
+        name: "Stock de articulos",
+        url: "/ayuda/stock-de-articulos",
+      },
+      {
+        name: "Sucursales punto de venta",
+        url: "/ayuda/sucursales-punto-de-venta",
+      },
     ],
   },
 ];

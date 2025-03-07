@@ -429,6 +429,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/sucursales-punto-de-venta",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Inventory/BranchPOS"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
