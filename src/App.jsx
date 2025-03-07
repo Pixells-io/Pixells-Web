@@ -463,6 +463,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/cobros-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/BanksManagement/CollectionGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }

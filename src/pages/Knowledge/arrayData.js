@@ -164,7 +164,11 @@ export const arrayData = [
     name: "Gestión de Bancos",
     sub_modules: [
       { name: "Cuentas Bancarias", url: "/ayuda/cuentas-bancarias" },
-      { name: "Plan de flujo de efectivo", url: "/ayuda/plan-de-flujo-de-efectivo" }
+      {
+        name: "Plan de flujo de efectivo",
+        url: "/ayuda/plan-de-flujo-de-efectivo",
+      },
+      { name: "Cobros General", url: "/ayuda/cobros-general" },
     ],
   },
 ];

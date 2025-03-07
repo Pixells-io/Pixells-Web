@@ -1,8 +1,6 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
 import SectionNavigation from "../../Components/SectionNavigation";
-import { chevronForward, ellipsisVertical } from "ionicons/icons";
-import { IonIcon } from "@ionic/react";
 
 function PlanAccount() {
   const sections = [
