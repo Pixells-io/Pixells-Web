@@ -45,7 +45,9 @@ function PriceList() {
               los clientes en tiendas y sucursales.
             </p>
             <br />
-            <p id="article1.1" className="font-semibold">¿Cómo crear una lista de precios?</p>
+            <p id="article1.1" className="font-semibold">
+              ¿Cómo crear una lista de precios?
+            </p>
             <br />
             <p>
               Para crear una nueva lista de precios, presiona el botón “nuevo”
@@ -97,28 +99,45 @@ function PriceList() {
             </p>
             <br />
             <p>
-              En caso de que se haya elegido una lista de precios base, los
-              productos se agregarán a la lista de forma automática. Si se
-              requiere agregar más productos, presiona el botón “+” en la parte
-              inferior izquierda de la tabla. Si es una lista de precios que no
-              contiene una lista de precios base, será necesario agregar todos
-              los productos por primera vez. Para ello, toca el botón “+” en la
-              parte inferior izquierda de la tabla. Posteriormente indica los
-              siguientes valores:
+              Si es una lista de precios que no contiene una lista de precios
+              base, será necesario agregar todos los productos por primera vez.
             </p>
             <br />
             <p>
-              En caso de que se haya elegido una lista de precios base, los
-              productos se agregarán a la lista de forma automática. Si se
-              requiere agregar más productos, presiona el botón “+” en la parte
-              inferior izquierda de la tabla. Si es una lista de precios que no
-              contiene una lista de precios base, será necesario agregar todos
-              los productos por primera vez. Para ello, toca el botón “+” en la
-              parte inferior izquierda de la tabla. Posteriormente indica los
-              siguientes valores:
+              Para ello, toca el botón “+” en la parte inferior izquierda de la
+              tabla. Posteriormente indica los siguientes valores:
             </p>
             <br />
-
+            <ol className="px-8">
+              <li className="before:content-['1.'] before:mr-2">
+                Escoge el artículo deseado
+              </li><br />
+              <li className="before:content-['2.'] before:mr-2">
+                Código: indica el código del artículo
+              </li><br />
+              <li className="before:content-['3.'] before:mr-2">
+                Precio unitario: indica el precio unitario del producto
+              </li><br />
+              <li className="before:content-['4.'] before:mr-2">
+                Lista de precios base: indica si el artículo tiene una lista de
+                precios de referencia activa, se puede modificar. En caso de que
+                se agregue un producto nuevo a la lista, se puede agregar una
+                lista de precios base, siempre y cuando el producto se encuentre
+                en alguna lista.
+              </li><br />
+              <li className="before:content-['5.'] before:mr-2">
+                Índice de refactorización: El índice de refactorización con el
+                que cuenta el producto con alguna lista de precios activa.{" "}
+              </li><br />
+              <li className="before:content-['6.'] before:mr-2">
+                Indice editable: es el indice por el cuál se multiplicará el
+                precio del producto base.
+              </li><br />
+              <li className="before:content-['7.'] before:mr-2">
+                Precio de refactorización: el precio final del producto para la
+                venta.
+              </li>
+            </ol><br />
             <p>Al finalizar toca el botón “Guardar”.</p>
             <br />
 
