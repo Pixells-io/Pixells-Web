@@ -440,6 +440,29 @@ const router = createBrowserRouter([
           };
         },
       },
+
+      {
+        path: "/ayuda/cuentas-bancarias",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/BanksManagement/BankAccounts"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/plan-de-flujo-de-efectivo",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/BanksManagement/PlanAccount"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
