@@ -177,7 +177,8 @@ export const arrayData = [
     sub_modules: [
       { name: "Impuestos Configuración", url: "/ayuda/impuestos-configuracion" },
       { name: "Facturas de Compras", url: "/ayuda/factura-de-compras" },
-      {name: "Facturas de Ventas", url:"/ayuda/factura-de-ventas"}
+      {name: "Facturas de Ventas: CFDI", url:"/ayuda/factura-de-ventas"},
+      {name: "Series y Folio",url:"/ayuda/series-y-folios"}
     ],
   },
 ];

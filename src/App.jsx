@@ -518,6 +518,17 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/series-y-folios",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Accounting/Series"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
