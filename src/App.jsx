@@ -474,6 +474,28 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/pagos-general",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/BanksManagement/PaymentGeneral"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/impuestos-configuracion",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Accounting/Taxes"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }

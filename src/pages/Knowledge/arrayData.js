@@ -169,6 +169,14 @@ export const arrayData = [
         url: "/ayuda/plan-de-flujo-de-efectivo",
       },
       { name: "Cobros General", url: "/ayuda/cobros-general" },
+      {name: "Pagos General" ,url:"/ayuda/pagos-general"}
+    ],
+  },
+  {
+    name: "Contabilidad",
+    sub_modules: [
+      { name: "Impuestos Configuración", url: "/ayuda/impuestos-configuracion" },
+      
     ],
   },
 ];
