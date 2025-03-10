@@ -22,6 +22,12 @@ function SalesCFDI() {
       ref: "article3",
       subsections: [],
     },
+    {
+      index: 4,
+      title: "Series y Folios",
+      ref: "article4",
+      subsections: [],
+    },
   ];
 
   const [showMenu, setShowMenu] = useState(1);
@@ -336,6 +342,86 @@ O bien, dentro de la tabla general de la factura de proveedor, toca el botón �
 Al final del documento, tenemos la opción de previsualizar la factura, guardarla como borrador o generar el CFDI.
 
 </p>
+          </article>
+        </div>
+        <div className="mt-6">
+          <span
+            id="article4"
+            className="font-poppins font-semibold text-[18px] text-grisHeading"
+          >
+            Series y Folios
+          </span>
+          <article className="pt-5 font-roboto font-light text-[14px] text-grisHeading">
+            <p>
+              Aqui podemos configurar que nomenclatura y consecutivo queremos
+              utilizar para cada tipo de CFDI que vamos a emitir. El sistema nos
+              da la oportunidad de colocar infrmoación nueva o podemos continuar
+              con algún folio que tengamos activo y no perder la numeración.
+            </p>
+            <br />
+            <p>En la tabla principal tenemos la siguiente información:</p>
+            <br />
+            <ol className="px-8">
+              <li className="before:content-['1.'] before:mr-2">
+                La serie registrada.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">
+                El folio con su secuencia actual.
+              </li>
+              <li className="before:content-['3.'] before:mr-2">
+                Tipo de CFDI al que se asoció la serie.
+              </li>
+              <li className="before:content-['4.'] before:mr-2">
+                CFDI´s: la cantidad de folios que se han emitido en este
+                sistema.
+              </li>
+              <li className="before:content-['5.'] before:mr-2">Estatus.</li>
+              <li className="before:content-['6.'] before:mr-2">
+                Acciones para eliminar la serie.
+              </li>
+            </ol>
+
+            <br />
+            <p>
+              Para registrar un nueva serie con su folio consecutivo, presiona
+              el botón “Nuevo”. A continuación, llena la siguiente información:
+            </p>
+            <br />
+            <ol className="px-8">
+              <li className="before:content-['1.'] before:mr-2">
+                Selecciona el tipo de documento al que se asociará dicha serie.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">
+                Letra alfabética que se designará a la serie.
+              </li>
+              <li className="before:content-['3.'] before:mr-2">
+                Número de folio con el que empezará el sistema.
+              </li>
+            </ol>
+            <br />
+            <p>
+              Para registrar un nueva serie con su folio consecutivo, presiona
+              el botón “Nuevo”. A continuación, llena la siguiente información:
+            </p>
+            <br />
+            <ol className="px-8">
+              <li className="before:content-['1.'] before:mr-2">
+                Selecciona el tipo de documento al que se asociará dicha serie.
+              </li>
+              <li className="before:content-['2.'] before:mr-2">
+                Letra alfabética que se designará a la serie.
+              </li>
+              <li className="before:content-['3.'] before:mr-2">
+                Número de folio con el que empezará el sistema.
+              </li>
+            </ol>
+            <br />
+            <p>
+
+            Al finalizar toca “Guardar”.
+
+            </p><br />
+
           </article>
         </div>
       </ScrollArea>

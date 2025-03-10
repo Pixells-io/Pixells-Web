@@ -519,10 +519,10 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/ayuda/series-y-folios",
+        path: "/ayuda/divisas",
         lazy: async () => {
           const { default: Component } = await import(
-            "./pages/Knowledge/Sections/Accounting/Series"
+            "./pages/Knowledge/Sections/Accounting/Currencies"
           );
           return {
             Component,

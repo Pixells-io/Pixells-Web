@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import React, { useRef, useState } from "react";
 import SectionNavigation from "../../Components/SectionNavigation";
 
-function SalesCFDI() {
+function Series() {
   const sections = [
     {
       index: 1,
@@ -122,4 +122,4 @@ function SalesCFDI() {
   );
 }
 
-export default SalesCFDI;
+export default Series;

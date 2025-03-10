@@ -41,7 +41,7 @@ function MenuMovil({ modal, setModal }) {
         </button>
         <button
           type="button"
-          onClick={() => redirectFunction("/")}
+          onClick={() => redirectFunction("/modulos")}
           className="w-full border-b border-blancoBox py-4 text-left font-poppins text-sm text-grisHeading"
         >
           MODULOS
