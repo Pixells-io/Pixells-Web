@@ -116,7 +116,7 @@ function MainModules() {
 
   return (
     <div className="w-full h-full px-4 md:px-8 lg:px-16 xl:px-24 pt-6 md:pt-12">
-      <h2 className="font-poppins font-bold text-[28px] text-grisHeading">
+      <h2 className="font-poppins font-bold text-[24px] text-grisHeading">
         Módulos para potenciar tu empresa
       </h2>
       
@@ -139,13 +139,13 @@ function MainModules() {
                 data-name={module.name}
                 data-description={module.shortDescription}
               >
-                <AccordionTrigger className="flex flex-col sm:flex-row justify-start border-b items-center gap-2 sm:gap-3">
+                <AccordionTrigger className="flex h-[75px] flex-col sm:flex-row justify-start border-b items-center gap-2 sm:gap-3">
                   <IonIcon icon={module.icon} className="size-8 text-grisHeading"/>
                   <div className="flex flex-col sm:flex-row w-full sm:items-center gap-1 sm:gap-3">
-                    <span className="font-poppins font-semibold text-[18px] text-grisHeading">
+                    <span className="font-poppins font-semibold text-[16px] text-grisHeading">
                       {module.name}
                     </span>
-                    <span className="font-poppins font-light text-[18px] text-grisHeading">
+                    <span className="font-poppins font-light text-[16px] text-grisHeading">
                       {module.shortDescription}
                     </span>
                   </div>
@@ -160,7 +160,7 @@ function MainModules() {
                     <img src={module.image || ""} alt={module.name} className="h-40 sm:h-48 md:h-[274px] w-full md:col-span-4 rounded-[10px]" />
                     
                     <div className="md:col-span-8">
-                      <p className="font-poppins font-light text-grisHeading text-[18px] md:text-lg">
+                      <p className="font-poppins font-light text-grisHeading text-[16px] md:text-lg">
                         {module.fullDescription.split('\n\n').map((paragraph, i) => (
                           <React.Fragment key={i}>
                             {paragraph}
