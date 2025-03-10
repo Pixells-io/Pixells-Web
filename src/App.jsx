@@ -496,6 +496,28 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "/ayuda/factura-de-compras",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Accounting/PurchaseCFDI"
+          );
+          return {
+            Component,
+          };
+        },
+      },
+      {
+        path: "/ayuda/factura-de-ventas",
+        lazy: async () => {
+          const { default: Component } = await import(
+            "./pages/Knowledge/Sections/Accounting/SalesCFDI"
+          );
+          return {
+            Component,
+          };
+        },
+      },
     ]
 
   }
