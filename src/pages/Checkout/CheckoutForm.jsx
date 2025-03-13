@@ -346,6 +346,10 @@ const CheckoutForm = () => {
         //Operativo
         setAmmount(899);
         break;
+      case 6:
+        //Project Manager
+        setAmmount(299);
+        break;
     }
 
     setStep(2);
@@ -437,6 +441,10 @@ const CheckoutForm = () => {
       case 5:
         //Operativo
         setAmmount(899);
+        break;
+      case 6:
+        //Project Manager
+        setAmmount(299);
         break;
     }
 
@@ -821,9 +829,9 @@ const CheckoutForm = () => {
                 </div>
               </TabsContent>
               <TabsContent value="parcial" className="">
-                <div className="mx-12 mt-8 flex rounded-xl border border-grisDisabled">
+                <div className="mt-8 rounded-xl border border-grisDisabled sm:mx-12 sm:flex">
                   {/* POS */}
-                  <div className="w-1/2 border-r border-grisDisabled px-6 py-6 text-left">
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
                     <span className="font-poppins text-xl font-medium text-black">
                       Punto de Venta
                     </span>
@@ -848,7 +856,11 @@ const CheckoutForm = () => {
                         Contratar ahora
                       </button>
                     </div>
-                    <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Ideal para empresas con tiendas físicas y tiendas en
+                      linea!
+                    </h2>
+                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
                       Crea ventas en tu tienda y gestiona multiples sucursales.
                       Conecta tus tiendas en línea y administra tus inventarios
                       en un solo sitio.
@@ -878,7 +890,7 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 15 usuarios</h2>
+                        <h2>Hasta 10 usuarios</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -898,7 +910,7 @@ const CheckoutForm = () => {
                     </div>
                   </div>
                   {/* CRM */}
-                  <div className="w-1/2 border-r border-grisDisabled px-6 py-6 text-left">
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
                     <span className="font-poppins text-xl font-medium text-black">
                       CRM (Gestión comercial)
                     </span>
@@ -906,7 +918,6 @@ const CheckoutForm = () => {
                     <span className="font-roboto text-sm text-[#ABABAB]">
                       $949/mensual MXN + IVA
                     </span>
-
                     <div className="w-full gap-8 pt-8 text-center">
                       <button
                         type="button"
@@ -923,7 +934,11 @@ const CheckoutForm = () => {
                         Contratar ahora
                       </button>
                     </div>
-                    <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Es perfecto para automatizar tu flujo comercial y generar
+                      mas clientes!
+                    </h2>
+                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
                       Crea ventas en tu tienda y gestiona multiples sucursales.
                       Conecta tus tiendas en línea y administra tus inventarios
                       en un solo sitio.
@@ -954,7 +969,7 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 15 usuarios</h2>
+                        <h2>Hasta 10 usuarios</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -974,7 +989,7 @@ const CheckoutForm = () => {
                     </div>
                   </div>
                   {/* Operativo */}
-                  <div className="w-1/2 border-r border-grisDisabled px-6 py-6 text-left">
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
                     <span className="font-poppins text-xl font-medium text-black">
                       Operativo
                     </span>
@@ -999,37 +1014,46 @@ const CheckoutForm = () => {
                         Contratar ahora
                       </button>
                     </div>
-                    <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Crea ventas en tu tienda y gestiona multiples sucursales.
-                      Conecta tus tiendas en línea y administra tus inventarios
-                      en un solo sitio.
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Ideal para fábricas, constructoras y comercializadoras al
+                      por mayor!
+                    </h2>
+                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                      Centraliza tu operación y profesionaliza tus procesos de
+                      cadena productiva. Abastece inventarios y genera
+                      cotizaciones y ventas.
                     </h2>
                     <div className="space-y-2 py-2 pt-6">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Punto de venta con sucursales ilimitadas</h2>
+                        <h2>Ventas, pedidos y cotizaciones de venta</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Gestión de inventarios básicos</h2>
+                        <h2>Ordenes de compra y cotizaciones de compra</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Facturas, impuestos y divisas</h2>
+                        <h2>Convierte tus ordenes de venta en CFDI´s</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Consulta de ventas</h2>
+                        <h2>Fabrica artículos y controla mermas y costos</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Haz consiliaciones bancarias de forma rápida</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Administra tus cuentas por cobrar y por pagar</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
-                          Integración con Shopify, Wix, Mercado Libre y Amazon
+                          Integra el sistema con Shopify, Wix, Mercado Libre,
+                          Amazon y más
                         </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 15 usuarios</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -1037,6 +1061,10 @@ const CheckoutForm = () => {
                           Integración con Gmail y Outlook para calendario y
                           correo
                         </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 10 usuarios</h2>
                       </div>
                     </div>
                     <div className="pt-6">
@@ -1048,70 +1076,67 @@ const CheckoutForm = () => {
                       </h2>
                     </div>
                   </div>
-                  {/* Productivo */}
-                  <div className="w-1/2 border-r border-grisDisabled px-6 py-6 text-left">
+                  {/* Project Manager */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
                     <span className="font-poppins text-xl font-medium text-black">
-                      Productivo
+                      Project Manager
                     </span>
                     <br />
                     <span className="font-roboto text-sm text-[#ABABAB]">
-                      $899/mensual MXN + IVA
+                      $299/mensual MXN + IVA
                     </span>
 
                     <div className="w-full gap-8 pt-8 text-center">
                       <button
                         type="button"
-                        onClick={() => setFreeMonth(5)}
+                        onClick={() => setFreeMonth(6)}
                         className="w-4/5 rounded-3xl border bg-[#3ACCA3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#3acca3e2]"
                       >
                         Probar Gratis 15 dias
                       </button>
                       <button
                         type="button"
-                        onClick={() => selectPlanFunction(5)}
+                        onClick={() => selectPlanFunction(6)}
                         className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#3ACCA3] hover:text-[#3acca3e2]"
                       >
                         Contratar ahora
                       </button>
                     </div>
-                    <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Crea ventas en tu tienda y gestiona multiples sucursales.
-                      Conecta tus tiendas en línea y administra tus inventarios
-                      en un solo sitio.
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Excelente para organizar mi agenda y la de mi equipo de
+                      trabajo!
+                    </h2>
+                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                      Administra tus proyectos y los de tu equipo con plazos de
+                      actividades y colaboración en tiempo real 
                     </h2>
                     <div className="space-y-2 py-2 pt-6">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Punto de venta con sucursales ilimitadas</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Gestión de inventarios básicos</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Facturas, impuestos y divisas</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Consulta de ventas</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
-                          Integración con Shopify, Wix, Mercado Libre y Amazon
+                          Crear espacios de trabajo para distintas areas de la
+                          empresa
                         </h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 15 usuarios</h2>
+                        <h2>
+                          Crea actividades y proyectos avanzados con fases
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Comparte proyectos con tus colaboradores</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
-                          Integración con Gmail y Outlook para calendario y
-                          correo
+                          Agenda actividades en calendario y recibe avisos
                         </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 10 usuarios</h2>
                       </div>
                     </div>
                     <div className="pt-6">
