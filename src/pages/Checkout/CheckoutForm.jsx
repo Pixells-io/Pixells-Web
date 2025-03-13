@@ -1220,7 +1220,9 @@ const CheckoutForm = () => {
                             ? "Operativo"
                             : selectedPlan == 5
                               ? "Productivo"
-                              : false}
+                              : selectedPlan == 6
+                                ? "Project Manager"
+                                : null}
                   </h2>
                   <span className="font-roboto text-xs text-[#ABABAB]">
                     Cancela cuando quieras
