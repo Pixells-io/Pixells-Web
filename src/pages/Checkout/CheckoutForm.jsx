@@ -871,7 +871,7 @@ const CheckoutForm = () => {
                       </h2>
                     </div>
                   </div>
-                  {/* Lite Pos */}
+                  {/* Pro */}
                   <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/4 sm:border-b-0">
                     <h2 className="mb-5 font-poppins text-lg font-medium text-black">
                       Pro
@@ -936,7 +936,7 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Punto de venta (2 sucursales)</h2>
+                        <h2>Punto de venta (multi-sucursal)</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -1043,7 +1043,7 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Punto de venta (2 sucursales)</h2>
+                        <h2>Punto de venta (multi-sucursal)</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
