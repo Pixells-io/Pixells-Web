@@ -45,6 +45,27 @@ const CheckoutForm = () => {
         return;
       }
 
+      switch (selectedPlan) {
+        case 1:
+          setCupon("50OFF");
+          break;
+        case 2:
+          setCupon("50OFF");
+          break;
+        case 3:
+          setCupon("100OFF");
+          break;
+        case 4:
+          setCupon("400OFF");
+          break;
+        case 5:
+          setCupon("50OFF");
+          break;
+        case 6:
+          setCupon("100OFF");
+          break;
+      }
+
       const response = await fetch(
         `${import.meta.env.VITE_SERVER_URL}suscriptions/create-suscription`,
         {
@@ -327,28 +348,28 @@ const CheckoutForm = () => {
 
     switch (plan) {
       case 1:
-        //Profesional
-        setAmmount(3000);
+        //Lite
+        setAmmount(749);
         break;
       case 2:
-        //POS
-        setAmmount(799);
-        break;
-      case 3:
-        //CRM
+        //Lite (Pos)
         setAmmount(949);
         break;
+      case 3:
+        //Pro
+        setAmmount(1899);
+        break;
       case 4:
-        //Operativo
-        setAmmount(1499);
+        //Enterprise
+        setAmmount(3499);
         break;
       case 5:
-        //Operativo
-        setAmmount(899);
+        //CRM (Gestión Comercial)
+        setAmmount(949);
         break;
       case 6:
         //Project Manager
-        setAmmount(299);
+        setAmmount(499);
         break;
     }
 
@@ -423,28 +444,28 @@ const CheckoutForm = () => {
 
     switch (plan) {
       case 1:
-        //Profesional
-        setAmmount(3000);
+        //Lite
+        setAmmount(749);
         break;
       case 2:
-        //POS
-        setAmmount(799);
-        break;
-      case 3:
-        //CRM
+        //Lite (Pos)
         setAmmount(949);
         break;
+      case 3:
+        //Pro
+        setAmmount(1899);
+        break;
       case 4:
-        //Operativo
-        setAmmount(1499);
+        //Enterprise
+        setAmmount(3499);
         break;
       case 5:
-        //Operativo
-        setAmmount(899);
+        //CRM (Gestión Comercial)
+        setAmmount(949);
         break;
       case 6:
         //Project Manager
-        setAmmount(299);
+        setAmmount(499);
         break;
     }
 
@@ -665,232 +686,82 @@ const CheckoutForm = () => {
               Escoge tu plan
             </span>
             <Tabs
-              defaultValue="parcial"
+              defaultValue="suite"
               className="mt-8 overflow-auto border-0 bg-transparent"
             >
               <TabsList className="py h-full rounded-3xl border border-grisDisabled bg-transparent px-2">
                 <TabsTrigger
                   className="rounded-3xl bg-transparent px-4 py-2 font-roboto text-sm font-medium text-grisSubText data-[state=active]:bg-black data-[state=active]:text-white"
-                  value="monthly"
+                  value="suite"
                 >
-                  Completo
+                  Suite
                 </TabsTrigger>
 
                 <TabsTrigger
                   className="rounded-3xl bg-transparent px-4 py-2 font-roboto text-sm font-medium text-grisSubText data-[state=active]:bg-black data-[state=active]:text-white"
-                  value="parcial"
+                  value="focus"
                 >
-                  Parcial
+                  Focus
                 </TabsTrigger>
               </TabsList>
-              <TabsContent value="monthly">
-                <div className="mt-8 rounded-xl border border-grisDisabled sm:flex">
-                  {/* 
-                  <div className="border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2">
-                    <span className="font-poppins text-xl font-medium text-black">
-                      Gratuito
-                    </span>
-                    <br />
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $0/mensual MXN
-                    </span>
-                    <div className="w-full py-8 text-center">
-                      <button
-                        disabled={true}
-                        type="button"
-                        className="w-3/5 rounded-3xl border border-grisSubText px-4 py-3 font-roboto text-base tracking-wider text-grisSubText"
-                      >
-                        No disponible
-                      </button>
-                    </div>
-                    <div className="space-y-2 py-2">
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Acceso a todos los módulos del sistema</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>1 usuario</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Facturación electrónica disponible</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Notificaciones en tiempo real</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Descarga de app gratuita</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Asistente virtual de inteligencia artificil 24/7
-                        </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Uso de Calendario</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Integraciones de terceros limitadas</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisDisabled">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Soporte personal limitado</h2>
-                      </div>
-                    </div>
-                    <div className="pt-6">
-                      <span className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                        * Plan gratuito, 1 usuario disponible
-                      </span>
-                    </div>
-                  </div>
-                  */}
-                  <div className="px-6 py-6 text-left">
-                    <div className="flex gap-2">
-                      <IonIcon
-                        icon={sparklesSharp}
-                        className="text-xl text-[#00A9B3]"
-                      ></IonIcon>
-                      <span className="font-poppins text-xl font-medium text-black">
-                        Plan Profesional
-                      </span>
-                    </div>
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $3,000/mensual MXN + IVA
-                    </span>
-                    <div className="w-full gap-8 py-8 text-center">
-                      <button
-                        type="button"
-                        onClick={() => setFreeMonth(1)}
-                        className="w-4/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#43b9c0]"
-                      >
-                        Probar Gratis 15 dias
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => selectPlanFunction(1)}
-                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#00A9B3] hover:text-[##43b9c0]"
-                      >
-                        Contratar ahora
-                      </button>
-                    </div>
-                    <div className="space-y-2 py-2">
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Acceso a todos 15 módulos del sistema</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Usuarios ilimitados</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Facturación electrónica disponible</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Notificaciones en tiempo real</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Descarga de app gratuita</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Asistente virtual de inteligencia artificil 24/7
-                        </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Uso de Calendario</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Integraciones de terceros</h2>{" "}
-                        <h2 className="text-[#00A9B3]">ilimitadas</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Soporte con ejecutivo limitado</h2>
-                      </div>
-                    </div>
-                    <div className="pt-6">
-                      <span className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                        * Cancela en cualquier momento
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-              <TabsContent value="parcial" className="">
+              <TabsContent value="suite">
                 <div className="mt-8 rounded-xl border border-grisDisabled sm:mx-12 sm:flex">
-                  {/* POS */}
-                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
-                    <span className="font-poppins text-xl font-medium text-black">
-                      Punto de Venta
+                  {/* Lite */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/4 sm:border-b-0">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
+                      Lite
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $749
                     </span>
-                    <br />
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $799/mensual MXN + IVA
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
                     </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $799
+                    </h2>
 
                     <div className="w-full gap-8 pt-8 text-center">
                       <button
                         type="button"
-                        onClick={() => setFreeMonth(2)}
+                        onClick={() => setFreeMonth(1)}
                         className="w-4/5 rounded-3xl border bg-[#008EF9] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#008df9e2]"
                       >
                         Probar Gratis 15 dias
                       </button>
                       <button
                         type="button"
-                        onClick={() => selectPlanFunction(2)}
+                        onClick={() => selectPlanFunction(1)}
                         className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#008EF9] hover:text-[#008df9e2]"
                       >
                         Contratar ahora
                       </button>
                     </div>
                     <h2 className="font-popins text-center text-base font-semibold">
-                      ¡Ideal para empresas con tiendas físicas y tiendas en
-                      linea!
+                      ¡Ideal para empresas que deben ordenar y profesionalizar
+                      procesos!
                     </h2>
-                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Crea ventas en tu tienda y gestiona multiples sucursales.
-                      Conecta tus tiendas en línea y administra tus inventarios
-                      en un solo sitio.
-                    </h2>
+
                     <div className="space-y-2 py-2 pt-6">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Punto de venta con sucursales ilimitadas</h2>
+                        <h2>Compras</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Gestión de inventarios básicos</h2>
+                        <h2>Ventas</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Facturas, impuestos y divisas</h2>
+                        <h2>Facturación</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Consulta de ventas</h2>
+                        <h2>Inventarios</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Integración con Shopify, Wix, Mercado Libre y Amazon
-                        </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 10 usuarios</h2>
+                        <h2>Bancos</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -899,37 +770,368 @@ const CheckoutForm = () => {
                           correo
                         </h2>
                       </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 2 usuarios</h2>
+                      </div>
                     </div>
-                    <div className="pt-6">
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+
+                    <div className="sticky bottom-0 bg-white pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Costo por timbre $1.00 mxn mas IVA
                       </h2>
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Cancela cuando quieras
                       </h2>
                     </div>
                   </div>
-                  {/* CRM */}
-                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
-                    <span className="font-poppins text-xl font-medium text-black">
-                      CRM (Gestión comercial)
+                  {/* Lite Pos */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/4 sm:border-b-0">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
+                      Lite (Pos)
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $949
                     </span>
-                    <br />
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $949/mensual MXN + IVA
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
                     </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $999
+                    </h2>
+
+                    <div className="w-full gap-8 pt-8 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setFreeMonth(2)}
+                        className="w-4/5 rounded-3xl border bg-[#E9B51C] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#e9b61cd8]"
+                      >
+                        Probar Gratis 15 dias
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => selectPlanFunction(2)}
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]"
+                      >
+                        Contratar ahora
+                      </button>
+                    </div>
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Para cualquier empresa que tenga tiendas y sucursales!
+                    </h2>
+                    <div className="space-y-2 py-2 pt-6">
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Compras</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Ventas</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Facturación</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Inventarios</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Bancos</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>
+                          Integración con Gmail y Outlook para calendario y
+                          correo
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Punto de venta (2 sucursales)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 3 usuarios</h2>
+                      </div>
+                    </div>
+                    <div className="pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo por timbre $1.00 mxn mas IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Cancela cuando quieras
+                      </h2>
+                    </div>
+                  </div>
+                  {/* Lite Pos */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/4 sm:border-b-0">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
+                      Pro
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $1,899
+                    </span>
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
+                    </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $1,999
+                    </h2>
+
                     <div className="w-full gap-8 pt-8 text-center">
                       <button
                         type="button"
                         onClick={() => setFreeMonth(3)}
-                        className="w-4/5 rounded-3xl border bg-[#F3B03D] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#f3b03ddc]"
+                        className="w-4/5 rounded-3xl border bg-[#7247CD] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#7147cddb]"
                       >
                         Probar Gratis 15 dias
                       </button>
                       <button
                         type="button"
                         onClick={() => selectPlanFunction(3)}
-                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#F3B03D] hover:text-[#f3b03ddc]"
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#7247CD] hover:text-[#7147cddb]"
+                      >
+                        Contratar ahora
+                      </button>
+                    </div>
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Excelente para conectar el ciclo comercial con la
+                      operación!
+                    </h2>
+                    <div className="space-y-2 py-2 pt-6">
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Compras</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Ventas</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Facturación</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Inventarios</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Bancos</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>
+                          Integración con Gmail y Outlook para calendario y
+                          correo
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Punto de venta (2 sucursales)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>CRM (Gestión Comercial)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-3xl" />
+                        <h2>
+                          Integra el sistema con Shopify, Wix, Mercado Libre,
+                          Amazon y más
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Chat interno y de Whatsapp</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Asistente de IA</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>App IOS y Android</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 8 usuarios</h2>
+                      </div>
+                    </div>
+                    <div className="pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo por timbre $1.00 mxn mas IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Cancela cuando quieras
+                      </h2>
+                    </div>
+                  </div>
+                  {/* Enterprise */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/4 sm:border-b-0">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
+                      Enterprise
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $3,499
+                    </span>
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
+                    </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $3,899
+                    </h2>
+
+                    <div className="w-full gap-8 pt-8 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setFreeMonth(4)}
+                        className="w-4/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#00aab3d7]"
+                      >
+                        Probar Gratis 15 dias
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => selectPlanFunction(4)}
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]"
+                      >
+                        Contratar ahora
+                      </button>
+                    </div>
+                    <h2 className="font-popins text-center text-base font-semibold">
+                      ¡Ideal para fabricantes, servicios y comercializadoras al
+                      por mayor!
+                    </h2>
+                    <div className="space-y-2 py-2 pt-6">
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Compras</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Ventas</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Facturación</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Inventarios</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Bancos</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>
+                          Integración con Gmail y Outlook para calendario y
+                          correo
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#E9B51C] hover:text-[#e9b61cd8]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Punto de venta (2 sucursales)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>CRM (Gestión Comercial)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-3xl" />
+                        <h2>
+                          Integra el sistema con Shopify, Wix, Mercado Libre,
+                          Amazon y más
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Chat interno y de Whatsapp</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Asistente de IA</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>App IOS y Android</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Fabricación</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Project Manager</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Desarrollo Organizacional (RRHH)</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Tickets</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#00A9B3] hover:text-[#00aab3d7]">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Hasta 20 usuarios</h2>
+                      </div>
+                    </div>
+                    <div className="pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo por timbre $1.00 mxn mas IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Cancela cuando quieras
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+              <TabsContent value="focus">
+                <div className="mt-8 rounded-xl border border-grisDisabled sm:mx-96 sm:flex">
+                  {/* CRM */}
+                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
+                      CRM (Gestión comercial)
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $949
+                    </span>
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
+                    </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $999
+                    </h2>
+
+                    <div className="w-full gap-8 pt-8 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setFreeMonth(5)}
+                        className="w-4/5 rounded-3xl border bg-[#008EF9] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#008df9e2]"
+                      >
+                        Probar Gratis 15 dias
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => selectPlanFunction(5)}
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#008EF9] hover:text-[#008df9e2]"
                       >
                         Contratar ahora
                       </button>
@@ -938,122 +1140,27 @@ const CheckoutForm = () => {
                       ¡Es perfecto para automatizar tu flujo comercial y generar
                       mas clientes!
                     </h2>
-                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Crea ventas en tu tienda y gestiona multiples sucursales.
-                      Conecta tus tiendas en línea y administra tus inventarios
-                      en un solo sitio.
-                    </h2>
-                    <div className="space-y-2 py-2 pt-6">
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Creación y seguimiento de prospectos</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Generación de cotizaciónes</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Campañas de E-mail y Whatsapp marketing</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Crea ordenes de venta y conviertelas en CFDI´s</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Maneja tus conversaciones de Whatsapp, Facebook e
-                          Instagram en un mismo lugar
-                        </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 10 usuarios</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Integración con Gmail y Outlook para calendario y
-                          correo
-                        </h2>
-                      </div>
-                    </div>
-                    <div className="pt-6">
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                        *Costo por timbre $1.00 mxn mas IVA
-                      </h2>
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                        *Cancela cuando quieras
-                      </h2>
-                    </div>
-                  </div>
-                  {/* Operativo */}
-                  <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
-                    <span className="font-poppins text-xl font-medium text-black">
-                      Operativo
-                    </span>
-                    <br />
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $1,499/mensual MXN + IVA
-                    </span>
 
-                    <div className="w-full gap-8 pt-8 text-center">
-                      <button
-                        type="button"
-                        onClick={() => setFreeMonth(4)}
-                        className="w-4/5 rounded-3xl border bg-[#8154E2] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#8154e2e1]"
-                      >
-                        Probar Gratis 15 dias
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => selectPlanFunction(4)}
-                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#8154E2] hover:text-[#8154e2e1]"
-                      >
-                        Contratar ahora
-                      </button>
-                    </div>
-                    <h2 className="font-popins text-center text-base font-semibold">
-                      ¡Ideal para fábricas, constructoras y comercializadoras al
-                      por mayor!
-                    </h2>
-                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Centraliza tu operación y profesionaliza tus procesos de
-                      cadena productiva. Abastece inventarios y genera
-                      cotizaciones y ventas.
-                    </h2>
                     <div className="space-y-2 py-2 pt-6">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Ventas, pedidos y cotizaciones de venta</h2>
+                        <h2>Creación y seguimiento de leads</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Ordenes de compra y cotizaciones de compra</h2>
+                        <h2>Campañas de email marketing</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Convierte tus ordenes de venta en CFDI´s</h2>
+                        <h2>Campañas de whatsapp marketing</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Fabrica artículos y controla mermas y costos</h2>
+                        <h2>Cotizaciones</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Haz consiliaciones bancarias de forma rápida</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Administra tus cuentas por cobrar y por pagar</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Integra el sistema con Shopify, Wix, Mercado Libre,
-                          Amazon y más
-                        </h2>
+                        <h2>Chat interno, de whatsapp, facebook e instagram</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
@@ -1064,86 +1171,98 @@ const CheckoutForm = () => {
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 10 usuarios</h2>
+                        <h2>Hasta 3 usuarios</h2>
                       </div>
                     </div>
-                    <div className="pt-6">
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+
+                    <div className="sticky bottom-0 bg-white pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Costo por timbre $1.00 mxn mas IVA
                       </h2>
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Cancela cuando quieras
                       </h2>
                     </div>
                   </div>
                   {/* Project Manager */}
                   <div className="border-b border-r border-grisDisabled px-6 py-6 text-left sm:w-1/2 sm:border-b-0">
-                    <span className="font-poppins text-xl font-medium text-black">
+                    <h2 className="mb-5 font-poppins text-lg font-medium text-black">
                       Project Manager
+                    </h2>
+                    <span className="font-roboto text-5xl text-grisHeading">
+                      $499
                     </span>
-                    <br />
-                    <span className="font-roboto text-sm text-[#ABABAB]">
-                      $299/mensual MXN + IVA
+                    <span className="ml-4 font-roboto text-sm text-[#ABABAB]">
+                      mxn /mes + IVA
                     </span>
+                    <h2 className="ml-2 mt-2 font-roboto text-sm text-[#ABABAB]">
+                      Los primeros 3 meses, después $599
+                    </h2>
 
                     <div className="w-full gap-8 pt-8 text-center">
                       <button
                         type="button"
                         onClick={() => setFreeMonth(6)}
-                        className="w-4/5 rounded-3xl border bg-[#3ACCA3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#3acca3e2]"
+                        className="w-4/5 rounded-3xl border bg-[#3ACCA3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#3acca3d2]"
                       >
                         Probar Gratis 15 dias
                       </button>
                       <button
                         type="button"
                         onClick={() => selectPlanFunction(6)}
-                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#3ACCA3] hover:text-[#3acca3e2]"
+                        className="rounded-3x py-4 font-roboto text-base tracking-wider text-[#3ACCA3] hover:text-[#3acca3d2]"
                       >
                         Contratar ahora
                       </button>
                     </div>
                     <h2 className="font-popins text-center text-base font-semibold">
-                      ¡Excelente para organizar mi agenda y la de mi equipo de
-                      trabajo!
+                      ¡Maravilloso para darle orden a tu equipo de una forma
+                      fácil y profesional!
                     </h2>
-                    <h2 className="mt-6 font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
-                      Administra tus proyectos y los de tu equipo con plazos de
-                      actividades y colaboración en tiempo real 
-                    </h2>
+
                     <div className="space-y-2 py-2 pt-6">
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Creación y seguimiento de proyectos y tareas</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Multiples espacios de trabajo</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
+                        <h2>Comparte proyectos con tu equipo</h2>
+                      </div>
+                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
-                          Crear espacios de trabajo para distintas areas de la
-                          empresa
+                          Integración con Gmail y Outlook para calendario y
+                          correo
                         </h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
-                          Crea actividades y proyectos avanzados con fases
+                          Agrega imagenes y comentarios de apoyo para el equipo
                         </h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
                         <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Comparte proyectos con tus colaboradores</h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>
-                          Agenda actividades en calendario y recibe avisos
-                        </h2>
-                      </div>
-                      <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-grisHeading">
-                        <IonIcon icon={checkmarkOutline} className="text-lg" />
-                        <h2>Hasta 10 usuarios</h2>
+                        <h2>Hasta 3 usuarios</h2>
                       </div>
                     </div>
-                    <div className="pt-6">
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+
+                    <div className="sticky bottom-0 bg-white pt-6">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Costo por timbre $1.00 mxn mas IVA
                       </h2>
-                      <h2 className="font-roboto text-sm font-normal tracking-wider text-[#ABABAB]">
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
+                        *Costo mensual por usuario adicional $249.00 + IVA
+                      </h2>
+                      <h2 className="font-roboto text-xs font-normal tracking-wider text-[#ABABAB]">
                         *Cancela cuando quieras
                       </h2>
                     </div>
@@ -1211,15 +1330,15 @@ const CheckoutForm = () => {
                 <div>
                   <h2 className="font-poppins text-lg font-semibold text-grisHeading">
                     {selectedPlan == 1
-                      ? "Profesional"
+                      ? "Lite"
                       : selectedPlan == 2
-                        ? "Punto de Venta"
+                        ? "Lite (Pos)"
                         : selectedPlan == 3
-                          ? "CRM"
+                          ? "Pro"
                           : selectedPlan == 4
-                            ? "Operativo"
+                            ? "Enterprise"
                             : selectedPlan == 5
-                              ? "Productivo"
+                              ? "CRM (Gestión Comercial)"
                               : selectedPlan == 6
                                 ? "Project Manager"
                                 : null}
