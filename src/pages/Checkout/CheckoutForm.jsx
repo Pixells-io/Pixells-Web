@@ -727,7 +727,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(1)}
                         className="w-4/5 rounded-3xl border bg-[#008EF9] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#008df9e2]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 das
                       </button>
                       <button
                         type="button"
@@ -809,7 +809,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(2)}
                         className="w-4/5 rounded-3xl border bg-[#E9B51C] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#e9b61cd8]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 días
                       </button>
                       <button
                         type="button"
@@ -892,7 +892,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(3)}
                         className="w-4/5 rounded-3xl border bg-[#7247CD] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#7147cddb]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 días
                       </button>
                       <button
                         type="button"
@@ -943,7 +943,7 @@ const CheckoutForm = () => {
                         <h2>CRM (Gestión Comercial)</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
-                        <IonIcon icon={checkmarkOutline} className="text-3xl" />
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
                           Integra el sistema con Shopify, Wix, Mercado Libre,
                           Amazon y más
@@ -999,7 +999,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(4)}
                         className="w-4/5 rounded-3xl border bg-[#00A9B3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#00aab3d7]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 días
                       </button>
                       <button
                         type="button"
@@ -1050,7 +1050,7 @@ const CheckoutForm = () => {
                         <h2>CRM (Gestión Comercial)</h2>
                       </div>
                       <div className="flex gap-2 font-roboto text-sm font-normal tracking-wider text-[#7247CD] hover:text-[#7147cddb]">
-                        <IonIcon icon={checkmarkOutline} className="text-3xl" />
+                        <IonIcon icon={checkmarkOutline} className="text-lg" />
                         <h2>
                           Integra el sistema con Shopify, Wix, Mercado Libre,
                           Amazon y más
@@ -1126,7 +1126,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(5)}
                         className="w-4/5 rounded-3xl border bg-[#008EF9] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#008df9e2]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 días
                       </button>
                       <button
                         type="button"
@@ -1208,7 +1208,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(6)}
                         className="w-4/5 rounded-3xl border bg-[#3ACCA3] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#3acca3d2]"
                       >
-                        Probar Gratis 15 dias
+                        Probar Gratis 15 días
                       </button>
                       <button
                         type="button"
@@ -1367,7 +1367,7 @@ const CheckoutForm = () => {
                     className="font-poppins text-xs text-[#ABABAB]"
                     onClick={() => setUseCupon(!useCupon)}
                   >
-                    ¿Tienes un codigo de descuento?
+                    ¿Tienes un código de descuento?
                   </span>
                   {useCupon == true ? (
                     <div>
@@ -1412,13 +1412,13 @@ const CheckoutForm = () => {
                   className="font-poppins text-xs text-[#ABABAB]"
                   onClick={() => setUseClientCode(!useClientCode)}
                 >
-                  ¿Tienes un codigo de referido?
+                  ¿Tienes un código de referido?
                 </span>
                 {useClientCode == true ? (
                   <input
                     type="text"
                     name="ref_code"
-                    placeholder="Ingresa el codigo de referido"
+                    placeholder="Ingresa el código de referido"
                     value={clientCode}
                     onChange={(e) => setClientCode(e.target.value)}
                     className="w-full border-b border-[#aab7c5] py-2 font-roboto text-base text-[#aab7c5] focus:outline-none"
@@ -1452,7 +1452,7 @@ const CheckoutForm = () => {
               ) : (
                 <h2 className="rounded-xl bg-white px-12 py-3 font-poppins text-xs text-primario">
                   {cuponData?.type == 3
-                    ? `Tienes acceso a una prueba gratuita de ${cuponData?.discount} ${cuponData?.discount > 1 ? "Meses." : "Mes"}.`
+                    ? `Tienes acceso a una prueba gratuita de ${cuponData?.discount > 1 ? cuponData?.discount + " Meses." : "15 Dias"}.`
                     : `Tienes acceso a una cuenta gratuita, por lo cual no necesitas
                   ingresar un metodo de pago.`}
                 </h2>
