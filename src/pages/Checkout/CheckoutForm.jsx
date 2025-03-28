@@ -727,7 +727,7 @@ const CheckoutForm = () => {
                         onClick={() => setFreeMonth(1)}
                         className="w-4/5 rounded-3xl border bg-[#008EF9] px-4 py-3 font-roboto text-base tracking-wider text-white hover:bg-[#008df9e2]"
                       >
-                        Probar Gratis 15 das
+                        Probar Gratis 15 dias
                       </button>
                       <button
                         type="button"
