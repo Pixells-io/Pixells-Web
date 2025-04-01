@@ -24,9 +24,12 @@ function Contact() {
             </span>
           </div>
           <div className="mt-8">
-            <Link className="rounded-xl bg-[#242425] px-6 py-3 font-roboto text-xs font-semibold tracking-wider text-white">
+            <a
+              href="https://wa.me/3318633514?text=Hola,%20me%20interesa%20obtener%20más%20información"
+              className="rounded-xl bg-[#242425] px-6 py-3 font-roboto text-xs font-semibold tracking-wider text-white"
+            >
               Contactar Whatsapp
-            </Link>
+            </a>
           </div>
         </div>
         <div className="px-4 pt-20 sm:w-1/2 sm:pt-0">
