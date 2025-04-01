@@ -25,7 +25,7 @@ function Contact() {
           </div>
           <div className="mt-8">
             <a
-              href="https://wa.me/3318633514?text=Hola,%20me%20interesa%20obtener%20más%20información"
+              href="https://wa.me/3318633514?text=Hola,%20me%20interesa%20obtener%20más%20información.%Por%favor"
               className="rounded-xl bg-[#242425] px-6 py-3 font-roboto text-xs font-semibold tracking-wider text-white"
             >
               Contactar Whatsapp
